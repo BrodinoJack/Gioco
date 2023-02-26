@@ -164,6 +164,15 @@ private GruppoPavimento: Phaser.GameObjects.Group;
       this._M.play("Cicciobello"); 
       console.log("po");
       //this._Indice+1;*/
+      startGame() {
+        this.scene.stop("GamePlay");
+        this.scene.start("scienzato", { level: 1 });
+;
+      }
+      update(time: number, delta: number): void {
+   
+      }
+      
   
 }
 
