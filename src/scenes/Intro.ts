@@ -73,7 +73,7 @@ export default class Intro extends Phaser.Scene {
       });
       
 //difpv
-
+//c
       this._credits = this.add
       .bitmapText(this.game.canvas.width / 2, 400, "arcade", "CREDITS")
       .setAlpha(1)
