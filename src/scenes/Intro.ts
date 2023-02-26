@@ -10,7 +10,16 @@ export default class Intro extends Phaser.Scene {
   private _creditsContainerBackground: Phaser.GameObjects.Image;
   private _creditsContainerBackground2: Phaser.GameObjects.Image;
   private _creditsContainerEsc: Phaser.GameObjects.Image;
-
+  //i due riferimenti alla mappa di tile e al tileset
+	private map: Phaser.Tilemaps.Tilemap;
+	private tileset1: Phaser.Tilemaps.Tileset;
+  private tileset2: Phaser.Tilemaps.Tileset;
+  private tileset3: Phaser.Tilemaps.Tileset;
+  private tileset4: Phaser.Tilemaps.Tileset;
+  //in layer viene istanziato il livello di tile visibili
+	private layer: Phaser.Tilemaps.TilemapLayer;
+  //in layer 2 il livello per la gestione delle collisioni pavimento e piattaforme	
+	private layer2: Phaser.Tilemaps.TilemapLayer;
   
   constructor() {
     super({
@@ -21,13 +30,54 @@ export default class Intro extends Phaser.Scene {
   }
 
   create() {
+    this.map = this.make.tilemap({ key: "intro"});
+    this.cameras.main.setBounds(
+      0, 
+      0, 
+      this.map.widthInPixels, 
+      this.map.heightInPixels 
+    );
+        this.physics.world.setBounds(
+      0, 
+      0, 
+      this.map.widthInPixels, 
+      this.map.heightInPixels 
+    );
+	  this.tileset1 = this.map.addTilesetImage("blocchi");
+    this.tileset2 = this.map.addTilesetImage("car");
+    this.tileset3 = this.map.addTilesetImage("truck");
+    this.tileset4 = this.map.addTilesetImage("trash");
+
+    this.layer = this.map
+    .createLayer("Livello tile 1", this.tileset1, 0, 0)
+    .setDepth(9)
+    .setAlpha(1);
+    this.layer = this.map
+	  .createLayer("veicoli", this.tileset2, 0, 0)
+    .setDepth(9)
+	  .setAlpha(1);
+    this.layer = this.map
+	  .createLayer("veicoli", this.tileset3, 0, 0)
+	  .setDepth(9)
+	  .setAlpha(1);
+    this.layer = this.map
+	  .createLayer("prima veicoli", this.tileset4, 0, 0)
+	  .setDepth(9)
+	  .setAlpha(1);
+
+
+    this.layer2 = this.map
+	.createLayer("Livello tile 1", this.tileset1, 0, 0)
+	.setDepth(0)
+	.setAlpha(1);
+
     this._music = this.sound.add("_intro", { loop: true, volume: 0.7 });
     this._music.play();
     this._creditsContainer = this.add.container().setAlpha(0).setDepth(10);
     this._creditsContainerText = this.add.text(this.game.canvas.width / 2, 100, "").setTint(0xff0000).setOrigin(.5);
     this._creditsContainerBackground = this.add.image(0, 0, "").setOrigin(.0).setScale(.1).setPosition(450,0);
     this._creditsContainerBackground2=this.add.image(this.game.canvas.width / 2, 120, "options");
-    
+
     this._creditsContainer.add([
       this._creditsContainerBackground,
        this._creditsContainerText,
