@@ -48,7 +48,7 @@ export default class Intro extends Phaser.Scene {
     })]);
    
 
-
+//fratellone
     this.cameras.main.setBackgroundColor(0xffffff);
     this._logo=this.add.image(this.game.canvas.width / 2, 50, "arkanoid").setAlpha(0);
     this._play = this.add
@@ -71,6 +71,7 @@ export default class Intro extends Phaser.Scene {
       .on("pointerout", () => { 
         this._play.setTint(0x2d8665).setScale(1.1);
       });
+
 
 
       this._credits = this.add
