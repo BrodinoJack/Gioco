@@ -4,8 +4,7 @@ import Preloader from "./scenes/Preloader";
 import Intro from "./scenes/Intro";
 import Hud from "./scenes/Hud";
 import GameOver from "./scenes/GameOver";
-import GamePlay from "./scenes/GamePlay";
-import scienziato from "./scenes/scienziato";
+import GamePlay from "./scenes/GamePlay"
 import { GameData } from "./GameData";
 import scienziato from "./scenes/scienziato";
 
@@ -28,6 +27,7 @@ window.addEventListener("load", () => {
       Hud,
       GamePlay,
       GameOver,
+      scienziato
       
     ],
 
