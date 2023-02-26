@@ -27,7 +27,7 @@ window.addEventListener("load", () => {
       Hud,
       GamePlay,
       GameOver,
-      scienziato
+      scienziato,
     ],
 
     physics: {
