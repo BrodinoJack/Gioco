@@ -78,7 +78,10 @@ export let GameData: any = {
     name: "galilei",
     path: "assets/images/galilei.png",
     },
-
+    {
+      name: "Sfondo",
+      path: "assets/images/introcity.png",
+      },
 ],
   atlas: [],
   sounds: [{
