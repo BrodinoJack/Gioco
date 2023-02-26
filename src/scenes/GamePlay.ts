@@ -26,7 +26,7 @@ export default class GamePlay extends Phaser.Scene {
   
     }
   
-  
+  //illustrazione
     create() {
       this.cameras.main.setBackgroundColor(0x00000);
       this._illustrazione= this.add.text(this.game.canvas.width / 2, 100, "Illustrazione:").setTint(0xff0000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setScale(1.4).setPosition(450,15),
