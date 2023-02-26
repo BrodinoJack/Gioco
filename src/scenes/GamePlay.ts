@@ -32,7 +32,7 @@ private GruppoPavimento: Phaser.GameObjects.Group;
     },
       callbackScope: this
       });
-    }
+    }//sodddd
   
     
     //this._illustrazione= this.add.text(500, 250, "aka gami no shanks").setTint(0xffffff).setAlpha(1).setDepth(5);
