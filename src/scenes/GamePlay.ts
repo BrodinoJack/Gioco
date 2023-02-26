@@ -4,13 +4,14 @@ private _illustrazione: Phaser.GameObjects.Text;
 private _cliccare: Phaser.GameObjects.Text;
 private _frase1: Phaser.GameObjects.Text;
 private _frase2:Phaser.GameObjects.Text;
-  private _frase3:Phaser.GameObjects.Text;
-  private _frase4:Phaser.GameObjects.Text;
-  private _frase5:Phaser.GameObjects.Text;
-  private _frase6:Phaser.GameObjects.Text;
-  private _frase7:Phaser.GameObjects.Text;
-  private _frase8:Phaser.GameObjects.Text;
-  private _frase9:Phaser.GameObjects.Text;
+private _frase3:Phaser.GameObjects.Text;
+private _frase4:Phaser.GameObjects.Text;
+private _frase5:Phaser.GameObjects.Text;
+private _frase6:Phaser.GameObjects.Text;
+private _frase7:Phaser.GameObjects.Text;
+private _frase8:Phaser.GameObjects.Text;
+private _frase9:Phaser.GameObjects.Text;
+private _fine: Phaser.GameObjects.Text;
 private _M: Phaser.Physics.Arcade.Sprite;
 private _P: Phaser.Physics.Arcade.Sprite;
 private _Dio: Array<number>=[0,1,2,3,4,5,6,7,8,9];
@@ -59,6 +60,8 @@ private GruppoPavimento: Phaser.GameObjects.Group;
             })
           }) 
           })
+          
+         
            
             
           /*this._cliccare.setInteractive().on("pointerdown", () => {
