@@ -22,7 +22,39 @@ export let GameData: any = {
       width: 25,
       height: 50,
       frames: 10,
-    }
+    },
+    {
+      name: "blocchi",
+      path: "assets/map/blocchi.png",
+      width: 32,
+      height: 32,
+      spacing: 2,
+      margin: 1,
+    },
+    {
+      name: "car",
+      path: "assets/map/macchine.png",
+      width: 83,
+      height: 58,
+      spacing: 2,
+      margin: 1,
+    },
+    {
+      name: "truck",
+      path: "assets/map/camion.png",
+      width: 261,
+      height: 107,
+      spacing: 2,
+      margin: 1,
+    },
+    {
+      name: "trash",
+      path: "assets/map/immondizia.png",
+      width: 30,
+      height: 30,
+      spacing: 2,
+      margin: 1,
+    },
   ],
 
   images: [
@@ -64,4 +96,10 @@ export let GameData: any = {
   }],
   audio: [],
   bitmapfont: [],
+  tilemaps: [
+		{
+		key: "intro",
+		path: "assets/map/intro.json",
+		}
+	],
 };
