@@ -4,13 +4,14 @@ private _illustrazione: Phaser.GameObjects.Text;
 private _cliccare: Phaser.GameObjects.Text;
 private _frase1: Phaser.GameObjects.Text;
 private _frase2:Phaser.GameObjects.Text;
-  private _frase3:Phaser.GameObjects.Text;
-  private _frase4:Phaser.GameObjects.Text;
-  private _frase5:Phaser.GameObjects.Text;
-  private _frase6:Phaser.GameObjects.Text;
-  private _frase7:Phaser.GameObjects.Text;
-  private _frase8:Phaser.GameObjects.Text;
-  private _frase9:Phaser.GameObjects.Text;
+private _frase3:Phaser.GameObjects.Text;
+private _frase4:Phaser.GameObjects.Text;
+private _frase5:Phaser.GameObjects.Text;
+private _frase6:Phaser.GameObjects.Text;
+private _frase7:Phaser.GameObjects.Text;
+private _frase8:Phaser.GameObjects.Text;
+private _frase9:Phaser.GameObjects.Text;
+private _fine: Phaser.GameObjects.Text;
 private _M: Phaser.Physics.Arcade.Sprite;
 private _P: Phaser.Physics.Arcade.Sprite;
 private _Dio: Array<number>=[0,1,2,3,4,5,6,7,8,9];
@@ -52,6 +53,9 @@ private GruppoPavimento: Phaser.GameObjects.Group;
                   this._frase8=this.add.text(this.game.canvas.width / 2, 100, "dove era solito passare le serate per prendere da bere,").setTint(0xffffff).setScale(1.2).setPosition(290,255)
                   this._cliccare.setInteractive().setPosition(800,500).on("pointerdown", () => {
                     this._frase9=this.add.text(this.game.canvas.width / 2, 100, "ma ad un certo punto…").setTint(0xffffff).setScale(1.2).setPosition(424,285)
+                    this._cliccare.setText("premi per andare avanti").setPosition(800,500).setInteractive().on("pointerdown", () => {
+                      this.scene.start("'scienzato");
+                    })
                   })
                 })
               })
@@ -59,6 +63,8 @@ private GruppoPavimento: Phaser.GameObjects.Group;
             })
           }) 
           })
+          
+         
            
             
           /*this._cliccare.setInteractive().on("pointerdown", () => {
