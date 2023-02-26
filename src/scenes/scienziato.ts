@@ -1,5 +1,5 @@
 import { GameData } from "../GameData";
-export default class GamePlay extends Phaser.Scene {
+export default class scienziato extends Phaser.Scene {
 private _prova:Phaser.GameObjects.Text;
 private _level: number;
 
