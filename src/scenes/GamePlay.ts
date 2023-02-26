@@ -38,12 +38,30 @@ private GruppoPavimento: Phaser.GameObjects.Group;
            .setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif')
            .setScale(1.2)
            .setPosition(180,45)
-          })
-           this._cliccare.setText("continua").setInteractive().on("pointerdown", () => { 
+           this._cliccare.setText("Continua").setPosition(800,500).setInteractive().on("pointerdown", () => { 
             this._frase2=this.add.text(this.game.canvas.width / 2, 100, "La Nazione y sovrasta completamente la Nazione x sterminandone tutti gli abitanti e soldati,").setTint(0xffffff).setScale(1.2).setScale(1.2)  .setPosition(125,75)
+            this._cliccare.setText("Continua ").setPosition(800,500).setInteractive().on("pointerdown", () => {
+              this._frase3=this.add.text(this.game.canvas.width / 2, 100, "di questa Nazione però sopravvive un solo soldato fuggito dalla guerra per paura,").setTint(0xffffff).setScale(1.2).setPosition(180,105)
+            this._cliccare.setInteractive().on("pointerdown", () => {
+              this._frase4=this.add.text(this.game.canvas.width / 2, 100, "costui dopo aver saputo della guerra persa").setTint(0xffffff).setScale(1.2).setPosition(335,135)
+              this._frase5=this.add.text(this.game.canvas.width / 2, 100, "si sente in colpa per non aver aiutato la Nazione e decide di dirigersi a nord.").setTint(0xffffff).setScale(1.2).setPosition(180,165)
+              this._cliccare.setInteractive().setPosition(800,500).on("pointerdown", () => {
+                this._frase6=this.add.text(this.game.canvas.width / 2, 100, "L’ex-soldato riuscì a trovare un paese ospitale dove trascorrere le notti,").setTint(0xffffff).setScale(1.2).setPosition(195,195)
+                this._cliccare.setInteractive().setPosition(800,500).on("pointerdown", () => {
+                  this._frase7=this.add.text(this.game.canvas.width / 2, 100, "passate un paio di settimane, entra nella locanda").setTint(0xffffff).setScale(1.2).setPosition(315,225)
+                  this._frase8=this.add.text(this.game.canvas.width / 2, 100, "dove era solito passare le serate per prendere da bere,").setTint(0xffffff).setScale(1.2).setPosition(290,255)
+                  this._cliccare.setInteractive().setPosition(800,500).on("pointerdown", () => {
+                    this._frase9=this.add.text(this.game.canvas.width / 2, 100, "ma ad un certo punto…").setTint(0xffffff).setScale(1.2).setPosition(424,285)
+                  })
+                })
+              })
+            })
+            })
           }) 
+          })
+           
             
-          this._cliccare.setInteractive().on("pointerdown", () => {
+          /*this._cliccare.setInteractive().on("pointerdown", () => {
               this._frase3=this.add.text(this.game.canvas.width / 2, 100, "di questa Nazione però sopravvive un solo soldato fuggito dalla guerra per paura,").setTint(0xffffff).setScale(1.2).setPosition(180,105)
             })
   
@@ -63,7 +81,7 @@ private GruppoPavimento: Phaser.GameObjects.Group;
             
             this._cliccare.setInteractive().on("pointerdown", () => {
               this._frase9=this.add.text(this.game.canvas.width / 2, 100, "ma ad un certo punto…").setTint(0xffffff).setScale(1.2).setPosition(424,285)
-            })
+            })*/
            
       }
         
