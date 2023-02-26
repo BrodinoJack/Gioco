@@ -7,7 +7,6 @@ import GameOver from "./scenes/GameOver";
 import GamePlay from "./scenes/GamePlay";
 import scienziato from "./scenes/scienziato";
 import { GameData } from "./GameData";
-import scienziato from "./scenes/scienziato";
 
 window.addEventListener("load", () => {
 
@@ -28,7 +27,7 @@ window.addEventListener("load", () => {
       Hud,
       GamePlay,
       GameOver,
-      
+      scienziato
     ],
 
     physics: {

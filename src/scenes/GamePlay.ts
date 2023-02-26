@@ -53,13 +53,8 @@ private GruppoPavimento: Phaser.GameObjects.Group;
                   this._frase8=this.add.text(this.game.canvas.width / 2, 100, "dove era solito passare le serate per prendere da bere,").setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setTint(0xffffff).setScale(1.2).setPosition(290,255)
                   this._cliccare.setInteractive().setPosition(800,500).on("pointerdown", () => {
                     this._frase9=this.add.text(this.game.canvas.width / 2, 100, "ma ad un certo punto…").setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setTint(0xffffff).setScale(1.2).setPosition(415,285)
-<<<<<<< HEAD
                     this._cliccare.setText("premi per andare avanti").setPosition(800,500).setInteractive().on("pointerdown", () => {
                       this.scene.start("'scienzato");
-=======
-                    this._cliccare.setInteractive().setPosition(800,500).on("pointerdown", () => {
-                      this.startGame();
->>>>>>> b8a47a7a83b6658718d4ad68f8f8f90f84cbaf60
                     })
                   })
                 })
