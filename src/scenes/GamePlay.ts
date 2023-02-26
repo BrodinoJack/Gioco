@@ -1,5 +1,8 @@
 
 export default class GamePlay extends Phaser.Scene {
+private _illustrazione: Phaser.GameObjects.Text;
+private _frase1: Phaser.GameObjects.Text;
+
 private _M: Phaser.Physics.Arcade.Sprite;
 private _P: Phaser.Physics.Arcade.Sprite;
 private _Dio: Array<number>=[0,1,2,3,4,5,6,7,8,9];
@@ -11,6 +14,7 @@ private GruppoPavimento: Phaser.GameObjects.Group;
 
 
 
+
   constructor() {    
     super({ key: "GamePlay" });
     
@@ -18,7 +22,21 @@ private GruppoPavimento: Phaser.GameObjects.Group;
 
 
   create() {
-    var Pavimento;
+    this.cameras.main.setBackgroundColor(0x00000);
+    this._illustrazione= this.add.text(this.game.canvas.width / 2, 100, "Illustrazione:").setTint(0xff0000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setScale(1.4).setPosition(424,15);
+    /*this._illustrazione= this.add.text(this.game.canvas.width / 2, 100, "sencio da").setTint(0xff0000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setScale(1.4).setPosition(424,50);*/
+   this.time.addEvent({
+      delay: 5000,
+      callback: () => { console.log(this._illustrazione= this.add.text(this.game.canvas.width / 2, 100, "sencio da").setTint(0xff0000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setScale(1.4).setPosition(424,50)) },
+      callbackScope: this
+      });
+    }
+  
+    
+    //this._illustrazione= this.add.text(500, 250, "aka gami no shanks").setTint(0xffffff).setAlpha(1).setDepth(5);
+    
+
+    /*var Pavimento;
 
     this.GruppoPavimento=this.add.group();
 
@@ -64,8 +82,8 @@ private GruppoPavimento: Phaser.GameObjects.Group;
       //this._M.setFrame(this._Indice)
       this._M.play("Cicciobello"); 
       console.log("po");
-      //this._Indice+1;
+      //this._Indice+1;*/
   }
-}
 
- }
+
+  
