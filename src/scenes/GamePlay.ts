@@ -1,7 +1,9 @@
 
 export default class GamePlay extends Phaser.Scene {
 private _illustrazione: Phaser.GameObjects.Text;
+private _cliccare: Phaser.GameObjects.Text;
 private _frase1: Phaser.GameObjects.Text;
+
 
 private _M: Phaser.Physics.Arcade.Sprite;
 private _P: Phaser.Physics.Arcade.Sprite;
@@ -24,16 +26,35 @@ private GruppoPavimento: Phaser.GameObjects.Group;
   create() {
     this.cameras.main.setBackgroundColor(0x00000);
     this._illustrazione= this.add.text(this.game.canvas.width / 2, 100, "Illustrazione:").setTint(0xff0000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setScale(1.4).setPosition(424,15);
-    /*this._illustrazione= this.add.text(this.game.canvas.width / 2, 100, "sencio da").setTint(0xff0000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setScale(1.4).setPosition(424,50);*/
-   this.time.addEvent({
-      delay: 5000,
-      callback: () => { console.log(this._illustrazione= this.add.text(this.game.canvas.width / 2, 100, "sencio da").setTint(0xff0000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setScale(1.4).setPosition(424,50).setAlpha(0))
-      this._illustrazione= this._illustrazione.setAlpha(1);
+    this._cliccare= this.add.text(this.game.canvas.width / 2, 100, "clicca per continuare a leggere." ).setTint(0xff0000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setScale(1.4).setPosition(700,500).setInteractive().on("pointerdown", () => {
+      this.time.addEvent({
+        delay: 0,
+        callback: () => { console.log(this._frase1=this.add.text(this.game.canvas.width / 2, 100, "SAVE US è un gioco che tratta di una guerra avvenuta tra due nazioni, (x, y).").setTint(0xffffff).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setScale(1.2).setPosition(180,45))
+      },
+        callbackScope: this
+    });
+    
+  
+  this.time.addEvent({
+    delay: 0,
+    callback: () => { console.log(this._frase1=this.add.text(this.game.canvas.width / 2, 100, "La Nazione y sovrasta completamente la Nazione x sterminandone tutti gli abitanti e soldati,").setTint(0xffffff).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setScale(1.2).setPosition(125,75))
+  },
+    callbackScope: this
+});
+   })
+  /*this._cliccare.setInteractive().on("pointerdown", () => {
+    this.time.addEvent({
+      delay: 4000,
+      callback: () => { console.log(this._frase1=this.add.text(this.game.canvas.width / 2, 100, "di questa Nazione però sopravvive un solo soldato fuggito dalla guerra per paura,").setTint(0xffffff).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setScale(1.2).setPosition(180,105))
     },
       callbackScope: this
-      });
-    }//sodddd
-  
+  });
+    } )*/
+
+    
+    
+    /*this._illustrazione= this.add.text(this.game.canvas.width / 2, 100, "sencio da").setTint(0xff0000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setScale(1.4).setPosition(424,50);*/
+   
     
     //this._illustrazione= this.add.text(500, 250, "aka gami no shanks").setTint(0xffffff).setAlpha(1).setDepth(5);
     
@@ -85,7 +106,6 @@ private GruppoPavimento: Phaser.GameObjects.Group;
       this._M.play("Cicciobello"); 
       console.log("po");
       //this._Indice+1;*/
-  }
-
-
   
+}
+}
