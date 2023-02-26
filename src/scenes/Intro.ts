@@ -30,47 +30,7 @@ export default class Intro extends Phaser.Scene {
   }
 
   create() {
-    this.map = this.make.tilemap({ key: "intro"});
-    this.cameras.main.setBounds(
-      0, 
-      0, 
-      this.map.widthInPixels, 
-      this.map.heightInPixels 
-    );
-        this.physics.world.setBounds(
-      0, 
-      0, 
-      this.map.widthInPixels, 
-      this.map.heightInPixels 
-    );
-	  this.tileset1 = this.map.addTilesetImage("blocchi");
-    this.tileset2 = this.map.addTilesetImage("car");
-    this.tileset3 = this.map.addTilesetImage("truck");
-    this.tileset4 = this.map.addTilesetImage("trash");
-
-    this.layer = this.map
-    .createLayer("Livello tile 1", this.tileset1, 0, 0)
-    .setDepth(9)
-    .setAlpha(1);
-    this.layer = this.map
-	  .createLayer("veicoli", this.tileset2, 0, 0)
-    .setDepth(9)
-	  .setAlpha(1);
-    this.layer = this.map
-	  .createLayer("veicoli", this.tileset3, 0, 0)
-	  .setDepth(9)
-	  .setAlpha(1);
-    this.layer = this.map
-	  .createLayer("prima veicoli", this.tileset4, 0, 0)
-	  .setDepth(9)
-	  .setAlpha(1);
-
-
-    this.layer2 = this.map
-	.createLayer("Livello tile 1", this.tileset1, 0, 0)
-	.setDepth(0)
-	.setAlpha(1);
-
+    
     this._music = this.sound.add("_intro", { loop: true, volume: 0.7 });
     this._music.play();
     this._creditsContainer = this.add.container().setAlpha(0).setDepth(10);
