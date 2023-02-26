@@ -26,11 +26,13 @@ private GruppoPavimento: Phaser.GameObjects.Group;
     this._d = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);    
     this._M=this.physics.add.sprite(20, 300,"Main");
     this._M.setGravity(1).setGravityY(1000);
-    Pavimento=this.physics.add.sprite(170, 500,"Pavimento")
+    Pavimento=this.physics.add.sprite(170, 500,"Pavimento").setImmovable(true);
+    Pavimento.body.setAllowGravity(false);
     Pavimento.body.setSize(420,100);
     
     this.GruppoPavimento.add(Pavimento);
-
+    this.physics.add.collider(this._M, Pavimento, ()=>{
+    });
   
    
     
