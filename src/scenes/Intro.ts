@@ -18,7 +18,7 @@ export default class Intro extends Phaser.Scene {
     });
 
 
-  }//sorata é viva, se ci credi
+  }//aka gami no shanks
 
   create() {
 //mammt
