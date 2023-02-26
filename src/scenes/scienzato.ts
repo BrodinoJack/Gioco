@@ -9,15 +9,6 @@ constructor() {
 }
 
 
-  init(data: {level:number}) {
-		
-		if (data.level != null) {
-			this._level = data.level
-		} else {
-		
-		this._level = 0;
-		}
-	}
 
 
 
