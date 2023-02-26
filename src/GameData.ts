@@ -21,7 +21,7 @@ export let GameData: any = {
       path: "assets/images/Gambe.png",
       width: 25,
       height: 50,
-      frames: 10,
+      frames: 8,
     }
   ],
 
