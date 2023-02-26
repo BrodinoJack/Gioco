@@ -10,7 +10,7 @@ export default class Intro extends Phaser.Scene {
   private _creditsContainerBackground: Phaser.GameObjects.Image;
   private _creditsContainerBackground2: Phaser.GameObjects.Image;
   private _creditsContainerEsc: Phaser.GameObjects.Image; 
-
+  private _M: Phaser.GameObjects.Sprite;
 	private map: Phaser.Tilemaps.Tilemap;
 	private tileset1: Phaser.Tilemaps.Tileset;
   private tileset2: Phaser.Tilemaps.Tileset;
@@ -74,7 +74,7 @@ export default class Intro extends Phaser.Scene {
 
 
 
-
+    this._M=this.add.sprite(512,500,"Main").setDepth(1);
     this._music = this.sound.add("_intro", { loop: true, volume: 0.7 });
     this._music.play();
     this._creditsContainer = this.add.container().setAlpha(0).setDepth(10);
@@ -144,7 +144,7 @@ export default class Intro extends Phaser.Scene {
         this._credits.setTint(0x800000).setScale(1);
       })
       .on("pointerdown", this.openCredits, this);
-     
+      
     }
 
 
