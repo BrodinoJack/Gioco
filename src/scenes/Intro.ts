@@ -30,7 +30,7 @@ export default class Intro extends Phaser.Scene {
   }
 
   create() {
-    this.add.tileSprite(500, 250, 1200, 400, "Sfondo");
+    this.add.tileSprite(500, 250, 0, 0, "Sfondo").setOrigin(1).setPosition(1024,600);
     /*this.map = this.make.tilemap({ key: "intro"});
     this.cameras.main.setBounds(
       0, 
@@ -109,18 +109,18 @@ export default class Intro extends Phaser.Scene {
       .setInteractive()
       .setDepth(100)
       .setScale(1.1)
-      .setTint(0x2d8665)
+      .setTint(0x800000)
       .on("pointerup", () => {
         this._play.removeInteractive();
         this.startGame();
       })
       .on("pointerover", () => {
-        this._play.setTint(0x7ad1b1).setScale(1.3);
+        this._play.setTint(0x300000).setScale(1.3);
         this._music2= this.sound.add("_button", { loop: false, volume: 0.7 });
         this._music2.play();
       })
       .on("pointerout", () => { 
-        this._play.setTint(0x2d8665).setScale(1.1);
+        this._play.setTint(0x800000).setScale(1.1);
       });
 
 
@@ -131,17 +131,17 @@ export default class Intro extends Phaser.Scene {
       .setInteractive()
       .setDepth(100)
       .setScale(1)
-      .setTint(0x2d8665)
+      .setTint(0x800000)
       .on("pointerup", () => {
         this._credits.removeInteractive();
       })
       .on("pointerover", () => {
-        this._credits.setTint(0x7ad1b1).setScale(1.3);
+        this._credits.setTint(0x300000).setScale(1.3);
         this._music2= this.sound.add("_button", { loop: false, volume: 0.7 });
         this._music2.play();
       })
       .on("pointerout", () => { 
-        this._credits.setTint(0x2d8665).setScale(1);
+        this._credits.setTint(0x800000).setScale(1);
       })
       .on("pointerdown", this.openCredits, this);
      
