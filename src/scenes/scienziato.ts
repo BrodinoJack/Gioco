@@ -1,9 +1,9 @@
-export default class Scene1 extends Phaser.Scene {
+export default class scienziato extends Phaser.Scene {
 
 	private _helloWorld: Phaser.GameObjects.Text;
 		private _counter: number;
   		constructor() {
-    			super({key: "Scene1"});
+    			super({key: "scienziato"});
    		}
 
 		init() { 
