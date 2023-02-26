@@ -82,6 +82,10 @@ export let GameData: any = {
       name: "Sfondo",
       path: "assets/images/Sfondo.png",
       },
+      {
+        name: "intro-image",
+        path: "assets/images/introcity.png",
+        },
 ],
   atlas: [],
   sounds: [{
