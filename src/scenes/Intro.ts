@@ -21,7 +21,7 @@ export default class Intro extends Phaser.Scene {
   }
 
   create() {
-
+//mammt
 
     this._music = this.sound.add("_intro", { loop: true, volume: 0.7 });
     this._music.play();
@@ -70,7 +70,8 @@ export default class Intro extends Phaser.Scene {
       .on("pointerout", () => { 
         this._play.setTint(0x2d8665).setScale(1.1);
       });
-      
+
+
       this._credits = this.add
       .bitmapText(this.game.canvas.width / 2, 400, "arcade", "CREDITS")
       .setAlpha(1)
