@@ -163,7 +163,7 @@ private GruppoPavimento: Phaser.GameObjects.Group;
       //this._Indice+1;*/
       startGame() {
         this.scene.stop("GamePlay");
-        this.scene.start("scienzato");
+        this.scene.start("scienziato");
 ;
       }
       update(time: number, delta: number): void {
