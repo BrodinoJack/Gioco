@@ -63,6 +63,10 @@ export let GameData: any = {
       path: "assets/images/playerintro.png",
     },
     {
+      name: "aereo",
+      path: "assets/images/aereo.png",
+    },
+    {
       name: "Pavimento",
       path: "assets/images/P.png",
     },

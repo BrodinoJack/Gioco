@@ -11,6 +11,9 @@ export default class Intro extends Phaser.Scene {
   private _creditsContainerBackground2: Phaser.GameObjects.Image;
   private _creditsContainerEsc: Phaser.GameObjects.Image; 
   private _M: Phaser.GameObjects.Sprite;
+  private _Aereo: Phaser.GameObjects.TileSprite;
+  private _Aereo2: Phaser.GameObjects.TileSprite;
+  private _Aereo3: Phaser.GameObjects.TileSprite;
 	private map: Phaser.Tilemaps.Tilemap;
 	private tileset1: Phaser.Tilemaps.Tileset;
   private tileset2: Phaser.Tilemaps.Tileset;
@@ -77,7 +80,9 @@ export default class Intro extends Phaser.Scene {
 	.setAlpha(1);*/
 
 
-//
+    this._Aereo=this.add.tileSprite(-200,10,0,0, "aereo").setOrigin(0).setDepth(1).setScale(.3);
+    this._Aereo2=this.add.tileSprite(-160,70,0,0, "aereo").setOrigin(0).setDepth(1).setScale(.3);
+    this._Aereo3=this.add.tileSprite(-200,120,0,0, "aereo").setOrigin(0).setDepth(1).setScale(.3);
     this._M=this.add.sprite(510,493,"player_intro").setDepth(1).setScale(.15);
     this._music = this.sound.add("_intro", { loop: true, volume: 0.7 });
     this._music.play();
@@ -184,7 +189,11 @@ export default class Intro extends Phaser.Scene {
     
   update(time: number, delta: number): void {
   
-   
+    
+    this._Aereo.x +=5;
+    this._Aereo2.x +=5;
+    this._Aereo3.x +=5;
+
     }
     
   
