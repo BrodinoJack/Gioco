@@ -18,10 +18,10 @@ export default class Intro extends Phaser.Scene {
     });
 
 
-  }//sorata
+  }
 
   create() {
-//mammt
+
 
     this._music = this.sound.add("_intro", { loop: true, volume: 0.7 });
     this._music.play();
