@@ -72,7 +72,9 @@ export default class Intro extends Phaser.Scene {
 	.setDepth(0)
 	.setAlpha(1);*/
 
->>>>>>> b2a4a7978277b7931a5f580f2714e485d236aff6
+
+
+
     this._music = this.sound.add("_intro", { loop: true, volume: 0.7 });
     this._music.play();
     this._creditsContainer = this.add.container().setAlpha(0).setDepth(10);
