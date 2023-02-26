@@ -30,6 +30,7 @@ export default class Intro extends Phaser.Scene {
   }
 
   create() {
+    //j
     this.add.tileSprite(500, 250, 1200, 400, "Sfondo");
     /*this.map = this.make.tilemap({ key: "intro"});
     this.cameras.main.setBounds(
