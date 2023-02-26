@@ -80,7 +80,7 @@ export let GameData: any = {
     },
     {
       name: "Sfondo",
-      path: "assets/images/introcity.png",
+      path: "assets/images/Sfondo.png",
       },
 ],
   atlas: [],
