@@ -16,7 +16,7 @@ export default class Intro extends Phaser.Scene {
   private tileset2: Phaser.Tilemaps.Tileset;
   private tileset3: Phaser.Tilemaps.Tileset;
   private tileset4: Phaser.Tilemaps.Tileset;
-//sesso mammt 
+
 	private layer: Phaser.Tilemaps.TilemapLayer; 
 
 	private layer2: Phaser.Tilemaps.TilemapLayer;
@@ -30,7 +30,7 @@ export default class Intro extends Phaser.Scene {
   }
 
   create() {
-    this.add.tileSprite(500, 250, 1200, 800, "Sfondo");
+    this.add.tileSprite(500, 250, 1200, 400, "Sfondo");
     /*this.map = this.make.tilemap({ key: "intro"});
     this.cameras.main.setBounds(
       0, 
@@ -71,6 +71,9 @@ export default class Intro extends Phaser.Scene {
 	.createLayer("Livello tile 1", this.tileset1, 0, 0)
 	.setDepth(0)
 	.setAlpha(1);*/
+
+
+
 
     this._music = this.sound.add("_intro", { loop: true, volume: 0.7 });
     this._music.play();
@@ -183,6 +186,3 @@ export default class Intro extends Phaser.Scene {
   
   
   }
-  
-
-
