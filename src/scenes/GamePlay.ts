@@ -27,7 +27,7 @@ private GruppoPavimento: Phaser.GameObjects.Group;
     /*this._illustrazione= this.add.text(this.game.canvas.width / 2, 100, "sencio da").setTint(0xff0000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setScale(1.4).setPosition(424,50);*/
    this.time.addEvent({
       delay: 5000,
-      callback: () => { console.log(this._illustrazione= this.add.text(this.game.canvas.width / 2, 100, "sencio da").setTint(0xff0000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setScale(1.4).setPosition(424,50)) },
+      callback: () => { console.log(this._illustrazione= this.add.text(this.game.canvas.width / 2, 100, "sencio da").setTint(0xff0000).setAlpha(0).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setScale(1.4).setPosition(424,50)) },
       callbackScope: this
       });
     }
