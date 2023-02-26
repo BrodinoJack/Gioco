@@ -18,7 +18,7 @@ export default class Intro extends Phaser.Scene {
     });
 
 
-  }//sorata é viva
+  }//sorata é viva, se ci credi
 
   create() {
 //mammt
