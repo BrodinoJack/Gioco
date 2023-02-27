@@ -108,9 +108,15 @@ export let GameData: any = {
   audio: [],
   bitmapfont: [],
   tilemaps: [
+      {
+      key: "level-1",
+      path: "assets/map/level-1.json",
+      },
+  
 		{
 		key: "intro",
 		path: "assets/map/intro.json",
 		}
 	],
+
 };

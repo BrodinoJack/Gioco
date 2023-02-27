@@ -7,6 +7,11 @@ export default class FabioIacolare extends Phaser.Scene {
     private Mov: number=20;
     private GruppoPavimento: Phaser.GameObjects.Group;
 
+    private map: Phaser.Tilemaps.Tilemap;
+	private tileset: Phaser.Tilemaps.Tileset;
+	private layer: Phaser.Tilemaps.TilemapLayer;
+	private layer2: Phaser.Tilemaps.TilemapLayer;
+
 
 
 
@@ -18,6 +23,30 @@ export default class FabioIacolare extends Phaser.Scene {
 
 create(){
     var Pavimento;
+    this.map = this.make.tilemap({ key: "level-1"});
+    this.cameras.main.setBounds(
+		0, //x	
+		0, //y
+		this.map.widthInPixels, //width
+		this.map.heightInPixels //height
+	);
+    	this.physics.world.setBounds(
+		0, //x
+		0, //y
+		this.map.widthInPixels, //width
+		this.map.heightInPixels //height
+	);
+    this.layer = this.map
+	.createLayer("world", this.tileset, 0, 0)
+	.setDepth(9)
+	.setAlpha(1);
+	this.layer2 = this.map
+	.createLayer("collision", this.tileset, 0, 0)
+	.setDepth(0)
+	.setAlpha(1);
+    this.layer2.setCollisionByProperty({ collide: true });
+
+
 
     this.GruppoPavimento=this.add.group();
 
