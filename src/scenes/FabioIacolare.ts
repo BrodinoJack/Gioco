@@ -35,7 +35,7 @@ create(){
 		0, //y
 		this.map.widthInPixels, //width
 		this.map.heightInPixels //height
-	); //a
+	);
     this.layer = this.map 
 	.createLayer("world", this.tileset, 0, 0)
 	.setDepth(9)
