@@ -134,7 +134,7 @@ export let GameData: any = {
   tilemaps: [
       {
       key: "Intro",
-      path: "assets/map/intro.json",
+      path: "assets/map/Dio.json",
       },
 	],
 
