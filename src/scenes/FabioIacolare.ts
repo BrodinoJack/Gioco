@@ -22,7 +22,7 @@ export default class FabioIacolare extends Phaser.Scene {
 
 
 create(){
-    var Pavimento;
+    /*var Pavimento;
     this.map = this.make.tilemap({ key: "level1"});
     this.cameras.main.setBounds(
 		0, //x	
@@ -68,10 +68,10 @@ create(){
 
       this.input.on("pointerdown", () => {
   
-    
+   
         });
 
-    
+     */
       }
 
 
