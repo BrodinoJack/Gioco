@@ -14,7 +14,7 @@ export default class scienziato extends Phaser.Scene {
     }
    create(){
     this._prova=this.add.text(this.game.canvas.width / 2, 100, "mammt").setTint(0xff0000).setTint(0xff0000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setScale(1.4).setPosition(443,15);
-   
+  this._bar=this.add.image(this.game.canvas.width / 2,100, "bar_contipi").setAlpha(1)
 
  
         }

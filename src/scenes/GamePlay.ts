@@ -51,19 +51,19 @@ export default class GamePlay extends Phaser.Scene {
 
       
       this.cameras.main.setBackgroundColor(0xfffff);
-      this._illustrazione= this.add.text(this.game.canvas.width / 2, 100, "Illustrazione:").setTint(0xff0000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setScale(1.4).setPosition(443,105);
+      this._illustrazione= this.add.text(this.game.canvas.width / 2, 100, "Illustrazione:").setTint(0xff0000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setScale(1.4).setPosition(443,155);
       this._cliccare= this.add.text(this.game.canvas.width / 2, 100, "clicca per continuare a leggere." ).setTint(0xff0000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setScale(1.4).setPosition(700,500).setInteractive().on("pointerdown", () => {
        this._frase1=this.add.text(this.game.canvas.width / 2, 100, "SAVE US è un gioco che tratta di una guerra avvenuta tra due nazioni, (Clover, Diamond).")
              .setTint(0xffffff)
              .setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif')
              .setScale(1.2)
-             .setPosition(180,135)
+             .setPosition(180,185)
              this._cliccare.setText("Continua").setPosition(800,500).setInteractive().on("pointerdown", () => { 
               this._frase2=this.add.text(this.game.canvas.width / 2, 100, "La Nazione Diamond sovrasta completamente la Nazione Clover sterminandone tutti gli abitanti e soldati,")
               .setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif')
               .setTint(0xffffff)
               .setScale(1.2)
-              .setPosition(105,165);
+              .setPosition(105,215);
               this._cliccare.setText("Continua ")
               .setPosition(800,500)
               .setInteractive()
@@ -72,7 +72,7 @@ export default class GamePlay extends Phaser.Scene {
                 .setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif')
                 .setTint(0xffffff)
                 .setScale(1.2)
-                .setPosition(180,195);
+                .setPosition(180,245);
                 this._cliccare
                .setInteractive()
                .on("pointerdown", () => {
@@ -80,12 +80,12 @@ export default class GamePlay extends Phaser.Scene {
                 .setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif')
                 .setTint(0xffffff)
                 .setScale(1.2)
-                .setPosition(335,225);
+                .setPosition(335,275);
                 this._frase5=this.add.text(this.game.canvas.width / 2, 100, "si sente in colpa per non aver aiutato la Nazione e decide di dirigersi a nord.")
                 .setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif')
                 .setTint(0xffffff)
                 .setScale(1.2)
-                .setPosition(180,255)
+                .setPosition(180,305)
                 this._cliccare.setInteractive()
                 .setPosition(800,500)
                 .on("pointerdown", () => {
@@ -93,7 +93,7 @@ export default class GamePlay extends Phaser.Scene {
                   .setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif')
                   .setTint(0xffffff)
                   .setScale(1.2)
-                  .setPosition(200,285)
+                  .setPosition(200,335)
                   this._cliccare
                   .setInteractive()
                   .setPosition(800,500)
@@ -101,7 +101,7 @@ export default class GamePlay extends Phaser.Scene {
                     this._frase9=this.add.text(this.game.canvas.width / 2, 100, "ma ad un certo punto…").setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif')
                     .setTint(0xffffff)
                     .setScale(1.2)
-                    .setPosition(415,315)
+                    .setPosition(415,365)
                     this._cliccare.setText("premi per andare avanti")
                     .setPosition(700,500)
                     .setInteractive()

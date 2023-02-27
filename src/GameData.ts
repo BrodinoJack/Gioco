@@ -102,7 +102,7 @@ export let GameData: any = {
     paths: ["assets/sounds/sfx.ogg", "assets/sounds/sfx.m4a"]
   },
   {
-    name: "_intro",
+    name: "_intro", 
     paths: ["assets/sounds/canzoneintro.ogg", "assets/sounds/canzoneintro.m4a"]
   },
   {
@@ -113,7 +113,7 @@ export let GameData: any = {
   bitmapfont: [],
   tilemaps: [
       {
-      key: "Level1",
+      key: "Intro",
       path: "assets/map/intro.json",
       },
 	],
