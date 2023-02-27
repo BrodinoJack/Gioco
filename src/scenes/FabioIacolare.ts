@@ -52,18 +52,16 @@ create(){
 
         this.anims.create(_animation);
         
-
       }
 
 
 
   update(time: number, delta: number): void {
     if (this._d.isDown) {  
-      this._M.setX(this.Mov+50)
-      //this._M.setFrame(this._Indice)
+      this._M.x +- .4;
       this._M.play("Cicciobello"); 
       console.log("po");
-      //this._Indice+1;*/
+
   }
 
 }
