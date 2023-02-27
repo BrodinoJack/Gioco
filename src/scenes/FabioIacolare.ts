@@ -23,7 +23,7 @@ export default class FabioIacolare extends Phaser.Scene {
 
 create(){
     var Pavimento;
-    this.map = this.make.tilemap({ key: "level-1"});
+   /* this.map = this.make.tilemap({ key: "level1"});
     this.cameras.main.setBounds(
 		0, //x	
 		0, //y
@@ -46,7 +46,7 @@ create(){
 	.setAlpha(1);
     this.layer2.setCollisionByProperty({ collide: true });
 
-
+*/
 
     this.GruppoPavimento=this.add.group();
 

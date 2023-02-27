@@ -90,6 +90,10 @@ export let GameData: any = {
         name: "intro-image",
         path: "assets/images/introcity.png",
         },
+        {
+          name: "bar",
+          path: "assets/images/bar.png",
+          },
 ],
   atlas: [],
   sounds: [{
@@ -109,14 +113,9 @@ export let GameData: any = {
   bitmapfont: [],
   tilemaps: [
       {
-      key: "level-1",
-      path: "assets/map/level-1.json",
+      key: "Level1",
+      path: "assets/map/intro.json",
       },
-  
-		{
-		key: "intro",
-		path: "assets/map/intro.json",
-		}
 	],
 
 };
