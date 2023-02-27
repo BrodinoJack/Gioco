@@ -12,7 +12,7 @@ export default class GamePlay extends Phaser.Scene {
   private _frase8:Phaser.GameObjects.Text;
   private _frase9:Phaser.GameObjects.Text;
   private _fine: Phaser.GameObjects.Text;
-  
+  private _gruop1: Phaser.GameObjects.Group;
   
   
   
@@ -26,34 +26,86 @@ export default class GamePlay extends Phaser.Scene {
   
     create() {
 
-    
-    
-    
-    
-    
-    
-    
-    
-      this.cameras.main.setBackgroundColor(0x00000);
-      this._illustrazione= this.add.text(this.game.canvas.width / 2, 100, "Illustrazione:").setTint(0xff0000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setScale(1.4).setPosition(443,15);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+      this.cameras.main.setBackgroundColor(0xfffff);
+      this._illustrazione= this.add.text(this.game.canvas.width / 2, 100, "Illustrazione:").setTint(0xff0000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setScale(1.4).setPosition(443,105);
       this._cliccare= this.add.text(this.game.canvas.width / 2, 100, "clicca per continuare a leggere." ).setTint(0xff0000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setScale(1.4).setPosition(700,500).setInteractive().on("pointerdown", () => {
        this._frase1=this.add.text(this.game.canvas.width / 2, 100, "SAVE US è un gioco che tratta di una guerra avvenuta tra due nazioni, (Clover, Diamond).")
              .setTint(0xffffff)
              .setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif')
              .setScale(1.2)
-             .setPosition(180,45)
+             .setPosition(180,135)
              this._cliccare.setText("Continua").setPosition(800,500).setInteractive().on("pointerdown", () => { 
-              this._frase2=this.add.text(this.game.canvas.width / 2, 100, "La Nazione Diamond sovrasta completamente la Nazione Clover sterminandone tutti gli abitanti e soldati,").setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setTint(0xffffff).setScale(1.2).setScale(1.2).setPosition(105,75)
-              this._cliccare.setText("Continua ").setPosition(800,500).setInteractive().on("pointerdown", () => {
-                this._frase3=this.add.text(this.game.canvas.width / 2, 100, "di questa Nazione però sopravvive un solo soldato fuggito dalla guerra per paura,").setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setTint(0xffffff).setScale(1.2).setPosition(180,105)
-              this._cliccare.setInteractive().on("pointerdown", () => {
-                this._frase4=this.add.text(this.game.canvas.width / 2, 100, "costui dopo aver saputo della guerra persa").setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setTint(0xffffff).setScale(1.2).setPosition(335,135)
-                this._frase5=this.add.text(this.game.canvas.width / 2, 100, "si sente in colpa per non aver aiutato la Nazione e decide di dirigersi a nord.").setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setTint(0xffffff).setScale(1.2).setPosition(180,165)
-                this._cliccare.setInteractive().setPosition(800,500).on("pointerdown", () => {
-                  this._frase6=this.add.text(this.game.canvas.width / 2, 100, "L’ex-soldato riuscì a trovare un paese ospitale dove trascorrere le notti,").setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setTint(0xffffff).setScale(1.2).setPosition(200,195)
-                  this._cliccare.setInteractive().setPosition(800,500).on("pointerdown", () => {
-                    this._frase9=this.add.text(this.game.canvas.width / 2, 100, "ma ad un certo punto…").setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setTint(0xffffff).setScale(1.2).setPosition(415,225)
-                    this._cliccare.setText("premi per andare avanti").setPosition(700,500).setInteractive().on("pointerdown", () => {
+              this._frase2=this.add.text(this.game.canvas.width / 2, 100, "La Nazione Diamond sovrasta completamente la Nazione Clover sterminandone tutti gli abitanti e soldati,")
+              .setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif')
+              .setTint(0xffffff)
+              .setScale(1.2)
+              .setPosition(105,165);
+              this._cliccare.setText("Continua ")
+              .setPosition(800,500)
+              .setInteractive()
+              .on("pointerdown", () => {
+                this._frase3=this.add.text(this.game.canvas.width / 2, 100, "di questa Nazione però sopravvive un solo soldato fuggito dalla guerra per paura,")
+                .setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif')
+                .setTint(0xffffff)
+                .setScale(1.2)
+                .setPosition(180,195);
+                this._cliccare
+               .setInteractive()
+               .on("pointerdown", () => {
+                this._frase4=this.add.text(this.game.canvas.width / 2, 100, "costui dopo aver saputo della guerra persa")
+                .setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif')
+                .setTint(0xffffff)
+                .setScale(1.2)
+                .setPosition(335,225);
+                this._frase5=this.add.text(this.game.canvas.width / 2, 100, "si sente in colpa per non aver aiutato la Nazione e decide di dirigersi a nord.")
+                .setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif')
+                .setTint(0xffffff)
+                .setScale(1.2)
+                .setPosition(180,255)
+                this._cliccare.setInteractive()
+                .setPosition(800,500)
+                .on("pointerdown", () => {
+                  this._frase6=this.add.text(this.game.canvas.width / 2, 100, "L’ex-soldato riuscì a trovare un paese ospitale dove trascorrere le notti,")
+                  .setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif')
+                  .setTint(0xffffff)
+                  .setScale(1.2)
+                  .setPosition(200,285)
+                  this._cliccare
+                  .setInteractive()
+                  .setPosition(800,500)
+                  .on("pointerdown", () => {
+                    this._frase9=this.add.text(this.game.canvas.width / 2, 100, "ma ad un certo punto…").setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif')
+                    .setTint(0xffffff)
+                    .setScale(1.2)
+                    .setPosition(415,315)
+                    this._cliccare.setText("premi per andare avanti")
+                    .setPosition(700,500)
+                    .setInteractive()
+                    .on("pointerdown", () => {
                       this.startGame();
                     })
                   })
@@ -79,7 +131,7 @@ export default class GamePlay extends Phaser.Scene {
      
         startGame() {
           this.scene.stop("GamePlay");
-          this.scene.start("FabioIacolare");
+          this.scene.start("scienziato");
   
         }
         update(time: number, delta: number): void {
