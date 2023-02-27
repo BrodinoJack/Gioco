@@ -52,8 +52,8 @@ export default class GamePlay extends Phaser.Scene {
                 this._cliccare.setInteractive().setPosition(800,500).on("pointerdown", () => {
                   this._frase6=this.add.text(this.game.canvas.width / 2, 100, "L’ex-soldato riuscì a trovare un paese ospitale dove trascorrere le notti,").setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setTint(0xffffff).setScale(1.2).setPosition(200,195)
                   this._cliccare.setInteractive().setPosition(800,500).on("pointerdown", () => {
-                    this._frase9=this.add.text(this.game.canvas.width / 2, 100, "ma ad un certo punto…").setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setTint(0xffffff).setScale(1.2).setPosition(415,285)
-                    this._cliccare.setText("premi per andare avanti").setPosition(800,500).setInteractive().on("pointerdown", () => {
+                    this._frase9=this.add.text(this.game.canvas.width / 2, 100, "ma ad un certo punto…").setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setTint(0xffffff).setScale(1.2).setPosition(415,225)
+                    this._cliccare.setText("premi per andare avanti").setPosition(700,500).setInteractive().on("pointerdown", () => {
                       this.startGame();
                     })
                   })
