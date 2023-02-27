@@ -1,67 +1,99 @@
 
 export default class GamePlay extends Phaser.Scene {
-private _M: Phaser.Physics.Arcade.Sprite;
-private _P: Phaser.Physics.Arcade.Sprite;
-private _Dio: Array<number>=[0,1,2,3,4,5,6,7,8,9];
-private _d: Phaser.Input.Keyboard.Key;
-private _Indice: number=0;
-private GruppoPavimento: Phaser.GameObjects.Group;
+  private _illustrazione: Phaser.GameObjects.Text;
+  private _cliccare: Phaser.GameObjects.Text;
+  private _frase1: Phaser.GameObjects.Text;
+  private _frase2:Phaser.GameObjects.Text;
+  private _frase3:Phaser.GameObjects.Text;
+  private _frase4:Phaser.GameObjects.Text;
+  private _frase5:Phaser.GameObjects.Text;
+  private _frase6:Phaser.GameObjects.Text;
+  private _frase7:Phaser.GameObjects.Text;
+  private _frase8:Phaser.GameObjects.Text;
+  private _frase9:Phaser.GameObjects.Text;
+  private _fine: Phaser.GameObjects.Text;
+  private _M: Phaser.Physics.Arcade.Sprite;
+  private _P: Phaser.Physics.Arcade.Sprite;
+  private _Dio: Array<number>=[0,1,2,3,4,5,6,7,8,9];
+  private _d: Phaser.Input.Keyboard.Key;
+  private _Indice: number=0;
+  private Mov: number=20;
+  private GruppoPavimento: Phaser.GameObjects.Group;
+  
+  
+  
+  
+  
+    constructor() {    
+      super({ key: "GamePlay" });
+      
+    }
+  
+  
+    create() {
 
-
-
-
-  constructor() {    
-    super({ key: "GamePlay" });
     
-  }
-
-
-  create() {
-    var Pavimento;
-
-    this.GruppoPavimento=this.add.group();
-
-
-   
-    this._d = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);    
-    this._M=this.physics.add.sprite(20, 300,"Main");
-    this._M.setGravity(1).setGravityY(1000);
-    Pavimento=this.physics.add.sprite(170, 500,"Pavimento")
-    Pavimento.body.setSize(420,100);
     
-    this.GruppoPavimento.add(Pavimento);
+    
+    
+    
+    
+    
+    
+      this.cameras.main.setBackgroundColor(0x00000);
+      this._illustrazione= this.add.text(this.game.canvas.width / 2, 100, "Illustrazione:").setTint(0xff0000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setScale(1.4).setPosition(443,15);
+      this._cliccare= this.add.text(this.game.canvas.width / 2, 100, "clicca per continuare a leggere." ).setTint(0xff0000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setScale(1.4).setPosition(700,500).setInteractive().on("pointerdown", () => {
+       this._frase1=this.add.text(this.game.canvas.width / 2, 100, "SAVE US è un gioco che tratta di una guerra avvenuta tra due nazioni, (Clover, Diamond).")
+             .setTint(0xffffff)
+             .setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif')
+             .setScale(1.2)
+             .setPosition(180,45)
+             this._cliccare.setText("Continua").setPosition(800,500).setInteractive().on("pointerdown", () => { 
+              this._frase2=this.add.text(this.game.canvas.width / 2, 100, "La Nazione Diamond sovrasta completamente la Nazione Clover sterminandone tutti gli abitanti e soldati,").setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setTint(0xffffff).setScale(1.2).setScale(1.2).setPosition(105,75)
+              this._cliccare.setText("Continua ").setPosition(800,500).setInteractive().on("pointerdown", () => {
+                this._frase3=this.add.text(this.game.canvas.width / 2, 100, "di questa Nazione però sopravvive un solo soldato fuggito dalla guerra per paura,").setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setTint(0xffffff).setScale(1.2).setPosition(180,105)
+              this._cliccare.setInteractive().on("pointerdown", () => {
+                this._frase4=this.add.text(this.game.canvas.width / 2, 100, "costui dopo aver saputo della guerra persa").setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setTint(0xffffff).setScale(1.2).setPosition(335,135)
+                this._frase5=this.add.text(this.game.canvas.width / 2, 100, "si sente in colpa per non aver aiutato la Nazione e decide di dirigersi a nord.").setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setTint(0xffffff).setScale(1.2).setPosition(180,165)
+                this._cliccare.setInteractive().setPosition(800,500).on("pointerdown", () => {
+                  this._frase6=this.add.text(this.game.canvas.width / 2, 100, "L’ex-soldato riuscì a trovare un paese ospitale dove trascorrere le notti,").setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setTint(0xffffff).setScale(1.2).setPosition(200,195)
+                  this._cliccare.setInteractive().setPosition(800,500).on("pointerdown", () => {
+                    this._frase9=this.add.text(this.game.canvas.width / 2, 100, "ma ad un certo punto…").setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setTint(0xffffff).setScale(1.2).setPosition(415,285)
+                    this._cliccare.setText("premi per andare avanti").setPosition(800,500).setInteractive().on("pointerdown", () => {
+                      this.startGame();
+                    })
+                  })
+                })
+              })
+              })
+            }) 
+            })
+            
+           
+             
+ 
+            
+          
+        }
+          
+     
+  
+    
 
   
-   
-    
-
-      this.input.on("pointerdown", () => {
-       //@ts-ignore
-       this._M.body.velocity.y = -20;
-        });
-
-   /* let _animation = { 
-      key: "Cicciobello", 
-      frames: this.anims.generateFrameNumbers("Main", { frames: this._Dio }), 
-      frameRate: 1, 
-      yoyo: false, 
-      repeat: -1 };
-
-        this.anims.create(_animation);*/
+      
+     
+        startGame() {
+          this.scene.stop("GamePlay");
+          this.scene.start("scienziato");
+  
+        }
+        update(time: number, delta: number): void {
+     
+        }
         
-
-      }
-
-
-
-  update(time: number, delta: number): void {
-    if (this._d.isDown) {  
-      this._M.setAccelerationX(2);
-      this._M.setFrame(this._Indice)
-      //this._M.play("Cicciobello"); 
-      console.log("po");
-      this._Indice++;
+    
   }
-}
+   
 
- }
+  
