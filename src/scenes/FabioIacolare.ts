@@ -13,7 +13,7 @@ export default class FabioIacolare extends Phaser.Scene {
 	private layer2: Phaser.Tilemaps.TilemapLayer;
 
 
-
+ 
 
     constructor() {    
         super({ key: "FabioIacolare" });

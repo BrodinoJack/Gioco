@@ -99,8 +99,8 @@ export let GameData: any = {
         path: "assets/images/introcity.png",
         },
         {
-          name: "bar",
-          path: "assets/images/bar.png",
+          name: "bar_contipi",
+          path: "assets/images/bar_contipi.png",
           },
 ],
   atlas: [],
