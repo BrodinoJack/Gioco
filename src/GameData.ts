@@ -40,6 +40,14 @@ export let GameData: any = {
       margin: 1,
     },
     {
+      name: "intro",
+      path: "assets/map/intro.png",
+      width: 32,
+      height: 32,
+      spacing: 2,
+      margin: 1,
+    },
+    {
       name: "truck",
       path: "assets/map/camion.png",
       width: 261,
