@@ -17,7 +17,7 @@ export default class scienziato extends Phaser.Scene {
   this._bar=this.add.tileSprite(500,250,0,0, "bar_contipi").setAlpha(1).setOrigin(1).setPosition(1024,600)
 
  
-        }
+   }
     }
 
 
