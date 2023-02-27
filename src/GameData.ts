@@ -102,6 +102,10 @@ export let GameData: any = {
           name: "bar_contipi",
           path: "assets/images/bar_contipi.png",
           },
+           {
+             name: "Dio",
+             path: "assets/images/Dio.png",
+             },
 ],
   atlas: [],
   sounds: [{
@@ -126,7 +130,7 @@ export let GameData: any = {
   tilemaps: [
       {
       key: "Intro",
-      path: "assets/map/intro.json",
+      path: "assets/map/Dio.json",
       },
 	],
 
