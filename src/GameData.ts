@@ -103,13 +103,18 @@ export let GameData: any = {
           path: "assets/images/bar_contipi.png",
           },
           {
+          name: "freccia",
+          path: "assets/images/freccia.png",
+          },
+          {
             name: "dialogo_destra",
             path: "assets/images/dialogo_destra.png",
           },
           {
-            name: "dialogosinistra",
+            name: "dialogo_sinistra",
             path: "assets/images/dialogo_sinistra.png",
           },
+         
 ],
   atlas: [],
   sounds: [{
