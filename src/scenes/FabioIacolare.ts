@@ -32,7 +32,6 @@ create(){
     
     this.GruppoPavimento.add(Pavimento);
     this.physics.add.collider(this._M, this.GruppoPavimento, ()=>{
-        console.log("Dio")
     });
   
    
@@ -43,24 +42,16 @@ create(){
     
         });
 
-    let _animation = { 
-      key: "Cicciobello", 
-      frames: this.anims.generateFrameNumbers("Main", { frames: this._Dio }), 
-      frameRate: 10, 
-      yoyo: false, 
-      repeat: -1 };
-
-        this.anims.create(_animation);
-        
+    
       }
 
 
 
   update(time: number, delta: number): void {
     if (this._d.isDown) {  
-      this._M.x +- .4;
-      this._M.play("Cicciobello"); 
+      this._M.x += .4;
       console.log("po");
+      
 
   }
 
