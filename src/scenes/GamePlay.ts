@@ -109,15 +109,7 @@ export default class GamePlay extends Phaser.Scene {
         startGame() {
           this.scene.stop("GamePlay");
           this.scene.start("scienziato");
-         /* this.tweens.add({
-            targets: this.scene.start("scienziato"),
-        duration: 2000,
-        delay: 0,
-       
-        onComplete: () => {
-          this._cliccare.setInteractive()
-       
-        alpha: 0.5}})*/}
+        }
       
       update(time: number, delta: number): void {
      
