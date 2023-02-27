@@ -19,7 +19,7 @@ export default class Intro extends Phaser.Scene {
   private tileset2: Phaser.Tilemaps.Tileset;
   private tileset3: Phaser.Tilemaps.Tileset;
   private tileset4: Phaser.Tilemaps.Tileset;
-//h
+
 	private layer: Phaser.Tilemaps.TilemapLayer; 
 
 	private layer2: Phaser.Tilemaps.TilemapLayer;
