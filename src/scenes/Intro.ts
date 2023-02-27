@@ -184,6 +184,7 @@ export default class Intro extends Phaser.Scene {
     this.scene.start("GamePlay");
     this.scene.start("Hud");
     this.scene.bringToTop("Hud");
+    this._music.stop();
   }
     
     
