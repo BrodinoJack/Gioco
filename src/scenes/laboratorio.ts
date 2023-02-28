@@ -1,6 +1,6 @@
  export default class laboratorio extends Phaser.Scene {
  private _lab:Phaser.GameObjects.TileSprite;
- private _dialogolabs:Phaser.GameObjects.BitmapText;
+ private _dialogolab:Phaser.GameObjects.BitmapText;
 
    //container 1
    private _dialogolabContainer: Phaser.GameObjects.Container;
@@ -36,7 +36,7 @@
 
     create(){
         this.cameras.main.setBackgroundColor(0x000000);
-        this._lab=this.add.tileSprite(500,250,0,0, "labs").setAlpha(1).setOrigin(1).setPosition(1024,600)
+        this._lab=this.add.tileSprite(500,250,0,0, "labs").setAlpha(1).setOrigin(1).setPosition(1024,600);
         
 
     this._dialogolabContainer = this.add.container().setAlpha(0).setDepth(10);
@@ -98,7 +98,7 @@
     this.startGame();
   }),])
 
-    this._dialogolabs = this.add
+    this._dialogolab = this.add
     .bitmapText(this.game.canvas.width / 2, 400, "arcade", "inizia il dialogo")
     .setAlpha(1)
     .setOrigin(0.5)
@@ -108,16 +108,16 @@
     .setPosition(915,480)
     .setTint(0x000000000)
     .on("pointerup", () => {
-      this._dialogolabs.setAlpha(0)
-      this._dialogolabs.removeInteractive();
+      this._dialogolab.setAlpha(0)
+      this._dialogolab.removeInteractive();
     })
     .on("pointerover", () => {
-      this._dialogolabs.setTint(0xffffff).setScale(0.4);
+      this._dialogolab.setTint(0xffffff).setScale(0.4);
       this._music2= this.sound.add("_button", { loop: false, volume: 0.7 });
       this._music2.play();
     })
     .on("pointerout", () => { 
-      this._dialogolabs.setTint(0xffffff).setScale(0.3);
+      this._dialogolab.setTint(0xffffff).setScale(0.3);
     })
     .on("pointerdown", this.opendialogolab, this);
 }
@@ -137,7 +137,7 @@ opendialogolab() {
   closedialogolab() {
       this.tweens.add({
         targets: this._dialogolabContainer, alpha: 0, duration: 1000, onComplete: () => {
-          this._dialogolabs.setInteractive();
+          this._dialogolab.setInteractive();
         }
       })
     }
@@ -152,7 +152,7 @@ opendialogolab() {
     closedialogolab2() {
         this.tweens.add({
           targets: this._dialogolab2Container, alpha: 0, duration: 1000, onComplete: () => {
-            this._dialogolabs.setInteractive();
+            this._dialogolab.setInteractive();
           }
         })
       }
@@ -168,7 +168,7 @@ opendialogolab() {
       closedialogolab3() {
           this.tweens.add({
             targets: this._dialogolab3Container, alpha: 0, duration: 1000, onComplete: () => {
-              this._dialogolabs.setInteractive();
+              this._dialogolab.setInteractive();
             }
           })
         }

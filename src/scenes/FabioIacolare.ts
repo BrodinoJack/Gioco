@@ -16,10 +16,8 @@ export default class FabioIacolare extends Phaser.Scene {
       }   
 
 create(){
-  this._bg = this.add.tileSprite(0, 0, 1024, 600, "bg").setOrigin(0).setScrollFactor(0);
-   
-    this.L=this.add.image(500,250,"Pavimento")
-    
+  this._bg = this.add.tileSprite(0, 0, 1024, 600, "bg").setOrigin(0).setScrollFactor(0).setDepth(0);
+
     this.physics.add.collider(this._player, this.L, ()=>{
     });    
       }
@@ -28,7 +26,7 @@ create(){
 
   update(time: number, delta: number): void {
 
-    this._player.update(time, delta)
+   
   }
 
 }

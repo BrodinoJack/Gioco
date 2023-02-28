@@ -24,22 +24,6 @@ export let GameData: any = {
       frames: 10,
     },
     {
-      name: "blocchi",
-      path: "assets/map/blocchi.png",
-      width: 32,
-      height: 32,
-      spacing: 2,
-      margin: 1,
-    },
-    {
-      name: "car",
-      path: "assets/map/macchine.png",
-      width: 83,
-      height: 58,
-      spacing: 2,
-      margin: 1,
-    },
-    {
       name: "intro",
       path: "assets/map/intro.png",
       width: 32,
@@ -47,25 +31,13 @@ export let GameData: any = {
       spacing: 2,
       margin: 1,
     },
-    {
-      name: "truck",
-      path: "assets/map/camion.png",
-      width: 261,
-      height: 107,
-      spacing: 2,
-      margin: 1,
-    },
-    {
-      name: "trash",
-      path: "assets/map/immondizia.png",
-      width: 30,
-      height: 30,
-      spacing: 2,
-      margin: 1,
-    },
   ],
 
   images: [
+    {
+      name: "bg",
+      path: "assets/images/introcity.png",
+    },
     {
       name: "player_intro",
       path: "assets/images/playerintro.png",
@@ -141,10 +113,6 @@ export let GameData: any = {
   audio: [],
   bitmapfont: [],
   tilemaps: [
-      {
-      key: "Intro",
-      path: "assets/map/Dio.json",
-      },
 	],
 
 };
