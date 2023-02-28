@@ -20,13 +20,40 @@ create(){
 
   this._bg = this.add.tileSprite(0, 0, 1024, 600, "bg").setOrigin(0).setScrollFactor(0).setDepth(0);
 
-  this._player = new Player({
-    scene: this, x: this.game.canvas.width / 2, y:
-      450, key: "Main"
-  });
-    this.physics.add.collider(this._player, this.L, ()=>{
-    });    
-      }
+
+
+
+  var Pavimento;
+ // this.add.image(100, 450, 'Map')
+  const map = this.make.tilemap({ key: 'Mappa' })
+
+	// add the tileset image we are using
+	const tileset = map.addTilesetImage('Fabio', 'Map')
+  map.createLayer('Collisioni', tileset)
+	
+
+   
+    this._d = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);    
+    this._M=this.physics.add.sprite(20, 300,"Main").setImmovable(false).setDepth(1);
+    this._M.setGravityY(1000);
+   //Pavimento=this.physics.add.sprite(170, 500,"Pavimento").setImmovable(true);
+   // Pavimento.body.setAllowGravity(false);
+    //Pavimento.body.setSize(420,100);
+    
+    this.GruppoPavimento.add(Pavimento);
+    this.physics.add.collider(this._M, this.GruppoPavimento, ()=>{
+    });
+  
+   
+    
+
+      this.input.on("pointerdown", () => {
+  
+   
+        });
+
+     
+       }
 
 
 
