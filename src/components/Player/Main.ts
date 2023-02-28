@@ -1,57 +1,66 @@
 import IMain from "./IMain";
-import GamePlay from "../../scenes/GamePlay";
+import FabioIacolare from "../../scenes/FabioIacolare";
 
-export default class Main extends Phaser.GameObjects.Sprite implements IMain {
-	private _config: genericConfig;
-	private _scene: GamePlay;
-	private _body: Phaser.Physics.Arcade.Body;
-	private _cursors: Phaser.Types.Input.Keyboard.CursorKeys;
-	private _velocity: number = 200;
-	private _animations: Array<{ key: string, frames: Array<number>, frameRate: number, yoyo: boolean, repeat: number }> = [
-	{ key: "idle", frames: [0, 1, 2, 3], frameRate: 10, yoyo: false, repeat: -1 },
-	{ key: "move", frames: [4, 5, 6, 7], frameRate: 10, yoyo: false, repeat: -1 }
-	];
+export default class Main extends Phaser.GameObjects.Sprite implements IMain{
+    protected _config: genericConfig;
+    private _scene: FabioIacolare;
+
+    private _M: Phaser.Physics.Arcade.Body; 
+    private _d: Phaser.Input.Keyboard.Key;
+    private _a: Phaser.Input.Keyboard.Key;
+
+
+
+
 constructor(params: genericConfig) {
+
 		super(params.scene, params.x, params.y, params.key);
-			this._config = params;
-			
-			this.create();
+        this._scene = <FabioIacolare>params.scene;
+        this._scene.physics.world.enable(this);
+        this._M = <Phaser.Physics.Arcade.Body>this.body;
+        this._scene.add.existing(this);
+			this._M = <Phaser.Physics.Arcade.Body>this.body;
 			this.createAnimations();
+            this._M.setDragX(1000)
+      .setCollideWorldBounds(true, 0.5)
+      .setImmovable(true)
+      .setGravity(0, 1200)
+      .setMaxVelocity(250, 550)
+      .setGravityY(1000)
+      
+      this._d = this._scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
+      this._a = this._scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
+
+      let _animation : Phaser.Types.Animations.Animation = {
+
+        key: "move",
+        frames: this.anims.generateFrameNumbers("Main", {
+          frames: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+        }),
+        frameRate: 10,
+        yoyo: false,
+        repeat: -1
+      };
+      this.anims.create(_animation);
+      this.setDepth(11);
 		}
-        create() {
-            
-            this._scene = <GamePlay>this._config.scene;
-            
-            this._scene.physics.world.enable(this);
-            
-            this._body = <Phaser.Physics.Arcade.Body>this.body;
-           
-            this._body.setCollideWorldBounds(true);
-           
-            this._cursors = this._scene.input.keyboard.createCursorKeys();
-            
-            this.setDepth(11);
-           
-            this._scene.add.existing(this);
-        }
+        getMain(): Phaser.Physics.Arcade.Body { return this._M }
+       
         
         createAnimations() {
             
-            this._animations.forEach(element => {
             
-                if (!this._scene.anims.exists(element.key)) {
-                    let _animation: Phaser.Types.Animations.Animation = {
-                        key: element.key,
-                        frames: this.anims.generateFrameNumbers("robo", { frames: element.frames }),
-                        frameRate: element.frameRate,
-                        yoyo: element.yoyo,
-                        repeat: element.repeat
-                    };
-            
-                    this._scene.anims.create(_animation);
-                }
-            });
         }
-    update(time: number, delta: number) {}
+    update(time: number, delta: number) {
+        if (this._d.isDown && this._M.blocked.down) {
+            this.anims.play('idle', true);
+            this._M.setVelocityY(-550);
+          }
+          if (this._a.isDown) {
+            this.setFlipX(false);
+            this.anims.play('move', true);
+            this._M.setAccelerationX(-250)
+      
+          }
     }
-    
+}

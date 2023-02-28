@@ -18,26 +18,10 @@ export let GameData: any = {
   spritesheets: [
     {
       name: "Main",
-      path: "assets/images/Gambe.png",
+      path: "assets/images/A_ritagliato2.0.png",
       width: 18,
       height: 50,
       frames: 10,
-    },
-    {
-      name: "blocchi",
-      path: "assets/map/blocchi.png",
-      width: 32,
-      height: 32,
-      spacing: 2,
-      margin: 1,
-    },
-    {
-      name: "car",
-      path: "assets/map/macchine.png",
-      width: 83,
-      height: 58,
-      spacing: 2,
-      margin: 1,
     },
     {
       name: "intro",
@@ -47,25 +31,13 @@ export let GameData: any = {
       spacing: 2,
       margin: 1,
     },
-    {
-      name: "truck",
-      path: "assets/map/camion.png",
-      width: 261,
-      height: 107,
-      spacing: 2,
-      margin: 1,
-    },
-    {
-      name: "trash",
-      path: "assets/map/immondizia.png",
-      width: 30,
-      height: 30,
-      spacing: 2,
-      margin: 1,
-    },
   ],
 
   images: [
+    {
+      name: "bg",
+      path: "assets/images/introcity.png",
+    },
     {
       name: "player_intro",
       path: "assets/images/playerintro.png",
@@ -103,9 +75,28 @@ export let GameData: any = {
           path: "assets/images/bar_contipi.png",
           },
           {
+<<<<<<< HEAD
             name: "dialogo_sinistra",
             path: "assets/images/dialogo_sinistra.png",
             },
+=======
+          name: "freccia",
+          path: "assets/images/freccia.png",
+          },
+          {
+            name: "dialogo_destra",
+            path: "assets/images/dialogo_destra.png",
+          },
+          {
+            name: "dialogo_sinistra",
+            path: "assets/images/dialogo_sinistra.png",
+          },
+          {
+            name: "labs",
+            path: "assets/images/labs.png",
+          },
+         
+>>>>>>> d64db73fe32cb9ed2eda48627b5d9b5681747353
 ],
   atlas: [],
   sounds: [{
@@ -128,10 +119,6 @@ export let GameData: any = {
   audio: [],
   bitmapfont: [],
   tilemaps: [
-      {
-      key: "Intro",
-      path: "assets/map/intro.json",
-      },
 	],
 
 };

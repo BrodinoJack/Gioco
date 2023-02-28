@@ -14,6 +14,7 @@ export default class Preloader extends Phaser.Scene {
   }
 
   preload() {
+    
     this.cameras.main.setBackgroundColor("#ffffff");
     this._progress = this.add.graphics();
     this.loadAssets();

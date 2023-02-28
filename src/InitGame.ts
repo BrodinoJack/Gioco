@@ -7,6 +7,7 @@ import GameOver from "./scenes/GameOver";
 import GamePlay from "./scenes/GamePlay";
 import scienziato from "./scenes/scienziato";
 import FabioIacolare from "./scenes/FabioIacolare";
+import laboratorio from "./scenes/laboratorio";
 import { GameData } from "./GameData";
 
 window.addEventListener("load", () => {
@@ -29,7 +30,8 @@ window.addEventListener("load", () => {
       GamePlay,
       GameOver,
       scienziato,
-      FabioIacolare
+      FabioIacolare,
+      laboratorio
   
       
     ],
