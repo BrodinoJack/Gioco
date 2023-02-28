@@ -6,7 +6,12 @@ import Hud from "./scenes/Hud";
 import GameOver from "./scenes/GameOver";
 import GamePlay from "./scenes/GamePlay";
 import scienziato from "./scenes/scienziato";
+<<<<<<< HEAD
 import Fabio from "./scenes/Fabio";
+=======
+import FabioIacolare from "./scenes/FabioIacolare";
+import laboratorio from "./scenes/laboratorio";
+>>>>>>> d64db73fe32cb9ed2eda48627b5d9b5681747353
 import { GameData } from "./GameData";
 
 window.addEventListener("load", () => {
@@ -28,8 +33,14 @@ window.addEventListener("load", () => {
       Hud,
       GamePlay,  
       GameOver,
+<<<<<<< HEAD
       scienziato, 
       Fabio
+=======
+      scienziato,
+      FabioIacolare,
+      laboratorio
+>>>>>>> d64db73fe32cb9ed2eda48627b5d9b5681747353
   
       
     ],
