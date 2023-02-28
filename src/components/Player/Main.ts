@@ -7,7 +7,7 @@ export default class Main extends Phaser.GameObjects.Sprite implements IMain{
 
     private _M: Phaser.Physics.Arcade.Body; 
     private _d: Phaser.Input.Keyboard.Key;
-
+    private _a: Phaser.Input.Keyboard.Key;
 
 
 
@@ -28,15 +28,18 @@ constructor(params: genericConfig) {
       .setMaxVelocity(250, 550)
       .setGravityY(1000)
       
+      this._d = this._scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
+      this._a = this._scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
 
-      let _animation = {
-        key: "idle",
-        frames: this.anims.generateFrameNumbers("this._config.key", {
+      let _animation : Phaser.Types.Animations.Animation = {
+
+        key: "move",
+        frames: this.anims.generateFrameNumbers("Main", {
           frames: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
         }),
         frameRate: 10,
         yoyo: false,
-        repeat: 0
+        repeat: -1
       };
       this.anims.create(_animation);
       this.setDepth(11);
@@ -49,13 +52,15 @@ constructor(params: genericConfig) {
             
         }
     update(time: number, delta: number) {
-        if (this._d.isDown) {  
+        if (this._d.isDown && this._M.blocked.down) {
             this.anims.play('idle', true);
-            this._M.x += .7;
-            console.log("po");
-            
+            this._M.setVelocityY(-550);
+          }
+          if (this._a.isDown) {
+            this.setFlipX(false);
+            this.anims.play('move', true);
+            this._M.setAccelerationX(-250)
       
-        }
+          }
     }
-    }
-    
+}
