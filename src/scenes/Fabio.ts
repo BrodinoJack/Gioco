@@ -1,8 +1,7 @@
-
 export default class Fabio extends Phaser.Scene {
+  private L:Phaser.GameObjects.Image;
     private _M: Phaser.Physics.Arcade.Sprite;
     private _P: Phaser.Physics.Arcade.Sprite;
-    private _Dio: Array<number>=[0,1,2,3,4,5,6,7,8,9];
     private _d: Phaser.Input.Keyboard.Key;
     private _Indice: number=0;
     private Mov: number=20;
@@ -11,7 +10,7 @@ export default class Fabio extends Phaser.Scene {
  
 
     constructor() {    
-        super({ key: "FabioIacolare" });       
+        super({ key: "Fabio" });       
       }   
       
        
@@ -19,18 +18,23 @@ export default class Fabio extends Phaser.Scene {
     
 
 create(){
-  console.log("Diocoppola")
-  var Pavimento;
+    console.log("Diocoppola")
+    var Pavimento;
   
     this._d = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);    
-    this._M=this.physics.add.sprite(20, 300, "Main").setImmovable(false).setDepth(1);
-    this._M.setGravityY(1000);
-    Pavimento=this.physics.add.sprite(170, 500,"Pavimento").setImmovable(true);
-    Pavimento.body.setAllowGravity(false);
-    Pavimento.body.setSize(420,100);
+    this._M=this.physics.add.sprite(20,300,"Main").setImmovable(false).setDepth(1).setGravityY(1000);
+    this.L=this.physics.add.sprite(500,500,"Pavimento").setImmovable(true);
+    let _animation: Phaser.Types.Animations.Animation = {
+      key: "Andrea", 
+frames: this.anims.generateFrameNumbers("Main", { frames: [0,1,2,3,4,5,6,7] }),
+frameRate: 10,
+yoyo: false,
+repeat: -1
+    };
+    this.anims.create(_animation);
+
     
-    this.GruppoPavimento.add(Pavimento);
-    this.physics.add.collider(this._M, this.GruppoPavimento, ()=>{
+    this.physics.add.collider(this._M, this.L, ()=>{
     });
   
 
@@ -42,7 +46,11 @@ create(){
   update(time: number, delta: number): void {
     if (this._d.isDown) {  
       this._M.x += .4;
-      console.log("po");
+      this._M.play("Andrea", true);
+
+      //this._M.setFrame(this._Indice)
+      //this._Indice++
+
       
 
   }

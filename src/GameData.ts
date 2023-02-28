@@ -19,18 +19,11 @@ export let GameData: any = {
     {
       name: "Main",
       path: "assets/images/A_ritagliato2.0.png",
-      width: 18,
-      height: 50,
+      width: 30,
+      height: 45,
       frames: 10,
     },
-    {
-      name: "blocchi",
-      path: "assets/map/blocchi.png",
-      width: 32,
-      height: 32,
-      spacing: 2,
-      margin: 1,
-    },
+   
 
   ],
 
@@ -93,10 +86,7 @@ export let GameData: any = {
   audio: [],
   bitmapfont: [],
   tilemaps: [
-      {
-      key: "Intro",
-      path: "assets/map/Dio.json",
-      },
+    
 	],
 
 };
