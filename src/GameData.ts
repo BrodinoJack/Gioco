@@ -19,6 +19,14 @@ export let GameData: any = {
     {
       name: "Main",
       path: "assets/images/A_ritagliato2.0.png",
+<<<<<<< HEAD
+      width: 30,
+      height: 45,
+      frames: 10,
+    },
+   
+
+=======
       width: 18,
       height: 50,
       frames: 10,
@@ -31,6 +39,7 @@ export let GameData: any = {
       spacing: 2,
       margin: 1,
     },
+>>>>>>> d64db73fe32cb9ed2eda48627b5d9b5681747353
   ],
 
   images: [
@@ -45,10 +54,6 @@ export let GameData: any = {
     {
       name: "aereo",
       path: "assets/images/aereo.png",
-    },
-    {
-      name: "Pavimento",
-      path: "assets/images/P.png",
     },
     {
     name: "popup",
@@ -74,6 +79,12 @@ export let GameData: any = {
           name: "bar_contipi",
           path: "assets/images/bar_contipi.png",
           },
+<<<<<<< HEAD
+              {
+               name: "Pavimento",
+               path: "assets/images/Pav.png",
+               },
+=======
           {
 <<<<<<< HEAD
             name: "dialogo_sinistra",
@@ -119,6 +130,10 @@ export let GameData: any = {
   audio: [],
   bitmapfont: [],
   tilemaps: [
+<<<<<<< HEAD
+    
+=======
+>>>>>>> d64db73fe32cb9ed2eda48627b5d9b5681747353
 	],
 
 };
