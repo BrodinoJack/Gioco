@@ -71,11 +71,6 @@ export let GameData: any = {
           path: "assets/images/bar_contipi.png",
           },
           {
-<<<<<<< HEAD
-            name: "dialogo_sinistra",
-            path: "assets/images/dialogo_sinistra.png",
-            },
-=======
           name: "freccia",
           path: "assets/images/freccia.png",
           },
