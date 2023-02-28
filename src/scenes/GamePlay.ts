@@ -1,4 +1,4 @@
-import Preloader from "./Preloader";
+
 export default class GamePlay extends Phaser.Scene {
   private _illustrazione: Phaser.GameObjects.Text;
   private _cliccare: Phaser.GameObjects.Text;
@@ -109,15 +109,11 @@ export default class GamePlay extends Phaser.Scene {
         startGame() {
           this.scene.stop("GamePlay");
           this.scene.start("scienziato");
-         /* this.tweens.add({
-            targets: this.scene.start("scienziato"),
-        duration: 2000,
-        delay: 0,
-       
-        onComplete: () => {
-          this._cliccare.setInteractive()
-       
-        alpha: 0.5}})*/}
+<<<<<<< HEAD
+  
+=======
+>>>>>>> d64db73fe32cb9ed2eda48627b5d9b5681747353
+        }
       
       update(time: number, delta: number): void {
      

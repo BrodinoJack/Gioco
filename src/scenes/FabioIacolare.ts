@@ -1,11 +1,12 @@
-
+import Main from "../components/Player/Main";
+import Player from "../components/Player/Main";
 export default class FabioIacolare extends Phaser.Scene {
-    private _M: Phaser.Physics.Arcade.Sprite;
+
+  private _player: Main;
+  private L: Phaser.GameObjects.Image;
+
+    private _bg: Phaser.GameObjects.TileSprite;
     private _P: Phaser.Physics.Arcade.Sprite;
-    private _Dio: Array<number>=[0,1,2,3,4,5,6,7,8,9];
-    private _d: Phaser.Input.Keyboard.Key;
-    private _Indice: number=0;
-    private Mov: number=20;
     private GruppoPavimento: Phaser.GameObjects.Group;
 
  
@@ -14,15 +15,10 @@ export default class FabioIacolare extends Phaser.Scene {
         super({ key: "FabioIacolare" });
         
       }   
-      preload(){
-        this.load.image('Map', "map/Dio.png"),
-
-        this.load.tilemapTiledJSON('Mappa', "Gioco/map/Dio.json")
-      }
 
 create(){
-     this.add.image(100,450, 'Map')
 
+  this._bg = this.add.tileSprite(0, 0, 1024, 600, "bg").setOrigin(0).setScrollFactor(0).setDepth(0);
 
 
 
@@ -62,14 +58,9 @@ create(){
 
 
   update(time: number, delta: number): void {
-    if (this._d.isDown) {  
-      this._M.x += .4;
-      console.log("po");
-      
 
+    
+    this._player.update(time, delta);
   }
-
-}
-
 
 }

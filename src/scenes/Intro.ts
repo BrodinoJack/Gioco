@@ -14,6 +14,27 @@ export default class Intro extends Phaser.Scene {
   private _Aereo: Phaser.GameObjects.TileSprite;
   private _Aereo2: Phaser.GameObjects.TileSprite;
   private _Aereo3: Phaser.GameObjects.TileSprite;
+  private _Aereo4: Phaser.GameObjects.TileSprite;
+  private _Aereo5: Phaser.GameObjects.TileSprite;
+  private _Aereo6: Phaser.GameObjects.TileSprite;
+  private _Aereo7: Phaser.GameObjects.TileSprite;
+  private _Aereo8: Phaser.GameObjects.TileSprite;
+  private _Aereo9: Phaser.GameObjects.TileSprite;
+  private _Aereo10: Phaser.GameObjects.TileSprite;
+  private _Aereo11: Phaser.GameObjects.TileSprite;
+  private _Aereo12: Phaser.GameObjects.TileSprite;
+  private _Aereo13: Phaser.GameObjects.TileSprite;
+  private _Aereo14: Phaser.GameObjects.TileSprite;
+  private _Aereo15: Phaser.GameObjects.TileSprite;
+  private _Aereo16: Phaser.GameObjects.TileSprite;
+  private _Aereo17: Phaser.GameObjects.TileSprite;
+  private _Aereo18: Phaser.GameObjects.TileSprite;
+  private _Aereo19: Phaser.GameObjects.TileSprite;
+  private _Aereo20: Phaser.GameObjects.TileSprite;
+  private _Aereo21: Phaser.GameObjects.TileSprite;
+  private _Aereo22: Phaser.GameObjects.TileSprite;
+  private _Aereo23: Phaser.GameObjects.TileSprite;
+  private _Aereo24: Phaser.GameObjects.TileSprite;
 	private map: Phaser.Tilemaps.Tilemap;
 	private tileset1: Phaser.Tilemaps.Tileset;
   private tileset2: Phaser.Tilemaps.Tileset;
@@ -38,51 +59,33 @@ export default class Intro extends Phaser.Scene {
 
     
 
-    /*this.map = this.make.tilemap({ key: "intro"});
-    this.cameras.main.setBounds(
-      0, 
-      0, 
-      this.map.widthInPixels, 
-      this.map.heightInPixels 
-    );
-        this.physics.world.setBounds(
-      0, 
-      0, 
-      this.map.widthInPixels, 
-      this.map.heightInPixels 
-    );
-	  this.tileset1 = this.map.addTilesetImage("blocchi");
-    this.tileset2 = this.map.addTilesetImage("car");
-    this.tileset3 = this.map.addTilesetImage("truck");
-    this.tileset4 = this.map.addTilesetImage("trash");
-
-    this.layer = this.map
-    .createLayer("Livello tile 1", this.tileset1, 0, 0)
-    .setDepth(9)
-    .setAlpha(1);
-    this.layer = this.map
-	  .createLayer("veicoli", this.tileset2, 0, 0)
-    .setDepth(9)
-	  .setAlpha(1);
-    this.layer = this.map
-	  .createLayer("veicoli", this.tileset3, 0, 0)
-	  .setDepth(9)
-	  .setAlpha(1);
-    this.layer = this.map
-	  .createLayer("prima veicoli", this.tileset4, 0, 0)
-	  .setDepth(9)
-	  .setAlpha(1);
+    
 
 
-    this.layer2 = this.map
-	.createLayer("Livello tile 1", this.tileset1, 0, 0)
-	.setDepth(0)
-	.setAlpha(1);*/
-
-
-    this._Aereo=this.add.tileSprite(-200,10,0,0, "aereo").setOrigin(0).setDepth(1).setScale(.3);
-    this._Aereo2=this.add.tileSprite(-160,70,0,0, "aereo").setOrigin(0).setDepth(1).setScale(.3);
-    this._Aereo3=this.add.tileSprite(-200,120,0,0, "aereo").setOrigin(0).setDepth(1).setScale(.3);
+    this._Aereo=this.add.tileSprite(-300,40,0,0, "aereo").setOrigin(0).setDepth(1).setScale(.24,.2);
+    this._Aereo2=this.add.tileSprite(-43,70,0,0, "aereo").setOrigin(0).setDepth(1).setScale(.3,.2);
+    this._Aereo3=this.add.tileSprite(-125,120,0,0, "aereo").setOrigin(0).setDepth(1).setScale(.4,.3);
+    this._Aereo4=this.add.tileSprite(-2000,10,0,0, "aereo").setOrigin(0).setDepth(1).setScale(.4,.3);
+    this._Aereo5=this.add.tileSprite(-1507,70,0,0, "aereo").setOrigin(0).setDepth(1).setScale(.24,.2);
+    this._Aereo6=this.add.tileSprite(-1662,120,0,0, "aereo").setOrigin(0).setDepth(1).setScale(.24,.2);
+    this._Aereo7=this.add.tileSprite(-2000,10,0,0, "aereo").setOrigin(0).setDepth(1).setScale(.4,.3);
+    this._Aereo8=this.add.tileSprite(-2307,70,0,0, "aereo").setOrigin(0).setDepth(1).setScale(.24,.2);
+    this._Aereo9=this.add.tileSprite(-2462,120,0,0, "aereo").setOrigin(0).setDepth(1).setScale(.24,.2);
+    this._Aereo10=this.add.tileSprite(-3100,10,0,0, "aereo").setOrigin(0).setDepth(1).setScale(.4,.3);
+    this._Aereo11=this.add.tileSprite(-3534,70,0,0, "aereo").setOrigin(0).setDepth(1).setScale(.24,.2);
+    this._Aereo12=this.add.tileSprite(-3842,120,0,0, "aereo").setOrigin(0).setDepth(1).setScale(.24,.2);
+    this._Aereo13=this.add.tileSprite(-3980,40,0,0, "aereo").setOrigin(0).setDepth(1).setScale(.24,.2);
+    this._Aereo14=this.add.tileSprite(-4300,70,0,0, "aereo").setOrigin(0).setDepth(1).setScale(.3,.2);
+    this._Aereo15=this.add.tileSprite(-4574,120,0,0, "aereo").setOrigin(0).setDepth(1).setScale(.4,.3);
+    this._Aereo16=this.add.tileSprite(-4876,10,0,0, "aereo").setOrigin(0).setDepth(1).setScale(.4,.3);
+    this._Aereo17=this.add.tileSprite(-5144,70,0,0, "aereo").setOrigin(0).setDepth(1).setScale(.24,.2);
+    this._Aereo18=this.add.tileSprite(-5632,120,0,0, "aereo").setOrigin(0).setDepth(1).setScale(.24,.2);
+    this._Aereo19=this.add.tileSprite(-6012,10,0,0, "aereo").setOrigin(0).setDepth(1).setScale(.4,.3);
+    this._Aereo20=this.add.tileSprite(-6344,70,0,0, "aereo").setOrigin(0).setDepth(1).setScale(.24,.2);
+    this._Aereo21=this.add.tileSprite(-6578,120,0,0, "aereo").setOrigin(0).setDepth(1).setScale(.24,.2);
+    this._Aereo22=this.add.tileSprite(-6890,10,0,0, "aereo").setOrigin(0).setDepth(1).setScale(.4,.3);
+    this._Aereo23=this.add.tileSprite(-7007,70,0,0, "aereo").setOrigin(0).setDepth(1).setScale(.24,.2);
+    this._Aereo24=this.add.tileSprite(-6643,120,0,0, "aereo").setOrigin(0).setDepth(1).setScale(.4,.3);
     this._M=this.add.sprite(510,493,"player_intro").setDepth(1).setScale(.15);
     this._music = this.sound.add("_intro", { loop: true, volume: 0.7 });
     this._music.play();
@@ -192,9 +195,29 @@ export default class Intro extends Phaser.Scene {
   
     
     this._Aereo.x +=5;
-    this._Aereo2.x +=5;
+    this._Aereo2.x +=3;
     this._Aereo3.x +=5;
-
+    this._Aereo4.x +=6;
+    this._Aereo5.x +=5;
+    this._Aereo6.x +=4;
+    this._Aereo7.x +=7;
+    this._Aereo8.x +=3;
+    this._Aereo9.x +=4;
+    this._Aereo10.x +=5;
+    this._Aereo11.x +=4;
+    this._Aereo12.x +=6;
+    this._Aereo13.x +=4;
+    this._Aereo14.x +=6;
+    this._Aereo15.x +=5;
+    this._Aereo16.x +=6;
+    this._Aereo17.x +=3;
+    this._Aereo18.x +=5;
+    this._Aereo19.x +=7;
+    this._Aereo20.x +=3;
+    this._Aereo21.x +=4;
+    this._Aereo22.x +=5;
+    this._Aereo23.x +=4;
+    this._Aereo24.x +=5;
     }
     
   
