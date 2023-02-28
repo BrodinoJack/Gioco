@@ -31,8 +31,8 @@ export let GameData: any = {
       frames: 4,
     },
     {
-      name: "intro",
-      path: "assets/map/intro.png",
+      name: "sfondo",
+      path: "assets/map/sfondo.png",
       width: 32,
       height: 32,
       spacing: 2,
@@ -116,6 +116,12 @@ export let GameData: any = {
   audio: [],
   bitmapfont: [],
   tilemaps: [
+    {
+      key: "level-0",
+      path: "assets/map/level-0.json",
+      },
+    
+  
 	],
 
 };

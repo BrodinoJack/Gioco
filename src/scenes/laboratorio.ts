@@ -174,7 +174,7 @@ opendialogolab() {
         }
         startGame() {
             this.scene.stop("laboratorio");
-            this.scene.start("FabioIacolare");
+            this.scene.start("livello");
           }
         update(time: number, delta: number): void {
 
