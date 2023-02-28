@@ -109,10 +109,7 @@ export default class GamePlay extends Phaser.Scene {
         startGame() {
           this.scene.stop("GamePlay");
           this.scene.start("scienziato");
-<<<<<<< HEAD
   
-=======
->>>>>>> d64db73fe32cb9ed2eda48627b5d9b5681747353
         }
       
       update(time: number, delta: number): void {
