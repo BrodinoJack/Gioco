@@ -10,7 +10,7 @@ export default class Main extends Phaser.GameObjects.Sprite implements IMain{
     private _a: Phaser.Input.Keyboard.Key;
     private _spacebar: Phaser.Input.Keyboard.Key;
     private _Andre: boolean = false
-
+    private _direction: string;
 
 constructor(params: genericConfig) {
 
@@ -19,8 +19,8 @@ constructor(params: genericConfig) {
         this._scene.physics.world.enable(this);
         this._M = <Phaser.Physics.Arcade.Body>this.body;
         this._scene.add.existing(this);
-			this._M = <Phaser.Physics.Arcade.Body>this.body;
-			this.createAnimations();
+			  this._M = <Phaser.Physics.Arcade.Body>this.body;
+			  this.createAnimations();
             this._M.setDragX(1000)
       .setCollideWorldBounds(true, 0.5)
       .setImmovable(true)
@@ -43,32 +43,59 @@ constructor(params: genericConfig) {
         yoyo: false,
         repeat: -1
       };
+      
       this.anims.create(_animation);
-      this.setDepth(11);
+      this.setDepth(11); 
+      
+      let _Fracesco : Phaser.Types.Animations.Animation = {
+
+        key: "fermo",
+        frames: this.anims.generateFrameNumbers("Fermo", {
+          frames: [0, 1, 2, 3]
+        }),
+        frameRate: 5,
+        yoyo: false,
+        repeat: -1
+      };
+      
+      this.anims.create(_animation);
+      this.setDepth(11);   
+         
 		}
+		
+    
         getMain(): Phaser.Physics.Arcade.Body { return this._M }
        
         
-        createAnimations() {
-            
-            
+        createAnimations() {           
         }
+
+        
     update(time: number, delta: number) {
         if (this._d.isDown ) {
+          this.setFlipX(false);
             this.anims.play('move', true);
             this._M.setVelocityX(100);
+            this._direction = "right";
           }
-          if (this._a.isDown) {
+          else if (this._a.isDown) {
+            this.setFlipX(true);
             this.anims.play('move', true);
             this._M.setVelocityX(-100)
-      
+            this._direction = "left";
           }
+          else {
+            this._M.setVelocityX(0);
+            this.anims.play('fermo', true);
+            this._direction = "none";
+
           if (Phaser.Input.Keyboard.JustDown(this._spacebar)) {
             if (this._M.onFloor()) {
-              // player can only double jump if it is on the floor
               this._Andre = true;
               this._M.setVelocityY(-550);
+
             } 
           }
     }
+  }
 }

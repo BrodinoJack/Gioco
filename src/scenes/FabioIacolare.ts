@@ -14,11 +14,18 @@ export default class FabioIacolare extends Phaser.Scene {
     constructor() {    
         super({ key: "FabioIacolare" });
         
-      }   
+      } 
+      
+      preload(){
+        this.load.image("bloc","assets/Mappa/blocchi.png")
+        this.load.tilemapTiledJSON('Map',"assets/Mappa/Mappa.png")
+      }
+
 
 create(){
-
-  this._bg = this.add.tileSprite(0, 0, 1024, 600, "bg").setOrigin(0).setScrollFactor(0).setDepth(0);
+const map = this.make.tilemap({ key: "Map", tileWidth: 32, tileHeight: 18});
+const tileset = map.addTilesetImage("Blocchi", "bloc");
+const layer = map.createLayer("Pavimento", tileset, 500, 250)
 
   this._player = new Player({
     scene: this, x: this.game.canvas.width / 2, y:
