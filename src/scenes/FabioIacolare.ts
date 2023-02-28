@@ -11,7 +11,7 @@ export default class FabioIacolare extends Phaser.Scene {
 
  
 
-    constructor() {    
+    constructor() {
         super({ key: "FabioIacolare" });
         
       } 
@@ -39,7 +39,7 @@ const layer = map.createLayer("Pavimento", tileset, 500, 250)
 
   update(time: number, delta: number): void {
 
-    
+
     this._player.update(time, delta);
   }
 

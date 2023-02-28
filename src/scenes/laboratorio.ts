@@ -42,7 +42,7 @@
     this._dialogolabContainer = this.add.container().setAlpha(0).setDepth(10);
     this._dialogolabContainerText = this.add.text(this.game.canvas.width / 2, 100, "").setTint(0xff0000).setOrigin(.5);
      this._dialogolabContainerBackground = this.add.image(0, 0, "").setOrigin(.0).setScale(.1).setPosition(450,0);
-    this._dialogolabContainerBackground2=this.add.image(this.game.canvas.width / 2, 120, "dialogo_sinistra").setDepth(2).setScale(4,3).setPosition(390,267).setOrigin(0.5);
+    this._dialogolabContainerBackground2=this.add.image(this.game.canvas.width / 2, 120, "dialogo_destra").setDepth(2).setScale(4,3).setPosition(695,335).setOrigin(0.5);
   this._dialogolabContainer = this.add.container().setAlpha(0).setDepth(10);
 
 
@@ -50,9 +50,9 @@
     this._dialogolabContainerBackground,
      this._dialogolabContainerText,
      this._dialogolabContainerBackground2,
-     this.add.text(this.game.canvas.width / 2, 100, "Cosa stai facendo?! ").setTint(0x00000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setDepth(10).setScale(1.2).setPosition(240,220),
-     this.add.text(this.game.canvas.width / 2, 100, "Perche' sono chiuso qui dentro?!").setTint(0x00000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setDepth(10).setScale(1.2).setPosition(240,245),
-     this.add.image(0, 0, "freccia").setOrigin(0.5).setScale(0.1).setDepth(15).setPosition(1010,470).setInteractive()
+     this.add.text(this.game.canvas.width / 2, 100, "Cosa stai facendo?! ").setTint(0x00000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setDepth(10).setScale(1.2).setPosition(550,280),
+     this.add.text(this.game.canvas.width / 2, 100, "Perche' sono chiuso qui dentro?!").setTint(0x00000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setDepth(10).setScale(1.2).setPosition(540,310),
+     this.add.image(0, 0, "freccia").setOrigin(0.5).setScale(0.4).setDepth(15).setPosition(1010,470).setInteractive()
      .on("pointerdown", () => {
       this.closedialogolab(),
     this.opendialogolab2();
@@ -62,16 +62,16 @@
   this._dialogolab2Container = this.add.container().setAlpha(0).setDepth(10);
     this._dialogolab2ContainerText = this.add.text(this.game.canvas.width / 2, 100, "").setTint(0xff0000).setOrigin(.5);
      this._dialogolab2ContainerBackground = this.add.image(0, 0, "").setOrigin(.0).setScale(.1).setPosition(450,0);
-    this._dialogolab2ContainerBackground2=this.add.image(this.game.canvas.width / 2, 120, "dialogo_destra").setDepth(2).setScale(4,3).setPosition(610,280).setOrigin(0.5);
+    this._dialogolab2ContainerBackground2=this.add.image(this.game.canvas.width / 2, 120, "dialogo_sinistra").setDepth(2).setScale(4,3).setPosition(345,330).setOrigin(0.5);
   this._dialogolab2Container = this.add.container().setAlpha(0).setDepth(10);
 
   this._dialogolab2Container.add([
     this._dialogolab2ContainerBackground,
      this._dialogolab2ContainerText,
      this._dialogolab2ContainerBackground2,
-     this.add.text(this.game.canvas.width / 2, 100, "Volevi tornare nel passato ").setTint(0x00000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setDepth(10).setScale(1.2).setPosition(500,230),
-     this.add.text(this.game.canvas.width / 2, 100, "o sbaglio ragazzo?").setTint(0x00000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setDepth(10).setScale(1.2).setPosition(500,265),
-     this.add.image(0, 0, "freccia").setOrigin(0.5).setScale(0.1).setPosition(1010,470).setDepth(15).setInteractive()
+     this.add.text(this.game.canvas.width / 2, 100, "Volevi tornare nel passato ").setTint(0x00000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setDepth(10).setScale(1.2).setPosition(200,280),
+     this.add.text(this.game.canvas.width / 2, 100, "o sbaglio ragazzo?").setTint(0x00000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setDepth(10).setScale(1.2).setPosition(200,310),
+     this.add.image(0, 0, "freccia").setOrigin(0.5).setScale(0.4).setPosition(1010,470).setDepth(15).setInteractive()
      .on("pointerdown", () => {
     this.closedialogolab2();
     this.opendialogolab3();
@@ -83,16 +83,16 @@
   this._dialogolab3Container = this.add.container().setAlpha(0).setDepth(10);
     this._dialogolab3ContainerText = this.add.text(this.game.canvas.width / 2, 100, "").setTint(0xff0000).setOrigin(.5);
      this._dialogolab3ContainerBackground = this.add.image(0, 0, "").setOrigin(.0).setScale(.1).setPosition(450,0);
-    this._dialogolab3ContainerBackground2=this.add.image(this.game.canvas.width / 2, 120, "dialogo_sinistra").setDepth(2).setScale(4,3).setPosition(390,267).setOrigin(0.5);
+    this._dialogolab3ContainerBackground2=this.add.image(this.game.canvas.width / 2, 120, "dialogo_destra").setDepth(2).setScale(4,3).setPosition(695,335).setOrigin(0.5);
   this._dialogolab3Container = this.add.container().setAlpha(0).setDepth(10);
 
   this._dialogolab3Container.add([
     this._dialogolab3ContainerBackground,
      this._dialogolab3ContainerText,
      this._dialogolab3ContainerBackground2,
-     this.add.text(this.game.canvas.width / 2, 100, "Quindi esiste davvero ").setTint(0x00000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setDepth(10).setScale(1.2).setPosition(240,220),
-     this.add.text(this.game.canvas.width / 2, 100, "una cosa del genere").setTint(0x00000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setDepth(10).setScale(1.2).setPosition(240,245),
-     this.add.image(0, 0, "freccia").setOrigin(0.5).setScale(0.1).setDepth(15).setPosition(1010,470).setInteractive()
+     this.add.text(this.game.canvas.width / 2, 100, "Quindi esiste davvero ").setTint(0x00000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setDepth(10).setScale(1.2).setPosition(570,280),
+     this.add.text(this.game.canvas.width / 2, 100, "una cosa del genere").setTint(0x00000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setDepth(10).setScale(1.2).setPosition(570,310),
+     this.add.image(0, 0, "freccia").setOrigin(0.5).setScale(0.4).setDepth(15).setPosition(1010,470).setInteractive()
      .on("pointerdown", () => {
       this.closedialogolab3(),
     this.startGame();
@@ -106,7 +106,7 @@
     .setDepth(100)
     .setScale(0.3)
     .setPosition(915,480)
-    .setTint(0x000000000)
+    .setTint(0xffffff)
     .on("pointerup", () => {
       this._dialogolab.setAlpha(0)
       this._dialogolab.removeInteractive();
