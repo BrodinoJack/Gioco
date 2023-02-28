@@ -1,7 +1,10 @@
 import GamePlay from "./GamePlay";
 
 export default class Hud extends Phaser.Scene {
-private _life:Phaser.GameObjects.Image;
+  private _vita: Phaser.GameObjects.Image;
+  private _tre: Phaser.GameObjects.Text;
+
+
   constructor() {
     super({
       key: "Hud",
@@ -11,19 +14,11 @@ private _life:Phaser.GameObjects.Image;
   preload() { }
 
   create() {
-    this._life= this.add.image(this.game.canvas.width/ 2,100, "life").setPosition(100,900);
-    //console.log("create:HUD")
-
-
+    this._vita=this.add.image(this.game.canvas.width/ 2,100, "cuore").setPosition(100,900)
+    this._tre=this.add.text(this.game.canvas.width / 2,100, "3").setPosition(100,850).setTint(0xff0000)
   }
-
-
-
-  private gameOver() {
-
-    this.scene.stop("Hud");
-    this.scene.stop("GamePlay");
-    this.scene.start("GameOver");
-
+ update(time: number, delta: number): void {
+     this._vita.update("FabioIacolare")
+     this._tre.update("FabioIacolare")
+    }
   }
-}

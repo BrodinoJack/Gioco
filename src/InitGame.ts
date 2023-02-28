@@ -10,6 +10,7 @@ import FabioIacolare from "./scenes/FabioIacolare";
 import laboratorio from "./scenes/laboratorio";
 import { GameData } from "./GameData";
 
+
 window.addEventListener("load", () => {
 
   const config: any = {
