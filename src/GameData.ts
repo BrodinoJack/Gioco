@@ -18,7 +18,7 @@ export let GameData: any = {
   spritesheets: [
     {
       name: "Main",
-      path: "assets/images/Gambe.png",
+      path: "assets/images/A_ritagliato2.0.png",
       width: 18,
       height: 50,
       frames: 10,
@@ -113,6 +113,10 @@ export let GameData: any = {
           {
             name: "dialogo_sinistra",
             path: "assets/images/dialogo_sinistra.png",
+          },
+          {
+            name: "labs",
+            path: "assets/images/labs.png",
           },
          
 ],

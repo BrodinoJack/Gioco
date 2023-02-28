@@ -1,7 +1,6 @@
 export default class scienziato extends Phaser.Scene {
   private _bar:Phaser.GameObjects.TileSprite;
   private _dialogo:Phaser.GameObjects.BitmapText;
-  private _dialogo2:Phaser.GameObjects.BitmapText;
 
   //container 1
   private _dialogoContainer: Phaser.GameObjects.Container;
@@ -87,7 +86,7 @@ export default class scienziato extends Phaser.Scene {
      this._dialogoContainerBackground2,
      this.add.text(this.game.canvas.width / 2, 100, "Forestiero, e' da un po' di tempo che ").setTint(0x00000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setDepth(10).setScale(1.2).setPosition(240,220),
      this.add.text(this.game.canvas.width / 2, 100, "ti vedo da queste parti, da dove vieni?").setTint(0x00000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setDepth(10).setScale(1.2).setPosition(240,245),
-     this.add.image(0, 0, "freccia").setOrigin(0.5).setScale(0.1).setDepth(15).setPosition(1010,420).setInteractive()
+     this.add.image(0, 0, "freccia").setOrigin(0.5).setScale(0.1).setDepth(15).setPosition(1010,470).setInteractive()
      .on("pointerdown", () => {
       this.closedialogo(),
     this.opendialogo2();
@@ -108,7 +107,7 @@ export default class scienziato extends Phaser.Scene {
      this._dialogo2ContainerBackground2,
      this.add.text(this.game.canvas.width / 2, 100, "Vengo da una Nazione ").setTint(0x00000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setDepth(10).setScale(1.2).setPosition(500,230),
      this.add.text(this.game.canvas.width / 2, 100, "del sud chiamata Clover").setTint(0x00000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setDepth(10).setScale(1.2).setPosition(500,265),
-     this.add.image(0, 0, "freccia").setOrigin(0.5).setScale(0.1).setPosition(1010,420).setDepth(15).setInteractive()
+     this.add.image(0, 0, "freccia").setOrigin(0.5).setScale(0.1).setPosition(1010,470).setDepth(15).setInteractive()
      .on("pointerdown", () => {
     this.closedialogo2();
     this.opendialogo3();
@@ -129,7 +128,7 @@ export default class scienziato extends Phaser.Scene {
      this._dialogo3ContainerBackground2,
      this.add.text(this.game.canvas.width / 2, 100, "Ah, quella nazione che ha perso ").setTint(0x00000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setDepth(10).setScale(1.2).setPosition(240,220),
      this.add.text(this.game.canvas.width / 2, 100, "la guerra tempo fa. *cough *cough").setTint(0x00000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setDepth(10).setScale(1.2).setPosition(240,245),
-     this.add.image(0, 0, "freccia").setOrigin(0.5).setScale(0.1).setDepth(15).setPosition(1010,420).setInteractive()
+     this.add.image(0, 0, "freccia").setOrigin(0.5).setScale(0.1).setDepth(15).setPosition(1010,470).setInteractive()
      .on("pointerdown", () => {
       this.closedialogo3(),
     this.opendialogo4();
@@ -151,7 +150,7 @@ export default class scienziato extends Phaser.Scene {
      this.add.text(this.game.canvas.width / 2, 100, "vorrei ci fosse un modo per  ").setTint(0x00000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setDepth(10).setScale(1.2).setPosition(480,233),
      this.add.text(this.game.canvas.width / 2, 100, "rimediare ai miei sbagli come ").setTint(0x00000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setDepth(10).setScale(1.2).setPosition(480,253),
      this.add.text(this.game.canvas.width / 2, 100, " ad esempio tornare nel passato").setTint(0x00000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setDepth(10).setScale(1.2).setPosition(480,273),
-     this.add.image(0, 0, "freccia").setOrigin(0.5).setScale(0.1).setPosition(1010,420).setDepth(15).setInteractive()
+     this.add.image(0, 0, "freccia").setOrigin(0.5).setScale(0.1).setPosition(1010,470).setDepth(15).setInteractive()
      .on("pointerdown", () => {
     this.closedialogo4();
     this.opendialogo5();
@@ -171,7 +170,7 @@ export default class scienziato extends Phaser.Scene {
      this.add.text(this.game.canvas.width / 2, 100, "Ho io qualcosa che fa al caso tuo,  ").setTint(0x00000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setDepth(10).setScale(1.2).setPosition(240,210),
      this.add.text(this.game.canvas.width / 2, 100, "domani recati nel mio laboratorio").setTint(0x00000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setDepth(10).setScale(1.2).setPosition(240,230),
      this.add.text(this.game.canvas.width / 2, 100, "via WolfStreet 1/5").setTint(0x00000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setDepth(10).setScale(1.2).setPosition(240,250),
-     this.add.image(0, 0, "freccia").setOrigin(0.5).setScale(0.1).setDepth(15).setPosition(1010,420).setInteractive()
+     this.add.image(0, 0, "freccia").setOrigin(0.5).setScale(0.1).setDepth(15).setPosition(1010,470).setInteractive()
      .on("pointerdown", () => {
       this.closedialogo5(),
     this.opendialogo6();
@@ -190,7 +189,7 @@ export default class scienziato extends Phaser.Scene {
      this._dialogo6ContainerText,
      this._dialogo6ContainerBackground2,
      this.add.text(this.game.canvas.width / 2, 100, "Saresti una specie di scienziato? ").setTint(0x00000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setDepth(10).setScale(1.2).setPosition(470,240),
-     this.add.image(0, 0, "freccia").setOrigin(0.5).setScale(0.1).setPosition(1010,420).setDepth(15).setInteractive()
+     this.add.image(0, 0, "freccia").setOrigin(0.5).setScale(0.1).setPosition(1010,470).setDepth(15).setInteractive()
      .on("pointerdown", () => {
     this.closedialogo6();
     this.opendialogo7();
@@ -208,9 +207,9 @@ export default class scienziato extends Phaser.Scene {
     this._dialogo7ContainerBackground,
      this._dialogo7ContainerText,
      this._dialogo7ContainerBackground2,
-     this.add.text(this.game.canvas.width / 2, 100, "Haha ragazzo, sono uno scienziato, ").setTint(0x00000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setDepth(10).setScale(1.2).setPosition(240,220),
+     this.add.text(this.game.canvas.width / 2, 100, "Haha ragazzo, lo scoprirai, ").setTint(0x00000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setDepth(10).setScale(1.2).setPosition(240,220),
      this.add.text(this.game.canvas.width / 2, 100, "a domani. *cough *cough").setTint(0x00000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setDepth(10).setScale(1.2).setPosition(240,245),
-     this.add.image(0, 0, "freccia").setOrigin(0.5).setScale(0.1).setDepth(15).setPosition(1010,420).setInteractive()
+     this.add.image(0, 0, "freccia").setOrigin(0.5).setScale(0.1).setDepth(15).setPosition(1010,470).setInteractive()
      .on("pointerdown", () => {
       this.closedialogo7();
       this.startGame();
@@ -229,6 +228,7 @@ export default class scienziato extends Phaser.Scene {
     .setPosition(915,480)
     .setTint(0xffffff)
     .on("pointerup", () => {
+      this._dialogo.setAlpha(0)
       this._dialogo.removeInteractive();
     })
     .on("pointerover", () => {
@@ -356,10 +356,10 @@ export default class scienziato extends Phaser.Scene {
                     })
                   }
 
-
 startGame() {
   this.scene.stop("scienziato");
   this.scene.start("laboratorio");
+  this.music_bar.stop();
 }
 
 update(time: number, delta: number): void {
