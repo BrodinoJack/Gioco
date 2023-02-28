@@ -8,8 +8,8 @@ export default class Main extends Phaser.GameObjects.Sprite implements IMain{
     private _M: Phaser.Physics.Arcade.Body; 
     private _d: Phaser.Input.Keyboard.Key;
     private _a: Phaser.Input.Keyboard.Key;
-
-
+    private _spacebar: Phaser.Input.Keyboard.Key;
+    private _Andre: boolean = false
 
 
 constructor(params: genericConfig) {
@@ -26,10 +26,12 @@ constructor(params: genericConfig) {
       .setImmovable(true)
       .setGravity(0, 1200)
       .setMaxVelocity(250, 550)
-      .setGravityY(1000)
+      .setGravityY(1500)
       
       this._d = this._scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
       this._a = this._scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
+      this._spacebar = this._scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
+
 
       let _animation : Phaser.Types.Animations.Animation = {
 
@@ -52,15 +54,21 @@ constructor(params: genericConfig) {
             
         }
     update(time: number, delta: number) {
-        if (this._d.isDown && this._M.blocked.down) {
-            this.anims.play('idle', true);
-            this._M.setVelocityY(-550);
+        if (this._d.isDown ) {
+            this.anims.play('move', true);
+            this._M.setVelocityX(100);
           }
           if (this._a.isDown) {
-            this.setFlipX(false);
             this.anims.play('move', true);
-            this._M.setAccelerationX(-250)
+            this._M.setVelocityX(-100)
       
+          }
+          if (Phaser.Input.Keyboard.JustDown(this._spacebar)) {
+            if (this._M.onFloor()) {
+              // player can only double jump if it is on the floor
+              this._Andre = true;
+              this._M.setVelocityY(-550);
+            } 
           }
     }
 }

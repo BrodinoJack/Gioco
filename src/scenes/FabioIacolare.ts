@@ -25,7 +25,7 @@ create(){
       450, key: "Main"
   });
     this.physics.add.collider(this._player, this.L, ()=>{
-    });
+    });    
       }
 
 
