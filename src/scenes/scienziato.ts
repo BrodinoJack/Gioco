@@ -21,13 +21,11 @@ export default class scienziato extends Phaser.Scene {
   this._dialogoContainer = this.add.container().setAlpha(0).setDepth(10).setPosition(425,250);
   this._dialogoContainerText=this.add.text(this.game.canvas.width/2,100, "mammt").setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setTint(0xff0000).setScale(1.2)
   this._dialogoContainerBackground= this.add.image(this.game.canvas.width/ 2,100, "dialogo_sinistra").setAlpha(1).setOrigin(1).setPosition(425,250)
-  this.time.addEvent({
+ /* this.time.addEvent({
 		delay: 0,
-		callback: () => { console.log(this._dialogoContainer = this.add.container().setAlpha(0).setDepth(10).setPosition(425,250),
-      this._dialogoContainerText=this.add.text(this.game.canvas.width/2,100, "mammt").setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setTint(0xff0000).setScale(1.2),
-      this._dialogoContainerBackground= this.add.image(this.game.canvas.width/ 2,100, "dialogo_sinistra").setAlpha(1).setOrigin(1).setPosition(425,250)); },
+		callback: () => { console.log(
 		callbackScope: this
-		});
+		});*/
 
   
 

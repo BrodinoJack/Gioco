@@ -120,6 +120,10 @@ export let GameData: any = {
   {
     name: "_button",
     paths: ["assets/sounds/button.ogg", "assets/sounds/button.m4a"]
+  },
+  {
+    name: "_musicbar",
+    paths: ["assets/sounds/music-bar.ogg", "assets/sounds/music-bar.m4a"]
   }],
   audio: [],
   bitmapfont: [],
