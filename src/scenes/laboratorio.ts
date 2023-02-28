@@ -52,7 +52,7 @@
      this._dialogolabContainerBackground2,
      this.add.text(this.game.canvas.width / 2, 100, "Cosa stai facendo?! ").setTint(0x00000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setDepth(10).setScale(1.2).setPosition(550,280),
      this.add.text(this.game.canvas.width / 2, 100, "Perche' sono chiuso qui dentro?!").setTint(0x00000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setDepth(10).setScale(1.2).setPosition(540,310),
-     this.add.image(0, 0, "freccia").setOrigin(0.5).setScale(0.1).setDepth(15).setPosition(1010,470).setInteractive()
+     this.add.image(0, 0, "freccia").setOrigin(0.5).setScale(0.4).setDepth(15).setPosition(1010,470).setInteractive()
      .on("pointerdown", () => {
       this.closedialogolab(),
     this.opendialogolab2();
@@ -71,7 +71,7 @@
      this._dialogolab2ContainerBackground2,
      this.add.text(this.game.canvas.width / 2, 100, "Volevi tornare nel passato ").setTint(0x00000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setDepth(10).setScale(1.2).setPosition(200,280),
      this.add.text(this.game.canvas.width / 2, 100, "o sbaglio ragazzo?").setTint(0x00000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setDepth(10).setScale(1.2).setPosition(200,310),
-     this.add.image(0, 0, "freccia").setOrigin(0.5).setScale(0.1).setPosition(1010,470).setDepth(15).setInteractive()
+     this.add.image(0, 0, "freccia").setOrigin(0.5).setScale(0.4).setPosition(1010,470).setDepth(15).setInteractive()
      .on("pointerdown", () => {
     this.closedialogolab2();
     this.opendialogolab3();
@@ -92,7 +92,7 @@
      this._dialogolab3ContainerBackground2,
      this.add.text(this.game.canvas.width / 2, 100, "Quindi esiste davvero ").setTint(0x00000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setDepth(10).setScale(1.2).setPosition(570,280),
      this.add.text(this.game.canvas.width / 2, 100, "una cosa del genere").setTint(0x00000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setDepth(10).setScale(1.2).setPosition(570,310),
-     this.add.image(0, 0, "freccia").setOrigin(0.5).setScale(0.1).setDepth(15).setPosition(1010,470).setInteractive()
+     this.add.image(0, 0, "freccia").setOrigin(0.5).setScale(0.4).setDepth(15).setPosition(1010,470).setInteractive()
      .on("pointerdown", () => {
       this.closedialogolab3(),
     this.startGame();
