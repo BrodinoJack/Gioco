@@ -35,16 +35,6 @@ export default class Intro extends Phaser.Scene {
   private _Aereo22: Phaser.GameObjects.TileSprite;
   private _Aereo23: Phaser.GameObjects.TileSprite;
   private _Aereo24: Phaser.GameObjects.TileSprite;
-	private map: Phaser.Tilemaps.Tilemap;
-	private tileset1: Phaser.Tilemaps.Tileset;
-  private tileset2: Phaser.Tilemaps.Tileset;
-  private tileset3: Phaser.Tilemaps.Tileset;
-  private tileset4: Phaser.Tilemaps.Tileset;
-
-	private layer: Phaser.Tilemaps.TilemapLayer; 
-
-	private layer2: Phaser.Tilemaps.TilemapLayer;
-  
   constructor() {
     super({
       key: "Intro",
@@ -98,7 +88,7 @@ export default class Intro extends Phaser.Scene {
       this._creditsContainerBackground,
        this._creditsContainerText,
        this._creditsContainerBackground2,
-       this.add.text(this.game.canvas.width / 2, 100, "Creators").setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setScale(1.4).setPosition(475,15),
+       this.add.text(this.game.canvas.width / 2, 100, "Creators").setTint(0xff0000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setScale(1.4).setPosition(475,15),
        this.add.text(this.game.canvas.width / 2, 100, "Andrea Iacolare / andrue").setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setScale(1.4).setPosition(378,45),
        this.add.text(this.game.canvas.width / 2, 100, "Michele Pascarella / zozne").setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setScale(1.4).setPosition(378,75),
        this.add.text(this.game.canvas.width / 2, 100, "Fabio Iacolare / fasbruk").setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setScale(1.4).setPosition(378,105),
