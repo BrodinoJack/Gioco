@@ -6,7 +6,7 @@ import Hud from "./scenes/Hud";
 import GameOver from "./scenes/GameOver";
 import GamePlay from "./scenes/GamePlay";
 import scienziato from "./scenes/scienziato";
-import FabioIacolare from "./scenes/FabioIacolare";
+import FabioIacolare from "./scenes/Fabio";
 import { GameData } from "./GameData";
 
 window.addEventListener("load", () => {
@@ -26,13 +26,14 @@ window.addEventListener("load", () => {
       Preloader,
       Intro,
       Hud,
-      GamePlay,
+      GamePlay,  
       GameOver,
-      scienziato,
+      scienziato, 
       FabioIacolare
   
       
     ],
+   
 
     physics: {
       default: "arcade",

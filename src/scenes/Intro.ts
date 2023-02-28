@@ -38,46 +38,7 @@ export default class Intro extends Phaser.Scene {
 
     
 
-    /*this.map = this.make.tilemap({ key: "intro"});
-    this.cameras.main.setBounds(
-      0, 
-      0, 
-      this.map.widthInPixels, 
-      this.map.heightInPixels 
-    );
-        this.physics.world.setBounds(
-      0, 
-      0, 
-      this.map.widthInPixels, 
-      this.map.heightInPixels 
-    );
-	  this.tileset1 = this.map.addTilesetImage("blocchi");
-    this.tileset2 = this.map.addTilesetImage("car");
-    this.tileset3 = this.map.addTilesetImage("truck");
-    this.tileset4 = this.map.addTilesetImage("trash");
-
-    this.layer = this.map
-    .createLayer("Livello tile 1", this.tileset1, 0, 0)
-    .setDepth(9)
-    .setAlpha(1);
-    this.layer = this.map
-	  .createLayer("veicoli", this.tileset2, 0, 0)
-    .setDepth(9)
-	  .setAlpha(1);
-    this.layer = this.map
-	  .createLayer("veicoli", this.tileset3, 0, 0)
-	  .setDepth(9)
-	  .setAlpha(1);
-    this.layer = this.map
-	  .createLayer("prima veicoli", this.tileset4, 0, 0)
-	  .setDepth(9)
-	  .setAlpha(1);
-
-
-    this.layer2 = this.map
-	.createLayer("Livello tile 1", this.tileset1, 0, 0)
-	.setDepth(0)
-	.setAlpha(1);*/
+    
 
 
     this._Aereo=this.add.tileSprite(-200,10,0,0, "aereo").setOrigin(0).setDepth(1).setScale(.3);

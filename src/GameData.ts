@@ -18,7 +18,7 @@ export let GameData: any = {
   spritesheets: [
     {
       name: "Main",
-      path: "assets/images/Gambe.png",
+      path: "assets/images/A_ritagliato2.0.png",
       width: 18,
       height: 50,
       frames: 10,
@@ -31,38 +31,7 @@ export let GameData: any = {
       spacing: 2,
       margin: 1,
     },
-    {
-      name: "car",
-      path: "assets/map/macchine.png",
-      width: 83,
-      height: 58,
-      spacing: 2,
-      margin: 1,
-    },
-    {
-      name: "intro",
-      path: "assets/map/intro.png",
-      width: 32,
-      height: 32,
-      spacing: 2,
-      margin: 1,
-    },
-    {
-      name: "truck",
-      path: "assets/map/camion.png",
-      width: 261,
-      height: 107,
-      spacing: 2,
-      margin: 1,
-    },
-    {
-      name: "trash",
-      path: "assets/map/immondizia.png",
-      width: 30,
-      height: 30,
-      spacing: 2,
-      margin: 1,
-    },
+
   ],
 
   images: [
@@ -73,10 +42,6 @@ export let GameData: any = {
     {
       name: "aereo",
       path: "assets/images/aereo.png",
-    },
-    {
-      name: "Pavimento",
-      path: "assets/images/P.png",
     },
     {
     name: "popup",
@@ -102,10 +67,10 @@ export let GameData: any = {
           name: "bar_contipi",
           path: "assets/images/bar_contipi.png",
           },
-           {
-             name: "Dio",
-             path: "assets/images/Dio.png",
-             },
+              {
+               name: "Pavimento",
+               path: "assets/images/Pav.png",
+               },
 ],
   atlas: [],
   sounds: [{
