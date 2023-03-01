@@ -17,11 +17,19 @@ export let GameData: any = {
 
   spritesheets: [
     {
+      name: "Pav",
+      path: "assets/Mappa/Blocchi.png",
+      width: 32,
+      height: 32,
+      spacing: 1,
+      margin: 1,
+    },
+    {
       name: "Main",
-      path: "assets/images/corsalarghezza28.png",
-      width: 28,
-      height: 40,
-      frames: 12,
+      path: "assets/images/Corsa.png",
+      width: 40,
+      height: 43,
+      frames: 11,
     },
     {
       name: "Fermo",
@@ -125,8 +133,9 @@ export let GameData: any = {
   audio: [],
   bitmapfont: [],
   tilemaps: [
-    
-  
-	],
-
+    {
+      key: "Map",
+      path: "assets/Mappa/Mappa.json",
+    },
+  ],
 };

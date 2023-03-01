@@ -37,7 +37,7 @@ constructor(params: genericConfig) {
 
         key: "move",
         frames: this.anims.generateFrameNumbers("Main", {
-          frames: [0, 1, 2, 3, 4, 5, 6, 7]
+          frames: [0, 1, 2, 3, 4, 5, 6, 7,8,9,10]
         }),
         frameRate: 10,
         yoyo: false,
@@ -80,13 +80,13 @@ constructor(params: genericConfig) {
         } 
       }
         if (this._d.isDown ) {
-          this.setFlipX(true);
+          this.setFlipX(false);
             this.anims.play('move', true);
             this._M.setVelocityX(100);
             this._direction = "right";
           }
           else if (this._a.isDown) {
-            this.setFlipX(false);
+            this.setFlipX(true);
             this.anims.play('move', true);
             this._M.setVelocityX(-100)
             this._direction = "left";
