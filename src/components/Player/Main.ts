@@ -1,6 +1,5 @@
 import IMain from "./IMain";
 import FabioIacolare from "../../scenes/FabioIacolare";
-import livello from "../../scenes/livello";
 
 export default class Main extends Phaser.GameObjects.Sprite implements IMain{
     protected _config: genericConfig;
@@ -38,9 +37,9 @@ constructor(params: genericConfig) {
 
         key: "move",
         frames: this.anims.generateFrameNumbers("Main", {
-          frames: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9,10,11,12,13,14,15,16,17,18,19,20]
+          frames: [0, 1, 2, 3, 4, 5, 6, 7]
         }),
-        frameRate: 30,
+        frameRate: 10,
         yoyo: false,
         repeat: -1
       };
@@ -73,14 +72,21 @@ constructor(params: genericConfig) {
 
         
     update(time: number, delta: number) {
+      if (Phaser.Input.Keyboard.JustDown(this._spacebar)) {
+        if (this._M.onFloor()) {
+          this._Andre = true;
+          this._M.setVelocityY(-550);
+
+        } 
+      }
         if (this._d.isDown ) {
-          this.setFlipX(false);
+          this.setFlipX(true);
             this.anims.play('move', true);
             this._M.setVelocityX(100);
             this._direction = "right";
           }
           else if (this._a.isDown) {
-            this.setFlipX(true);
+            this.setFlipX(false);
             this.anims.play('move', true);
             this._M.setVelocityX(-100)
             this._direction = "left";
@@ -90,13 +96,7 @@ constructor(params: genericConfig) {
             this.anims.play('fermo', true);
             this._direction = "none";
 
-          if (Phaser.Input.Keyboard.JustDown(this._spacebar)) {
-            if (this._M.onFloor()) {
-              this._Andre = true;
-              this._M.setVelocityY(-550);
-
-            } 
-          }
+         
     }
   }
 }

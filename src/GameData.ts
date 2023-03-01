@@ -18,16 +18,16 @@ export let GameData: any = {
   spritesheets: [
     {
       name: "Main",
-      path: "assets/images/A_ritagliato2.0.png",
-      width: 30,
-      height: 70,
-      frames: 30,
+      path: "assets/images/corsalarghezza28.png",
+      width: 28,
+      height: 40,
+      frames: 12,
     },
     {
       name: "Fermo",
       path: "assets/images/Copp.png",
-      width: 20,
-      height: 50,
+      width: 28,
+      height: 40,
       frames: 4,
     },
     {
@@ -93,10 +93,19 @@ export let GameData: any = {
             name: "labs",
             path: "assets/images/labs.png",
           },
+
+          {
+            name: "stradabg",
+            path: "assets/imagestradaty.png",
+          },
+          {
+            name: "intro-image",
+            path: "assets/images/introcity.png",
+            },
          
 ],
   atlas: [],
-  sounds: [{
+  sous: [{
     name: "sfx",
     jsonpath: "assets/sounds/sfx.json",
     paths: ["assets/sounds/sfx.ogg", "assets/sounds/sfx.m4a"]
