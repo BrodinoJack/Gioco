@@ -19,9 +19,9 @@ export let GameData: any = {
     {
       name: "Main",
       path: "assets/images/A_ritagliato2.0.png",
-      width: 18,
+      width: 30,
       height: 70,
-      frames: 10,
+      frames: 30,
     },
     {
       name: "Fermo",

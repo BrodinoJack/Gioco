@@ -1,5 +1,6 @@
 import IMain from "./IMain";
 import FabioIacolare from "../../scenes/FabioIacolare";
+import livello from "../../scenes/livello";
 
 export default class Main extends Phaser.GameObjects.Sprite implements IMain{
     protected _config: genericConfig;
@@ -37,9 +38,9 @@ constructor(params: genericConfig) {
 
         key: "move",
         frames: this.anims.generateFrameNumbers("Main", {
-          frames: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+          frames: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9,10,11,12,13,14,15,16,17,18,19,20]
         }),
-        frameRate: 10,
+        frameRate: 30,
         yoyo: false,
         repeat: -1
       };
