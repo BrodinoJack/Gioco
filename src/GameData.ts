@@ -18,7 +18,7 @@ export let GameData: any = {
   spritesheets: [
     {
       name: "Pav",
-      path: "assets/Mappa/Blocchi.png",
+      path: "assets/Mappa/blocchi.png",
       width: 32,
       height: 32,
       spacing: 1,
@@ -51,7 +51,7 @@ export let GameData: any = {
   images: [
     {
       name: "bg",
-      path: "assets/images/introcity.png",
+      path: "assets/Sfondo/landscape.png",
     },
     {
       name: "player_intro",
@@ -68,10 +68,6 @@ export let GameData: any = {
    {
     name: "options",
     path: "assets/images/options.png",
-    },
-   {
-    name: "galilei",
-    path: "assets/images/galilei.png",
     },
     {
       name: "Sfondo",
