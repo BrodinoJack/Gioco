@@ -17,22 +17,30 @@ export let GameData: any = {
 
   spritesheets: [
     {
+      name: "Pav",
+      path: "assets/Mappa/Blocchi.png",
+      width: 32,
+      height: 32,
+      spacing: 1,
+      margin: 1,
+    },
+    {
       name: "Main",
-      path: "assets/images/A_ritagliato2.0.png",
-      width: 18,
-      height: 70,
-      frames: 10,
+      path: "assets/images/Corsa.png",
+      width: 40,
+      height: 43,
+      frames: 11,
     },
     {
       name: "Fermo",
       path: "assets/images/Copp.png",
-      width: 20,
-      height: 50,
+      width: 28,
+      height: 40,
       frames: 4,
     },
     {
-      name: "intro",
-      path: "assets/map/intro.png",
+      name: "sfondo",
+      path: "assets/map/sfondo.png",
       width: 32,
       height: 32,
       spacing: 2,
@@ -93,6 +101,15 @@ export let GameData: any = {
             name: "labs",
             path: "assets/images/labs.png",
           },
+
+          {
+            name: "stradabg",
+            path: "assets/imagestradaty.png",
+          },
+          {
+            name: "cuore",
+            path: "assets/images/cuore.png",
+            },
          
 ],
   atlas: [],
@@ -116,6 +133,9 @@ export let GameData: any = {
   audio: [],
   bitmapfont: [],
   tilemaps: [
-	],
-
+    {
+      key: "Map",
+      path: "assets/Mappa/Mappa.json",
+    },
+  ],
 };

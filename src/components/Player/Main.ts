@@ -37,7 +37,7 @@ constructor(params: genericConfig) {
 
         key: "move",
         frames: this.anims.generateFrameNumbers("Main", {
-          frames: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+          frames: [0, 1, 2, 3, 4, 5, 6, 7,8,9,10]
         }),
         frameRate: 10,
         yoyo: false,
@@ -72,6 +72,13 @@ constructor(params: genericConfig) {
 
         
     update(time: number, delta: number) {
+      if (Phaser.Input.Keyboard.JustDown(this._spacebar)) {
+        if (this._M.onFloor()) {
+          this._Andre = true;
+          this._M.setVelocityY(-550);
+
+        } 
+      }
         if (this._d.isDown ) {
           this.setFlipX(false);
             this.anims.play('move', true);
@@ -89,13 +96,7 @@ constructor(params: genericConfig) {
             this.anims.play('fermo', true);
             this._direction = "none";
 
-          if (Phaser.Input.Keyboard.JustDown(this._spacebar)) {
-            if (this._M.onFloor()) {
-              this._Andre = true;
-              this._M.setVelocityY(-550);
-
-            } 
-          }
+         
     }
   }
 }
