@@ -1,4 +1,4 @@
-import Preloader from "./Preloader";
+
 export default class GamePlay extends Phaser.Scene {
   private _illustrazione: Phaser.GameObjects.Text;
   private _cliccare: Phaser.GameObjects.Text;

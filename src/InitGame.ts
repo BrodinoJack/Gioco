@@ -8,7 +8,9 @@ import GamePlay from "./scenes/GamePlay";
 import scienziato from "./scenes/scienziato";
 import FabioIacolare from "./scenes/FabioIacolare";
 import laboratorio from "./scenes/laboratorio";
+import livello from "./scenes/livello";
 import { GameData } from "./GameData";
+
 
 window.addEventListener("load", () => {
 
@@ -27,14 +29,16 @@ window.addEventListener("load", () => {
       Preloader,
       Intro,
       Hud,
-      GamePlay,
+      GamePlay,  
       GameOver,
       scienziato,
       FabioIacolare,
+      livello,
       laboratorio
   
       
     ],
+   
 
     physics: {
       default: "arcade",

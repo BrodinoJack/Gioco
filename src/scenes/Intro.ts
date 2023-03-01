@@ -35,16 +35,6 @@ export default class Intro extends Phaser.Scene {
   private _Aereo22: Phaser.GameObjects.TileSprite;
   private _Aereo23: Phaser.GameObjects.TileSprite;
   private _Aereo24: Phaser.GameObjects.TileSprite;
-	private map: Phaser.Tilemaps.Tilemap;
-	private tileset1: Phaser.Tilemaps.Tileset;
-  private tileset2: Phaser.Tilemaps.Tileset;
-  private tileset3: Phaser.Tilemaps.Tileset;
-  private tileset4: Phaser.Tilemaps.Tileset;
-
-	private layer: Phaser.Tilemaps.TilemapLayer; 
-
-	private layer2: Phaser.Tilemaps.TilemapLayer;
-  
   constructor() {
     super({
       key: "Intro",
@@ -59,46 +49,7 @@ export default class Intro extends Phaser.Scene {
 
     
 
-    /*this.map = this.make.tilemap({ key: "intro"});
-    this.cameras.main.setBounds(
-      0, 
-      0, 
-      this.map.widthInPixels, 
-      this.map.heightInPixels 
-    );
-        this.physics.world.setBounds(
-      0, 
-      0, 
-      this.map.widthInPixels, 
-      this.map.heightInPixels 
-    );
-	  this.tileset1 = this.map.addTilesetImage("blocchi");
-    this.tileset2 = this.map.addTilesetImage("car");
-    this.tileset3 = this.map.addTilesetImage("truck");
-    this.tileset4 = this.map.addTilesetImage("trash");
-
-    this.layer = this.map
-    .createLayer("Livello tile 1", this.tileset1, 0, 0)
-    .setDepth(9)
-    .setAlpha(1);
-    this.layer = this.map
-	  .createLayer("veicoli", this.tileset2, 0, 0)
-    .setDepth(9)
-	  .setAlpha(1);
-    this.layer = this.map
-	  .createLayer("veicoli", this.tileset3, 0, 0)
-	  .setDepth(9)
-	  .setAlpha(1);
-    this.layer = this.map
-	  .createLayer("prima veicoli", this.tileset4, 0, 0)
-	  .setDepth(9)
-	  .setAlpha(1);
-
-
-    this.layer2 = this.map
-	.createLayer("Livello tile 1", this.tileset1, 0, 0)
-	.setDepth(0)
-	.setAlpha(1);*/
+    
 
 
     this._Aereo=this.add.tileSprite(-300,40,0,0, "aereo").setOrigin(0).setDepth(1).setScale(.24,.2);
@@ -137,7 +88,7 @@ export default class Intro extends Phaser.Scene {
       this._creditsContainerBackground,
        this._creditsContainerText,
        this._creditsContainerBackground2,
-       this.add.text(this.game.canvas.width / 2, 100, "Creators").setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setScale(1.4).setPosition(475,15),
+       this.add.text(this.game.canvas.width / 2, 100, "Creators").setTint(0xff0000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setScale(1.4).setPosition(475,15),
        this.add.text(this.game.canvas.width / 2, 100, "Andrea Iacolare / andrue").setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setScale(1.4).setPosition(378,45),
        this.add.text(this.game.canvas.width / 2, 100, "Michele Pascarella / zozne").setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setScale(1.4).setPosition(378,75),
        this.add.text(this.game.canvas.width / 2, 100, "Fabio Iacolare / fasbruk").setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setScale(1.4).setPosition(378,105),

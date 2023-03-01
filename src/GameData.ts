@@ -20,12 +20,19 @@ export let GameData: any = {
       name: "Main",
       path: "assets/images/A_ritagliato2.0.png",
       width: 18,
-      height: 50,
+      height: 70,
       frames: 10,
     },
     {
-      name: "intro",
-      path: "assets/map/intro.png",
+      name: "Fermo",
+      path: "assets/images/Copp.png",
+      width: 20,
+      height: 50,
+      frames: 4,
+    },
+    {
+      name: "sfondo",
+      path: "assets/map/sfondo.png",
       width: 32,
       height: 32,
       spacing: 2,
@@ -45,10 +52,6 @@ export let GameData: any = {
     {
       name: "aereo",
       path: "assets/images/aereo.png",
-    },
-    {
-      name: "Pavimento",
-      path: "assets/images/P.png",
     },
     {
     name: "popup",
@@ -113,6 +116,12 @@ export let GameData: any = {
   audio: [],
   bitmapfont: [],
   tilemaps: [
+    {
+      key: "level-0",
+      path: "assets/map/level-0.json",
+      },
+    
+  
 	],
 
 };
