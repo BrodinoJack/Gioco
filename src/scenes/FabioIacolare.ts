@@ -26,7 +26,7 @@ export default class FabioIacolare extends Phaser.Scene {
 
 
 create(){
-  this._vita= this.add.image(this.game.canvas.width/ 2,100, "cuore").setPosition(450,250).setScale(1)
+ // this._vita= this.add.image(this.game.canvas.width/ 2,100, "cuore").setPosition(450,250).setScale(1)
 
   this.add.tileSprite(500, 250, 0, 0, "blocconero").setOrigin(1).setPosition(1024,600); 
   this.add.tileSprite(500, 250, 0, 0, "strada").setOrigin(1).setPosition(1024,600); 
