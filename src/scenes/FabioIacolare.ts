@@ -26,7 +26,8 @@ export default class FabioIacolare extends Phaser.Scene {
 
 
 create(){
- // this._vita= this.add.image(this.game.canvas.width/ 2,100, "cuore").setPosition(450,250).setScale(1)
+ this._vita= this.add.image(this.game.canvas.width/ 2,100, "cuore").setPosition(450,250).setScale(1).setAlpha(1),
+ this._tre= this.add.text(this.game.canvas.width/ 2,100, "3").setPosition(450,300).setScale(1).setAlpha(1).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif'),
 
   this.add.tileSprite(500, 250, 0, 0, "blocconero").setOrigin(1).setPosition(1024,600); 
   this.add.tileSprite(500, 250, 0, 0, "strada").setOrigin(1).setPosition(1024,600); 

@@ -105,7 +105,7 @@ export let GameData: any = {
          
 ],
   atlas: [],
-  sous: [{
+  sounds: [{
     name: "sfx",
     jsonpath: "assets/sounds/sfx.json",
     paths: ["assets/sounds/sfx.ogg", "assets/sounds/sfx.m4a"]
@@ -125,10 +125,6 @@ export let GameData: any = {
   audio: [],
   bitmapfont: [],
   tilemaps: [
-    {
-      key: "level-0",
-      path: "assets/map/level-0.json",
-      },
     
   
 	],
