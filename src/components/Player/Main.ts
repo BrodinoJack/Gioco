@@ -37,7 +37,7 @@ constructor(params: genericConfig) {
 
         key: "move",
         frames: this.anims.generateFrameNumbers("Main", {
-          frames: [0, 1, 2, 3, 4, 5, 6, 7,8,9,10]
+          frames: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
         }),
         frameRate: 10,
         yoyo: false,
@@ -46,20 +46,6 @@ constructor(params: genericConfig) {
       
       this.anims.create(_animation);
       this.setDepth(11); 
-      
-      let _Fracesco : Phaser.Types.Animations.Animation = {
-
-        key: "fermo",
-        frames: this.anims.generateFrameNumbers("Fermo", {
-          frames: [0, 1, 2, 3]
-        }),
-        frameRate: 5,
-        yoyo: false,
-        repeat: -1
-      };
-      
-      this.anims.create(_animation);
-      this.setDepth(11);   
          
 		}
 		
@@ -90,13 +76,11 @@ constructor(params: genericConfig) {
             this.anims.play('move', true);
             this._M.setVelocityX(-100)
             this._direction = "left";
-          }
-          else {
+          }else{
             this._M.setVelocityX(0);
-            this.anims.play('fermo', true);
+            this.anims.stop;
             this._direction = "none";
-
+          }
          
-    }
   }
 }
