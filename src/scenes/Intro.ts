@@ -39,9 +39,12 @@ export default class Intro extends Phaser.Scene {
     super({
       key: "Intro",
     });
-
-
+    
   }
+
+
+
+  
 
   create() {
     this.add.tileSprite(500, 250, 0, 0, "intro-image").setOrigin(1).setPosition(1024,600); 
@@ -175,8 +178,6 @@ export default class Intro extends Phaser.Scene {
 
     this.scene.stop("Intro");
     this.scene.start("GamePlay");
-    this.scene.start("Hud");
-    this.scene.bringToTop("Hud");
     this._music.stop();
   }
     

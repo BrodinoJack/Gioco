@@ -33,8 +33,13 @@
             key: "laboratorio"
         })
     }
+    preload(){
+      
+   }
 
     create(){
+
+      
         this.cameras.main.setBackgroundColor(0x000000);
         this._lab=this.add.tileSprite(500,250,0,0, "labs").setAlpha(1).setOrigin(1).setPosition(1024,600);
         
@@ -175,6 +180,7 @@ opendialogolab() {
         startGame() {
             this.scene.stop("laboratorio");
             this.scene.start("FabioIacolare");
+          
           }
         update(time: number, delta: number): void {
 
