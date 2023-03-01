@@ -18,7 +18,7 @@ export let GameData: any = {
   spritesheets: [
     {
       name: "Pav",
-      path: "assets/Mappa/blocchi.png",
+      path: "assets/Mappa/Blocchi.png",
       width: 32,
       height: 32,
       spacing: 1,
