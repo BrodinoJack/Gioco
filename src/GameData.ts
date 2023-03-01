@@ -47,7 +47,7 @@ export let GameData: any = {
       margin: 1,
     },
   ],
-
+//a
   images: [
     {
       name: "bg",
