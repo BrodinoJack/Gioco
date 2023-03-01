@@ -52,14 +52,14 @@ constructor(params: genericConfig) {
             
         }
     update(time: number, delta: number) {
-        if (this._d.isDown && this._M.blocked.down) {
-            this.anims.play('idle', true);
-            this._M.setVelocityY(-550);
+        if (this._d.isDown) {
+            this.anims.play('move', true);
+            this._M.setVelocityX(-550); 
           }
           if (this._a.isDown) {
             this.setFlipX(false);
             this.anims.play('move', true);
-            this._M.setAccelerationX(-250)
+            this._M.setVelocityX(-250)
       
           }
     }
