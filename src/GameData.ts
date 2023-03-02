@@ -4,9 +4,9 @@ export let GameData: any = {
     gameWidth: 1024,
     gameHeight: 600,
     bgColor: "#ffffff",
-    debug: false,
-  },
-
+    debug: true,
+  },//chi è
+    //o angelo
   preloader: {
     bgColor: "",
     image: "phaser",
@@ -18,7 +18,7 @@ export let GameData: any = {
   spritesheets: [
     {
       name: "Pav",
-      path: "assets/Mappa/blocchi.png",
+      path: "assets/Mappa/Blocchi.png",
       width: 32,
       height: 32,
       spacing: 1,
