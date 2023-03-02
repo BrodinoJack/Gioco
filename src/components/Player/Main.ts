@@ -141,7 +141,7 @@ constructor(params: genericConfig) {
       
           Proi.x += vec.x * 16
       
-          Proi.setVelocity(vec.x * 300)
+          Proi.setVelocity(vec.x * 300, vec.y * 300)
         }
 
 
@@ -167,11 +167,13 @@ constructor(params: genericConfig) {
             this.anims.play('move', true);
             this._M.setVelocityX(100);
             this.scaleX = 1
+            
           }
           else if (this._cursors.left.isDown) {
             this.anims.play('move', true);
-            this._M.setVelocityX(-100)
-            this.scaleX = -1
+            this._M.setVelocityX(-100);
+            this.scaleX = 1;
+            this._M.setOffset(0,0)
 
           }else{
             this.anims.play('Stop', true);
