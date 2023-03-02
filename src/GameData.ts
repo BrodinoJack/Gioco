@@ -5,7 +5,7 @@ export let GameData: any = {
     gameHeight: 600,
     bgColor: "#ffffff",
     debug: true,
-  },//s
+  },
   preloader: {
     bgColor: "",
     image: "phaser",
@@ -17,17 +17,9 @@ export let GameData: any = {
   spritesheets: [
     {
       name: "Pav",
-      path: "assets/Mappa/Blocchi.png",
+      path: "assets/Mappa/blocchi.png",
       width: 32,
       height: 32,
-      spacing: 1,
-      margin: 1,
-    },
-    {
-      name: "Macchine",
-      path: "assets/Mappa/macchine.png",
-      width: 84,
-      height: 57,
       spacing: 1,
       margin: 1,
     },
@@ -161,7 +153,7 @@ export let GameData: any = {
   tilemaps: [
     {
       key: "Map",
-      path: "assets/Mappa/Liv1.json",
+      path: "assets/Mappa/Mappa.json",
     },
   ],
 };
