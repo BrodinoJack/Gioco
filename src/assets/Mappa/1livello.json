@@ -103,9 +103,91 @@
          "width":64,
          "x":0,
          "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":4,
+         "name":"soldato",
+         "objects":[
+                {
+                 "class":"soldato",
+                 "gid":222,
+                 "height":40,
+                 "id":1,
+                 "name":"soldato4",
+                 "rotation":0,
+                 "visible":true,
+                 "width":22,
+                 "x":1286.33333333333,
+                 "y":384
+                }, 
+                {
+                 "class":"soldato",
+                 "gid":222,
+                 "height":40,
+                 "id":2,
+                 "name":"soldato3",
+                 "rotation":0,
+                 "visible":true,
+                 "width":22,
+                 "x":1031,
+                 "y":384
+                }, 
+                {
+                 "class":"soldato",
+                 "gid":222,
+                 "height":40,
+                 "id":3,
+                 "name":"soldato2",
+                 "rotation":0,
+                 "visible":true,
+                 "width":22,
+                 "x":837.666666666667,
+                 "y":480
+                }, 
+                {
+                 "class":"soldato",
+                 "gid":222,
+                 "height":40,
+                 "id":4,
+                 "name":"soldato1",
+                 "rotation":0,
+                 "visible":true,
+                 "width":22,
+                 "x":580.333333333333,
+                 "y":480
+                }, 
+                {
+                 "class":"soldato",
+                 "gid":222,
+                 "height":40,
+                 "id":5,
+                 "name":"soldato5",
+                 "rotation":0,
+                 "visible":true,
+                 "width":22,
+                 "x":1609.66666666667,
+                 "y":288
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":6,
+         "name":"exit",
+         "objects":[],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
         }],
- "nextlayerid":4,
- "nextobjectid":1,
+ "nextlayerid":7,
+ "nextobjectid":24,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.9.2",
@@ -113,11 +195,15 @@
  "tilesets":[
         {
          "firstgid":1,
-         "source":"tiled\/Blocchi.tsx"
+         "source":"Blocchi.tsx"
         }, 
         {
          "firstgid":217,
-         "source":"tiled\/macchine.tsx"
+         "source":"macchine.tsx"
+        }, 
+        {
+         "firstgid":222,
+         "source":"nemicocammina22_40.tsx"
         }],
  "tilewidth":32,
  "type":"map",
