@@ -3,13 +3,14 @@ import Player from "../components/Player/Main";
 import Nemico from "../components/Nemico/Nemico";
 export default class FabioIacolare extends Phaser.Scene {
 
-  private _vita: Phaser.GameObjects.Image;
-  private _tre: Phaser.GameObjects.Text;
-  private _colpi:Phaser.GameObjects.Image;
-  private _ncolpi:Phaser.GameObjects.Text;
-  private _ncolpi2: number=12;
-  private _player: Main;
-  private L: Phaser.GameObjects.Image;
+    private _player: Main;
+    private _vita: Phaser.GameObjects.Image;
+    private _tre: Phaser.GameObjects.Text;
+    private _colpi:Phaser.GameObjects.Image;
+    private _ncolpi:Phaser.GameObjects.Text;
+    private _ncolpi2: number=12;
+    private L: Phaser.GameObjects.Image;
+
     private _bg: Phaser.GameObjects.TileSprite;
     private _P: Phaser.Physics.Arcade.Sprite;
     private GruppoPavimento: Phaser.GameObjects.Group;
@@ -33,8 +34,7 @@ export default class FabioIacolare extends Phaser.Scene {
       } 
       
       preload(){
-        this.scene.start("Hud");
-        this.scene.bringToTop("Hud");
+
       }
 
 
@@ -51,7 +51,7 @@ this._colpi= this.add.image(this.game.canvas.width /2,100, "proiettil").setPosit
 
   this.Sparata = this.physics.add.group({
     classType: Phaser.Physics.Arcade.Image,
-    maxSize: 24
+    maxSize: 12
   })
   this._player = new Player({
     scene: this, x: 60, y:
@@ -71,11 +71,8 @@ createMap(): void {
     .createLayer("Pavimento", this.tileset, 0, 50)
     .setDepth(100)
     .setAlpha(1);
-    this.layer1 = this.map
-    .createLayer("Collisioni", this.tileset, 0, 50)
-    .setDepth(0)
-    .setAlpha(0);
-    this.layer1.setCollisionByProperty({ collide: true });
+ 
+  
     
     };
   
