@@ -24,6 +24,14 @@ export let GameData: any = {
       margin: 1,
     },
     {
+      name: "Macchine",
+      path: "assets/Mappa/macchine.png",
+      width: 84,
+      height: 57,
+      spacing: 1,
+      margin: 1,
+    },
+    {
       name: "Proi",
       path: "assets/images/proiettili.png",
       width: 20,
@@ -115,9 +123,10 @@ export let GameData: any = {
             name: "stradabg",
             path: "assets/imagestradaty.png",
           },
+          
           {
-            name: "cuore",
-            path: "assets/images/cuore.png",
+            name: "proiettili",
+            path: "assets/images/proiettili.png",
             },
             {
               name: "proiettili_pieni",
@@ -152,7 +161,7 @@ export let GameData: any = {
   tilemaps: [
     {
       key: "Map",
-      path: "assets/Mappa/Mappa.json",
+      path: "assets/Mappa/Liv1.json",
     },
   ],
 };

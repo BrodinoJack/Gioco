@@ -43,7 +43,7 @@ export default class Nemico extends Phaser.GameObjects.Sprite implements INemico
       .setBounce(0.9, 0.9);
     this.anims.create(_animation);
     this.play("rotate");*/
-    this._scene.addNemico(this);
+   // this._scene.addNemico(this);
     this._scene.add.existing(this);
   }
   update(time: number, delta: number) { }

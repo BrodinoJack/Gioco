@@ -22,7 +22,7 @@ window.addEventListener("load", () => {
       width: GameData.globals.gameWidth,
       height: GameData.globals.gameHeight,
     },
-//a
+
     scene: [
       Boot,
       Preloader,
