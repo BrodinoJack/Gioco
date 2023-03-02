@@ -1,6 +1,5 @@
 import Main from "../components/Player/Main";
 import Player from "../components/Player/Main";
-import Proiettile  from "../components/Proiettile/proiettile";
 import Nemico from "../components/Nemico/Nemico";
 export default class FabioIacolare extends Phaser.Scene {
 
@@ -56,19 +55,7 @@ create(){
   });  
   this._player.setProie(this.Sparata)
     this.setupEnemies();
-    
       }
-      addproiettile(proiettile: Proiettile) { 
-        this._proiettileGroup.add(proiettile);
-      }
-      removeproiettile(proiettile: Proiettile) {
-        this._proiettileGroup.remove(proiettile, true, true);}
-
-        addNemico(Nemico: Nemico) { 
-          this._proiettileGroup.add(Nemico);
-        }
-        removeNemico(Nemico: Nemico) {
-          this._proiettileGroup.remove(Nemico, true, true);}
 
 
 createMap(): void {

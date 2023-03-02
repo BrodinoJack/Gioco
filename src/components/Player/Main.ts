@@ -1,6 +1,5 @@
 import IMain from "./IMain";
 import FabioIacolare from "../../scenes/FabioIacolare";
-import Proiettile from "../Proiettile/proiettile";
 
 export default class Main extends Phaser.GameObjects.Sprite implements IMain{
     protected _config: genericConfig;
