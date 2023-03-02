@@ -1,6 +1,5 @@
 import Main from "../components/Player/Main";
 import Player from "../components/Player/Main";
-import Proiettile  from "../components/Proiettile/proiettile";
 import Nemico from "../components/Nemico/Nemico";
 export default class FabioIacolare extends Phaser.Scene {
  //vita
@@ -51,7 +50,7 @@ create(){
 
   this.Sparata = this.physics.add.group({
     classType: Phaser.Physics.Arcade.Image,
-    maxSize: 12
+    maxSize: 24
   })
   this._player = new Player({
     scene: this, x: 60, y:
@@ -59,19 +58,7 @@ create(){
   });  
   this._player.setProie(this.Sparata)
     this.setupEnemies();
-    
       }
-      addproiettile(proiettile: Proiettile) { 
-        this._proiettileGroup.add(proiettile);
-      }
-      removeproiettile(proiettile: Proiettile) {
-        this._proiettileGroup.remove(proiettile, true, true);}
-
-        addNemico(Nemico: Nemico) { 
-          this._proiettileGroup.add(Nemico);
-        }
-        removeNemico(Nemico: Nemico) {
-          this._proiettileGroup.remove(Nemico, true, true);}
 
 
 createMap(): void {
