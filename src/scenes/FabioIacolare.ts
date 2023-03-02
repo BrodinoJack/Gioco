@@ -1,14 +1,15 @@
 import Main from "../components/Player/Main";
 import Player from "../components/Player/Main";
-import Proiettile  from "../components/Proiettile/proiettile";
 import Nemico from "../components/Nemico/Nemico";
 export default class FabioIacolare extends Phaser.Scene {
-
-  private _player: Main;
-  private L: Phaser.GameObjects.Image;
+ //vita
   private _vita: Phaser.GameObjects.Image;
   private _tre: Phaser.GameObjects.Text;
-
+  private _colpi: Phaser.GameObjects.Image;
+  private _ncolpi:Phaser.GameObjects.Text;
+  private _ncolpi2: number
+  private _player: Main;
+  private L: Phaser.GameObjects.Image;
     private _bg: Phaser.GameObjects.TileSprite;
     private _P: Phaser.Physics.Arcade.Sprite;
     private GruppoPavimento: Phaser.GameObjects.Group;
@@ -32,7 +33,8 @@ export default class FabioIacolare extends Phaser.Scene {
       } 
       
       preload(){
-        
+        this.scene.start("Hud");
+        this.scene.bringToTop("Hud");
       }
 
 
@@ -48,7 +50,7 @@ create(){
 
   this.Sparata = this.physics.add.group({
     classType: Phaser.Physics.Arcade.Image,
-    maxSize: 12
+    maxSize: 24
   })
   this._player = new Player({
     scene: this, x: 60, y:
@@ -56,19 +58,7 @@ create(){
   });  
   this._player.setProie(this.Sparata)
     this.setupEnemies();
-    
       }
-      addproiettile(proiettile: Proiettile) { 
-        this._proiettileGroup.add(proiettile);
-      }
-      removeproiettile(proiettile: Proiettile) {
-        this._proiettileGroup.remove(proiettile, true, true);}
-
-        addNemico(Nemico: Nemico) { 
-          this._proiettileGroup.add(Nemico);
-        }
-        removeNemico(Nemico: Nemico) {
-          this._proiettileGroup.remove(Nemico, true, true);}
 
 
 createMap(): void {
