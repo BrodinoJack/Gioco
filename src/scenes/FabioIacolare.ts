@@ -3,16 +3,13 @@ import Player from "../components/Player/Main";
 import Nemico from "../components/Nemico/Nemico";
 export default class FabioIacolare extends Phaser.Scene {
 
-  private _player: Main;
-  private L: Phaser.GameObjects.Image;
   private _vita: Phaser.GameObjects.Image;
   private _tre: Phaser.GameObjects.Text;
   private _colpi:Phaser.GameObjects.Image;
   private _ncolpi:Phaser.GameObjects.Text;
   private _ncolpi2: number=12;
-
-
-
+  private _player: Main;
+  private L: Phaser.GameObjects.Image;
     private _bg: Phaser.GameObjects.TileSprite;
     private _P: Phaser.Physics.Arcade.Sprite;
     private GruppoPavimento: Phaser.GameObjects.Group;
@@ -36,7 +33,8 @@ export default class FabioIacolare extends Phaser.Scene {
       } 
       
       preload(){
-        
+        this.scene.start("Hud");
+        this.scene.bringToTop("Hud");
       }
 
 
@@ -53,7 +51,7 @@ this._colpi= this.add.image(this.game.canvas.width /2,100, "proiettil").setPosit
 
   this.Sparata = this.physics.add.group({
     classType: Phaser.Physics.Arcade.Image,
-    maxSize: 12
+    maxSize: 24
   })
   this._player = new Player({
     scene: this, x: 60, y:
@@ -113,4 +111,4 @@ createMap(): void {
     undefined,
     this
   }
-}//Da fare pure la fisica del proiettile?
+}

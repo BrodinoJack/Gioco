@@ -120,6 +120,14 @@ export let GameData: any = {
             name: "proiettili",
             path: "assets/images/proiettili.png",
             },
+            {
+              name: "proiettili_pieni",
+              path: "assets/images/proiettili_pieni.png",
+            },  
+            {
+              name: "proiettili_vuoti",
+              path: "assets/images/proiettili_vuoti.png",
+            },
          
 ],
   atlas: [],
