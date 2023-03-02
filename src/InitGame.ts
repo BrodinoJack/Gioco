@@ -8,7 +8,6 @@ import GamePlay from "./scenes/GamePlay";
 import scienziato from "./scenes/scienziato";
 import FabioIacolare from "./scenes/FabioIacolare";
 import laboratorio from "./scenes/laboratorio";
-import livello from "./scenes/livello";
 import { GameData } from "./GameData";
 
 
@@ -23,7 +22,7 @@ window.addEventListener("load", () => {
       width: GameData.globals.gameWidth,
       height: GameData.globals.gameHeight,
     },
-
+//a
     scene: [
       Boot,
       Preloader,
@@ -33,7 +32,6 @@ window.addEventListener("load", () => {
       GameOver,
       scienziato,
       FabioIacolare,
-      livello,
       laboratorio
   
       

@@ -22,7 +22,7 @@ export default class scienziato extends Phaser.Scene {
    private _dialogo3ContainerBackground: Phaser.GameObjects.Image;
    private _dialogo3ContainerBackground2: Phaser.GameObjects.Image;
    private _dialogo3ContainerEsc: Phaser.GameObjects.Image; 
-
+//a
     //container 4
   private _dialogo4Container: Phaser.GameObjects.Container;
   private _dialogo4ContainerText: Phaser.GameObjects.Text;

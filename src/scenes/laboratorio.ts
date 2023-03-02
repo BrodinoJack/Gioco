@@ -33,9 +33,6 @@
             key: "laboratorio"
         })
     }
-    preload(){
-      
-   }
 
     create(){
 

@@ -4,9 +4,8 @@ export let GameData: any = {
     gameWidth: 1024,
     gameHeight: 600,
     bgColor: "#ffffff",
-    debug: false,
+    debug: true,
   },
-
   preloader: {
     bgColor: "",
     image: "phaser",
@@ -18,11 +17,18 @@ export let GameData: any = {
   spritesheets: [
     {
       name: "Pav",
-      path: "assets/Mappa/blocchi.png",
+      path: "assets/Mappa/Blocchi.png",
       width: 32,
       height: 32,
       spacing: 1,
       margin: 1,
+    },
+    {
+      name: "Proi",
+      path: "assets/images/proiettili.png",
+      width: 20,
+      height: 20,
+      frames: 12,
     },
     {
       name: "Main",
@@ -30,6 +36,13 @@ export let GameData: any = {
       width: 40,
       height: 43,
       frames: 11,
+    },
+    {
+      name: "Fermo",
+      path: "assets/images/sta_puntando.png",
+      width: 40,
+      height: 43,
+      frames: 1,
     },
     {
       name: "Fermo",
@@ -47,7 +60,7 @@ export let GameData: any = {
       margin: 1,
     },
   ],
-
+//a
   images: [
     {
       name: "bg",
