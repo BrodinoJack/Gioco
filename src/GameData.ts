@@ -5,7 +5,7 @@ export let GameData: any = {
     gameHeight: 600,
     bgColor: "#ffffff",
     debug: true,
-  },
+  },//s
   preloader: {
     bgColor: "",
     image: "phaser",

@@ -2,12 +2,12 @@ import Main from "../components/Player/Main";
 import Player from "../components/Player/Main";
 import Nemico from "../components/Nemico/Nemico";
 export default class FabioIacolare extends Phaser.Scene {
- //vita
+
   private _vita: Phaser.GameObjects.Image;
   private _tre: Phaser.GameObjects.Text;
-  private _colpi: Phaser.GameObjects.Image;
+  private _colpi:Phaser.GameObjects.Image;
   private _ncolpi:Phaser.GameObjects.Text;
-  private _ncolpi2: number
+  private _ncolpi2: number=12;
   private _player: Main;
   private L: Phaser.GameObjects.Image;
     private _bg: Phaser.GameObjects.TileSprite;
@@ -33,8 +33,6 @@ export default class FabioIacolare extends Phaser.Scene {
       } 
       
       preload(){
-        this.scene.start("Hud");
-        this.scene.bringToTop("Hud");
       }
 
 
@@ -42,6 +40,7 @@ create(){
   this.createMap();  
  this._vita= this.add.image(this.game.canvas.width/ 2,100, "cuore").setPosition(980,40).setScale(.1).setAlpha(1).setScrollFactor(0);
  this._tre= this.add.text(this.game.canvas.width/ 2,100, "3").setPosition(977,25).setScale(1).setAlpha(1).setScrollFactor(0).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setTint(0x000000),
+this._colpi= this.add.image(this.game.canvas.width /2,100, "proiettil").setPosition(450,250).setScale(.1).setAlpha(1).setScrollFactor(0);
 
   this.add.tileSprite(500, 250, 0, 0, "blocconero").setOrigin(1).setPosition(1024,600); 
   this.add.tileSprite(500, 250, 0, 0, "strada").setOrigin(1).setPosition(1024,600); 
