@@ -13,9 +13,9 @@ export default class FabioIacolare extends Phaser.Scene {
     private _P: Phaser.Physics.Arcade.Sprite;
     private GruppoPavimento: Phaser.GameObjects.Group;
     private strada: Phaser.GameObjects.TileSprite;
-
     private _enemyGroup: Phaser.GameObjects.Group;
 
+    private Sparata: Phaser.Physics.Arcade.Group
 
     private map: Phaser.Tilemaps.Tilemap;
     private tileset: Phaser.Tilemaps.Tileset;
@@ -46,11 +46,15 @@ create(){
   this._enemyGroup = this.add.group({ runChildUpdate: true });
   this._proiettileGroup = this.add.group({ runChildUpdate: true });
 
+  this.Sparata = this.physics.add.group({
+    classType: Phaser.Physics.Arcade.Image,
+    maxSize: 12
+  })
   this._player = new Player({
     scene: this, x: 60, y:
-      450, key: "Main"
-      
+      450, key: "Main"     
   });  
+  this._player.setProie(this.Sparata)
     this.setupEnemies();
     
       }
@@ -101,11 +105,17 @@ createMap(): void {
 
 
   update(time: number, delta: number): void {
+    
     this._player.update(time, delta);
     this.cameras.main.startFollow(
       this._player);
+      this.physics.add.collider(this.Sparata, this.layer1,()=>{
+        console.log("Andre")
+        this.Sparata.setActive(false)
+        this.Sparata.setVisible(false)
+      });
     this.physics.add.collider(this._player, this.layer1, ()=>{
-      console.log("Andre")
+ 
     }); 
     undefined,
     this
