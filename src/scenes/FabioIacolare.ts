@@ -48,7 +48,7 @@ create(){
 
   this.Sparata = this.physics.add.group({
     classType: Phaser.Physics.Arcade.Image,
-    maxSize: 12
+    maxSize: 24
   })
   this._player = new Player({
     scene: this, x: 60, y:
