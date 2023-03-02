@@ -1,5 +1,7 @@
 import Main from "../components/Player/Main";
 import Player from "../components/Player/Main";
+import Proiettile  from "../components/Proiettile/proiettile";
+import Nemico from "../components/Nemico/Nemico";
 export default class FabioIacolare extends Phaser.Scene {
 
   private _player: Main;
@@ -10,8 +12,10 @@ export default class FabioIacolare extends Phaser.Scene {
     private _bg: Phaser.GameObjects.TileSprite;
     private _P: Phaser.Physics.Arcade.Sprite;
     private GruppoPavimento: Phaser.GameObjects.Group;
-
     private strada: Phaser.GameObjects.TileSprite;
+    private _enemyGroup: Phaser.GameObjects.Group;
+
+    private Sparata: Phaser.Physics.Arcade.Group
 
     private map: Phaser.Tilemaps.Tilemap;
     private tileset: Phaser.Tilemaps.Tileset;
@@ -19,6 +23,8 @@ export default class FabioIacolare extends Phaser.Scene {
     private layer1: Phaser.Tilemaps.TilemapLayer;
     private Level: number=0;
  
+    private _proiettileGroup: Phaser.GameObjects.Group
+
 
     constructor() {
         super({ key: "FabioIacolare" });
@@ -37,15 +43,33 @@ create(){
 
   this.add.tileSprite(500, 250, 0, 0, "blocconero").setOrigin(1).setPosition(1024,600); 
   this.add.tileSprite(500, 250, 0, 0, "strada").setOrigin(1).setPosition(1024,600); 
+  this._enemyGroup = this.add.group({ runChildUpdate: true });
+  this._proiettileGroup = this.add.group({ runChildUpdate: true });
 
-
+  this.Sparata = this.physics.add.group({
+    classType: Phaser.Physics.Arcade.Image,
+    maxSize: 12
+  })
   this._player = new Player({
     scene: this, x: 60, y:
-      450, key: "Main"
+      450, key: "Main"     
   });  
+  this._player.setProie(this.Sparata)
+    this.setupEnemies();
+    
       }
+      addproiettile(proiettile: Proiettile) { 
+        this._proiettileGroup.add(proiettile);
+      }
+      removeproiettile(proiettile: Proiettile) {
+        this._proiettileGroup.remove(proiettile, true, true);}
 
-//adfsaeda<xdas
+        addNemico(Nemico: Nemico) { 
+          this._proiettileGroup.add(Nemico);
+        }
+        removeNemico(Nemico: Nemico) {
+          this._proiettileGroup.remove(Nemico, true, true);}
+
 
 createMap(): void {
 
@@ -64,14 +88,34 @@ createMap(): void {
     
     };
   
-//a
+    setupEnemies(): void {
+
+      let _objLayer: Phaser.Tilemaps.ObjectLayer = this.map.getObjectLayer("enemies");
+      if (_objLayer != null) {
+
+        let _enemies: any = _objLayer.objects as any[];
+  
+        _enemies.forEach((tile: Phaser.Tilemaps.Tile) => {
+  
+      
+        })};}
+
+
+
+
 
   update(time: number, delta: number): void {
+    
     this._player.update(time, delta);
     this.cameras.main.startFollow(
       this._player);
+      this.physics.add.collider(this.Sparata, this.layer1,()=>{
+        console.log("Andre")
+        this.Sparata.setActive(false)
+        this.Sparata.setVisible(false)
+      });
     this.physics.add.collider(this._player, this.layer1, ()=>{
-      console.log("Andre")
+ 
     }); 
     undefined,
     this
