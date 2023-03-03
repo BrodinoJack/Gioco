@@ -140,10 +140,9 @@ export let GameData: any = {
               path: "assets/images/proiettili_vuoti.png",
             },
             {
-              name: "",
-              path: "assets/images/proiettili_vuoti.png",
+              name: "lvl1city",
+              path: "assets/Sfondo/lvl1city.png",
             },
-         
 ],
   atlas: [],
   sounds: [{
@@ -165,18 +164,9 @@ export let GameData: any = {
   }],
   audio: [],
   bitmapfont: [],
-  tilemaps:[ 
-    {
-    key: "level-1",
-    path: "assets/Mappa/Map1.json",
-  },
-  {
-    key: "level-2",
-    path: "assets/Mappa/livello2.json",
-  },
-  {
-    key: "level-3",
-    path: "assets/Mappa/livello5.json",
+  tilemaps:[ {
+    key: "level-0",
+    path: "assets/Mappa/Liv1b.json",
   },
   ]
 };
