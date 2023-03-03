@@ -160,7 +160,7 @@ export let GameData: any = {
   bitmapfont: [],
   tilemaps: [
     {
-      key: "Map",
+      key: "level-0",
       path: "assets/Mappa/Map1.json",
     },
   ],

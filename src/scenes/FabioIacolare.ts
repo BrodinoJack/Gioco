@@ -62,14 +62,14 @@ create(){
 createMap(): void {
 
   this._bg = this.add.tileSprite(0, 0, 1024, 600, "bg").setOrigin(0).setScrollFactor(0);
-  this.map = this.make.tilemap({ key: "Map"});
+  this.map = this.make.tilemap({ key: "level-0"});
   this.tileset = this.map.addTilesetImage("Blocchi", "Pav");
   this.layer = this.map
     .createLayer("Pavimento", this.tileset, 0, 50)
     .setDepth(100)
     .setAlpha(1);
     this.layer1 = this.map
-    .createLayer("Collisioni", this.tileset, 0, 50)
+    .createLayer("Macchine", this.tileset, 0, 50)
     .setDepth(0)
     .setAlpha(0);
     this.layer1.setCollisionByProperty({ collide: true });
