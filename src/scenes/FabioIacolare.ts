@@ -2,7 +2,7 @@ import Main from "../components/Player/Main";
 import Player from "../components/Player/Main";
 import Nemico from "../components/Nemico/Nemico"; 
 export default class FabioIacolare extends Phaser.Scene {
- 
+ //a
   private _vita: Phaser.GameObjects.Image;
   private _tre: Phaser.GameObjects.Text;
   private _colpi:Phaser.GameObjects.Image;

@@ -80,7 +80,7 @@ constructor(params: genericConfig) {
         
         createAnimations() {           
         }
-
+//a
 
         death() {
           this._M.setEnable(false);
