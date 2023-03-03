@@ -35,6 +35,11 @@ console.log("create proiettile")
     this.play("rotate");
     this._scene.add.existing(this);
 
+   /* if(this._body.collideWorldBounds){
+
+      //this._body.destroy 
+    }*/
+
 
   }
 

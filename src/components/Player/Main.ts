@@ -13,9 +13,12 @@ export default class Main extends Phaser.GameObjects.Sprite implements IMain{
     private _Andre: boolean = false
     private _direction: string;
 
+    private _CounterColpi: number = 0;
+
 constructor(params: genericConfig) {
 
 		super(params.scene, params.x, params.y, params.key);
+      
         this._scene = <FabioIacolare>params.scene;
         this._scene.physics.world.enable(this);
         this._M = <Phaser.Physics.Arcade.Body>this.body;
@@ -74,12 +77,12 @@ constructor(params: genericConfig) {
       };
 		
      
-        getMain(): Phaser.Physics.Arcade.Body { return this._M }
+        getMain(): Phaser.Physics.Arcade.Body {return this._M}
        
         
         createAnimations() {           
         }
-
+//a
 
         death() {
           this._M.setEnable(false);
@@ -152,7 +155,7 @@ constructor(params: genericConfig) {
     update(time: number, delta: number) {
 
       if (Phaser.Input.Keyboard.JustDown(this._spacebar)) { 
-        this.Sparo()
+        this.Sparo();
        }
 
 
@@ -165,15 +168,16 @@ constructor(params: genericConfig) {
 
         if (this._cursors.right.isDown ) {
             this.anims.play('move', true);
-            this._M.setVelocityX(100);
+            this._M.setVelocityX(150);
             this.scaleX = 1
+			      this._M.offset.x = 8
             
           }
           else if (this._cursors.left.isDown) {
             this.anims.play('move', true);
-            this._M.setVelocityX(-100);
-            this.scaleX = 1;
-            this._M.setOffset(0,0)
+            this._M.setVelocityX(-150);
+            this.scaleX = -1
+			      this._M.offset.x = 24
 
           }else{
             this.anims.play('Stop', true);

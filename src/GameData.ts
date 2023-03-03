@@ -20,16 +20,20 @@ export let GameData: any = {
       path: "assets/Mappa/Blocchi.png",
       width: 32,
       height: 32,
-      spacing: 1,
-      margin: 1,
+      spacing: 0,
+      margin: 0,
     },
     {
+<<<<<<< HEAD
       name: "Mac",
+=======
+      name: "Car",
+>>>>>>> 0522842bcca92913d6b565f51c35e41fe1b04ce6
       path: "assets/Mappa/macchine.png",
       width: 84,
       height: 57,
-      spacing: 1,
-      margin: 1,
+      spacing: 0,
+      margin: 0,
     },
     {
       name: "Proi",
@@ -68,11 +72,11 @@ export let GameData: any = {
       margin: 1,
     },
   ],
-//a
+
   images: [
     {
       name: "bg",
-      path: "assets/Sfondo/landscape.png",
+      path: "assets/Sfondo/introcity.png",
     },
     {
       name: "player_intro",
@@ -96,7 +100,7 @@ export let GameData: any = {
       },
       {
         name: "intro-image",
-        path: "assets/images/introcity.png",
+        path: "assets/Sfondo/introcity.png",
         },
         {
           name: "bar_contipi",
@@ -123,20 +127,26 @@ export let GameData: any = {
             name: "stradabg",
             path: "assets/imagestradaty.png",
           },
-          
+          {
+            name: "cuore",
+            path: "assets/images/cuore.png",
+          },
           {
             name: "proiettili",
             path: "assets/images/proiettili.png",
             },
             {
-              name: "proiettili_pieni",
+              name: "proiettil",
               path: "assets/images/proiettili_pieni.png",
             },  
             {
               name: "proiettili_vuoti",
               path: "assets/images/proiettili_vuoti.png",
             },
-         
+            {
+              name: "lvl1city",
+              path: "assets/Sfondo/lvl1city.png",
+            },
 ],
   atlas: [],
   sounds: [{
@@ -158,6 +168,7 @@ export let GameData: any = {
   }],
   audio: [],
   bitmapfont: [],
+<<<<<<< HEAD
   tilemaps: [
     {
       key: "level-0",
@@ -165,3 +176,12 @@ export let GameData: any = {
     },
   ],
 };
+=======
+  tilemaps:[ {
+    key: "level-0",
+    path: "assets/Mappa/Map1.json",
+  },
+  ]
+};
+//a
+>>>>>>> 0522842bcca92913d6b565f51c35e41fe1b04ce6
