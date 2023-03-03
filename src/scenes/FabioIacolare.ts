@@ -3,13 +3,10 @@ import Player from "../components/Player/Main";
 import Nemico from "../components/Nemico/Nemico";
 export default class FabioIacolare extends Phaser.Scene {
 
-    private _player: Main;
-    private _vita: Phaser.GameObjects.Image;
-    private _tre: Phaser.GameObjects.Text;
-    private _colpi:Phaser.GameObjects.Image;
-    private _ncolpi:Phaser.GameObjects.Text;
-    private _ncolpi2: number=12;
-    private L: Phaser.GameObjects.Image;
+  private _player: Main;
+  private L: Phaser.GameObjects.Image;
+  private _vita: Phaser.GameObjects.Image;
+  private _tre: Phaser.GameObjects.Text;
 
     private _bg: Phaser.GameObjects.TileSprite;
     private _P: Phaser.Physics.Arcade.Sprite;
@@ -34,7 +31,7 @@ export default class FabioIacolare extends Phaser.Scene {
       } 
       
       preload(){
-
+        
       }
 
 
@@ -42,7 +39,6 @@ create(){
   this.createMap();  
  this._vita= this.add.image(this.game.canvas.width/ 2,100, "cuore").setPosition(980,40).setScale(.1).setAlpha(1).setScrollFactor(0);
  this._tre= this.add.text(this.game.canvas.width/ 2,100, "3").setPosition(977,25).setScale(1).setAlpha(1).setScrollFactor(0).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setTint(0x000000),
-this._colpi= this.add.image(this.game.canvas.width /2,100, "proiettil").setPosition(450,250).setScale(.1).setAlpha(1).setScrollFactor(0);
 
   this.add.tileSprite(500, 250, 0, 0, "blocconero").setOrigin(1).setPosition(1024,600); 
   this.add.tileSprite(500, 250, 0, 0, "strada").setOrigin(1).setPosition(1024,600); 
@@ -59,7 +55,8 @@ this._colpi= this.add.image(this.game.canvas.width /2,100, "proiettil").setPosit
   });  
   this._player.setProie(this.Sparata)
     this.setupEnemies();
-      }
+    
+   }
 
 
 createMap(): void {
@@ -71,8 +68,11 @@ createMap(): void {
     .createLayer("Pavimento", this.tileset, 0, 50)
     .setDepth(100)
     .setAlpha(1);
- 
-  
+    this.layer1 = this.map
+    .createLayer("Collisioni", this.tileset, 0, 50)
+    .setDepth(0)
+    .setAlpha(0);
+    this.layer1.setCollisionByProperty({ collide: true });
     
     };
   

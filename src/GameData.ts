@@ -24,7 +24,7 @@ export let GameData: any = {
       margin: 1,
     },
     {
-      name: "Macchine",
+      name: "Mac",
       path: "assets/Mappa/macchine.png",
       width: 84,
       height: 57,
@@ -161,7 +161,7 @@ export let GameData: any = {
   tilemaps: [
     {
       key: "Map",
-      path: "assets/Mappa/Liv1.json",
+      path: "assets/Mappa/Map1.json",
     },
   ],
 };
