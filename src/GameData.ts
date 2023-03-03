@@ -166,7 +166,7 @@ export let GameData: any = {
   bitmapfont: [],
   tilemaps:[ {
     key: "level-0",
-    path: "assets/Mappa/Liv1b.json",
+    path: "assets/Mappa/Map1.json",
   },
   ]
 };
