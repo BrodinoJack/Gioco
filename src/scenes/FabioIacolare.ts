@@ -3,6 +3,7 @@ import Player from "../components/Player/Main";
 import Nemico from "../components/Nemico/Nemico"; 
 export default class FabioIacolare extends Phaser.Scene {
  //a
+
   private _vita: Phaser.GameObjects.Image;
   private _tre: Phaser.GameObjects.Text;
   private _colpi:Phaser.GameObjects.Image;
@@ -42,14 +43,14 @@ create(){
  this._vita= this.add.image(this.game.canvas.width/ 2,100, "cuore").setPosition(980,40).setScale(.1).setAlpha(1).setScrollFactor(0);
  this._tre= this.add.text(this.game.canvas.width/ 2,100, "3").setPosition(977,25).setScale(1).setAlpha(1).setScrollFactor(0).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setTint(0x000000),
  this._colpi= this.add.image(this.game.canvas.width /2,100, "proiettil").setPosition(450,250).setScale(.1).setAlpha(1).setScrollFactor(0);
-
+this._ncolpi=this.add.text(this.game.canvas.width /2,100, ""+this._ncolpi2);
   
   this._enemyGroup = this.add.group({ runChildUpdate: true });
   this._proiettileGroup = this.add.group({ runChildUpdate: true });
 
   this.Sparata = this.physics.add.group({
     classType: Phaser.Physics.Arcade.Image,
-    maxSize: 24
+    maxSize: 12
   })
   this._player = new Player({
     scene: this, x: 60, y:
@@ -58,6 +59,7 @@ create(){
   this._player.setProie(this.Sparata)
   this.setupEnemies();
   
+  return("this._ncolpi2");
       }
 
 
@@ -130,9 +132,12 @@ createMap(): void {
 
   update(time: number, delta: number): void {
     
+
+
+
+
     this._player.update(time, delta);
-    this.cameras.main.startFollow(
-      this._player);
+    this.cameras.main.startFollow(this._player);
       this.physics.add.collider(this.Sparata, this.layer,()=>{
       });
       this.physics.add.collider(this._player, this.layer);

@@ -13,6 +13,8 @@ export default class Main extends Phaser.GameObjects.Sprite implements IMain{
     private _Andre: boolean = false
     private _direction: string;
 
+    private _CounterColpi: number = 0;
+
 constructor(params: genericConfig) {
 
 		super(params.scene, params.x, params.y, params.key);
@@ -153,7 +155,7 @@ constructor(params: genericConfig) {
     update(time: number, delta: number) {
 
       if (Phaser.Input.Keyboard.JustDown(this._spacebar)) { 
-        this.Sparo()
+        this.Sparo();
        }
 
 
