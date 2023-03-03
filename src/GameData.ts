@@ -96,7 +96,7 @@ export let GameData: any = {
       },
       {
         name: "intro-image",
-        path: "assets/images/introcity.png",
+        path: "assets/Sfondo/introcity.png",
         },
         {
           name: "bar_contipi",
@@ -139,7 +139,10 @@ export let GameData: any = {
               name: "proiettili_vuoti",
               path: "assets/images/proiettili_vuoti.png",
             },
-         
+            {
+              name: "lvl1city",
+              path: "assets/Sfondo/lvl1city.png",
+            },
 ],
   atlas: [],
   sounds: [{

@@ -62,7 +62,7 @@ create(){
 
 
 createMap(): void {
-  this._bg = this.add.tileSprite(0, 0, 1024, 600, "bg").setOrigin(0).setScrollFactor(0);
+  this._bg = this.add.tileSprite(0, 0, 1024, 600, "lvl1city").setOrigin(0).setScrollFactor(0);
   if (this.map != null) this.map.destroy();
 
     this.map = this.make.tilemap({ key: "level-0" });
