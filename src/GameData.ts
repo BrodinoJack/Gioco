@@ -139,6 +139,10 @@ export let GameData: any = {
               name: "proiettili_vuoti",
               path: "assets/images/proiettili_vuoti.png",
             },
+            {
+              name: "",
+              path: "assets/images/proiettili_vuoti.png",
+            },
          
 ],
   atlas: [],
@@ -161,9 +165,18 @@ export let GameData: any = {
   }],
   audio: [],
   bitmapfont: [],
-  tilemaps:[ {
-    key: "level-0",
-    path: "assets/Mappa/Liv1b.json",
+  tilemaps:[ 
+    {
+    key: "level-1",
+    path: "assets/Mappa/Map1.json",
+  },
+  {
+    key: "level-2",
+    path: "assets/Mappa/livello2.json",
+  },
+  {
+    key: "level-3",
+    path: "assets/Mappa/livello5.json",
   },
   ]
 };
