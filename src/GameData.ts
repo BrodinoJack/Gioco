@@ -28,8 +28,8 @@ export let GameData: any = {
       path: "assets/Mappa/macchine.png",
       width: 84,
       height: 57,
-      spacing: 1,
-      margin: 1,
+      spacing: 0,
+      margin: 0,
     },
     {
       name: "Proi",
@@ -68,11 +68,11 @@ export let GameData: any = {
       margin: 1,
     },
   ],
-//a
+
   images: [
     {
       name: "bg",
-      path: "assets/Sfondo/landscape.png",
+      path: "assets/Sfondo/introcity.png",
     },
     {
       name: "player_intro",
@@ -123,13 +123,16 @@ export let GameData: any = {
             name: "stradabg",
             path: "assets/imagestradaty.png",
           },
-          
+          {
+            name: "cuore",
+            path: "assets/images/cuore.png",
+          },
           {
             name: "proiettili",
             path: "assets/images/proiettili.png",
             },
             {
-              name: "proiettili_pieni",
+              name: "proiettil",
               path: "assets/images/proiettili_pieni.png",
             },  
             {
