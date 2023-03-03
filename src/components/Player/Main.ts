@@ -165,13 +165,13 @@ constructor(params: genericConfig) {
 
         if (this._cursors.right.isDown ) {
             this.anims.play('move', true);
-            this._M.setVelocityX(100);
+            this._M.setVelocityX(125);
             this.scaleX = 1
             
           }
           else if (this._cursors.left.isDown) {
             this.anims.play('move', true);
-            this._M.setVelocityX(-100);
+            this._M.setVelocityX(-125);
             this.scaleX = 1;
             this._M.setOffset(0,0)
 

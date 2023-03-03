@@ -17,9 +17,17 @@ export let GameData: any = {
   spritesheets: [
     {
       name: "Pav",
-      path: "assets/Mappa/blocchi.png",
+      path: "assets/Mappa/Blocchi.png",
       width: 32,
       height: 32,
+      spacing: 0,
+      margin: 0,
+    },
+    {
+      name: "Car",
+      path: "assets/Mappa/macchine.png",
+      width: 84,
+      height: 57,
       spacing: 1,
       margin: 1,
     },
@@ -150,10 +158,9 @@ export let GameData: any = {
   }],
   audio: [],
   bitmapfont: [],
-  tilemaps: [
-    {
-      key: "Map",
-      path: "assets/Mappa/Mappa.json",
-    },
-  ],
+  tilemaps:[ {
+    key: "level-0",
+    path: "assets/Mappa/Liv1b.json",
+  },
+  ]
 };
