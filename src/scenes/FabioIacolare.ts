@@ -111,7 +111,12 @@ createMap(): void {
       this.layer1.setCollisionByProperty({
         collide: true,})
 
-
+    this.layer2 = this.map
+      .createLayer("BlocchiNem", this.tileset, 0, 90)
+      .setDepth(9)
+      .setAlpha(1);
+      this.layer2.setCollisionByProperty({
+          collide: true,})
       
       
       }
@@ -119,18 +124,18 @@ createMap(): void {
       
 
   
-     //setupEnemies(): void {
-      //let _objLayer: Phaser.Tilemaps.ObjectLayer = this.map.getObjectLayer("nemico");
-      //if (_objLayer != null) {
-        //let _enemies: any = _objLayer.objects as any[];
+     setupEnemies(): void {
+      let _objLayer: Phaser.Tilemaps.ObjectLayer = this.map.getObjectLayer("nemico");
+      if (_objLayer != null) {
+        let _enemies: any = _objLayer.objects as any[];
       
-      // cicliamo l'array 
-//      _enemies.forEach((tile: Phaser.Tilemaps.Tile) => {
+      
+       _enemies.forEach((tile: Phaser.Tilemaps.Tile) => {
 
         //aggungiamo un nuovo nemico nella positione indicata dalla TILE
-    //    new ({
-      //    scene: this, x: tile.x, y: tile.y, key: "robo2"}}}
-     //}
+       new Piatt({
+        scene: this, x: tile.x, y: tile.y, key: "Soldato"})})}
+     }
 
     
         
@@ -142,18 +147,11 @@ createMap(): void {
 
 
   update(time: number, delta: number): void {
-   
-    if(this._ncolpi2==0){
-      this._colpi= this.add.image(this.game.canvas.width/ 2,100, "proiettili_vuoti").setPosition(915,37).setScale(.3).setAlpha(1).setScrollFactor(0)
-    }
-
-
 
     this._player.update(time, delta);
     this.cameras.main.startFollow(this._player);
-      this.physics.add.collider(this.Sparata, this.layer,()=>{
+      this.physics.add.collider(this.Sparata, this.layer1,()=>{
       });
-      this.physics.add.collider(this._player, this.layer);
       this.physics.add.collider(this._player, this.layer1);
       this.physics.add.collider(
         this._enemyGroup,

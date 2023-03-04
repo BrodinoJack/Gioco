@@ -98,13 +98,13 @@ private _logogame: Phaser.GameObjects.Image;
        this._creditsContainerText,
        this._creditsContainerBackground2,
        this.add.text(this.game.canvas.width / 2, 100, "Creators").setTint(0xff0000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setScale(1.4).setPosition(475,15),
-       this.add.text(this.game.canvas.width / 2, 100, "Andrea Iacolare / andrue").setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setScale(1.4).setPosition(378,45),
-       this.add.text(this.game.canvas.width / 2, 100, "Michele Pascarella / zozne").setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setScale(1.4).setPosition(378,75),
-       this.add.text(this.game.canvas.width / 2, 100, "Fabio Iacolare / fasbruk").setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setScale(1.4).setPosition(378,105),
-       this.add.text(this.game.canvas.width / 2, 100, "Giovanni Torrente / zio gio").setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setScale(1.4).setPosition(378,135),
-       this.add.text(this.game.canvas.width / 2, 100, "Angelo  Galzerano / brodino").setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setScale(1.4).setPosition(378,165),
-       this.add.text(this.game.canvas.width / 2, 100, "Gabriele Di Maio / nog").setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setScale(1.4).setPosition(378,195),
-       this.add.text(this.game.canvas.width / 2, 100, "Giampoalo La Cerra / tondus").setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setScale(1.4).setPosition(378,225),
+       this.add.text(this.game.canvas.width / 2, 100, "Andrea Iacolare / andrue").setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setScale(1.4).setPosition(378,45).setTint(0x000000),
+       this.add.text(this.game.canvas.width / 2, 100, "Michele Pascarella / zozne").setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setScale(1.4).setPosition(378,75).setTint(0x000000),
+       this.add.text(this.game.canvas.width / 2, 100, "Fabio Iacolare / fasbruk").setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setScale(1.4).setPosition(378,105).setTint(0x000000),
+       this.add.text(this.game.canvas.width / 2, 100, "Giovanni Torrente / zio gio").setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setScale(1.4).setPosition(378,135).setTint(0x000000),
+       this.add.text(this.game.canvas.width / 2, 100, "Angelo  Galzerano / brodino").setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setScale(1.4).setPosition(378,165).setTint(0x000000),
+       this.add.text(this.game.canvas.width / 2, 100, "Gabriele Di Maio / nog").setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setScale(1.4).setPosition(378,195).setTint(0x000000),
+       this.add.text(this.game.canvas.width / 2, 100, "Giampoalo La Cerra / tondus").setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setScale(1.4).setPosition(378,225).setTint(0x000000),
        this.add.image(0, 0, "popup").setOrigin(.0).setScale(.1).setPosition(640,0).setInteractive()
        .on("pointerdown", () => {
       this.closeCredits();
@@ -120,11 +120,10 @@ private _logogame: Phaser.GameObjects.Image;
        this._howtoplayContainerText,
        this._howtoplayContainerBackground2,
        this.add.text(this.game.canvas.width / 2, 100, "Comandi").setTint(0xff0000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setScale(1.4).setPosition(475,15),
-       this.add.image(0,0,"frecce").setOrigin(.0).setScale(.1).setPosition(580,0),
-       this.add.text(this.game.canvas.width / 2, 100, "Movimento a destra").setTint(0xff0000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setScale(1.4).setPosition(585,20),
+       this.add.image(0,0,"frecce").setOrigin(.0).setScale(.1).setPosition(410,20).setScale(0.5),
        this.add.image(0, 0, "popup").setOrigin(.0).setScale(.1).setPosition(640,0).setInteractive()
        .on("pointerdown", () => {
-      this.closeCredits();
+      this.closeHowToPlay();
     })]);
 
 
@@ -232,7 +231,7 @@ private _logogame: Phaser.GameObjects.Image;
     
     closeHowToPlay() {
         this.tweens.add({
-          targets: this._creditsContainer, alpha: 0, duration: 1000, onComplete: () => {
+          targets: this._howtoplayContainer, alpha: 0, duration: 1000, onComplete: () => {
             this._play.setInteractive();
             this._credits.setInteractive();
             this._howtoplay.setInteractive();

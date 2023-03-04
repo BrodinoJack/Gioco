@@ -1,10 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="32" tileheight="32" infinite="1" nextlayerid="4" nextobjectid="4">
+<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="80" height="16" tilewidth="32" tileheight="32" infinite="1" nextlayerid="5" nextobjectid="5">
  <editorsettings>
   <export target="Map1.json" format="json"/>
  </editorsettings>
  <tileset firstgid="1" name="Blocchi" tilewidth="32" tileheight="32" spacing="1" margin="1" tilecount="216" columns="18">
   <image source="Blocchi.png" width="612" height="408"/>
+  <tile id="36">
+   <properties>
+    <property name="exit" type="bool" value="true"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="217" name="macchine" tilewidth="84" tileheight="57" spacing="1" margin="1" tilecount="5" columns="5">
+  <image source="macchine.png" width="440" height="76"/>
+ </tileset>
+ <tileset firstgid="222" name="Nemico" tilewidth="22" tileheight="40" tilecount="4" columns="4">
+  <image source="nemicocammina22_40.png" width="88" height="40"/>
+ </tileset>
+ <tileset firstgid="226" name="grass" tilewidth="32" tileheight="32" tilecount="1980" columns="60">
+  <image source="grass-green-color-solid-background-1920x1080.png" width="1920" height="1080"/>
   <tile id="0">
    <properties>
     <property name="collide" type="bool" value="true"/>
@@ -45,134 +59,134 @@
     <property name="collide" type="bool" value="true"/>
    </properties>
   </tile>
-  <tile id="8">
+  <tile id="60">
    <properties>
     <property name="collide" type="bool" value="true"/>
    </properties>
   </tile>
-  <tile id="9">
+  <tile id="61">
    <properties>
     <property name="collide" type="bool" value="true"/>
    </properties>
   </tile>
-  <tile id="10">
+  <tile id="62">
    <properties>
     <property name="collide" type="bool" value="true"/>
    </properties>
   </tile>
-  <tile id="11">
+  <tile id="63">
    <properties>
     <property name="collide" type="bool" value="true"/>
    </properties>
   </tile>
-  <tile id="12">
+  <tile id="64">
    <properties>
     <property name="collide" type="bool" value="true"/>
    </properties>
   </tile>
-  <tile id="18">
+  <tile id="65">
    <properties>
     <property name="collide" type="bool" value="true"/>
    </properties>
   </tile>
-  <tile id="19">
+  <tile id="66">
    <properties>
     <property name="collide" type="bool" value="true"/>
    </properties>
   </tile>
-  <tile id="20">
+  <tile id="67">
    <properties>
     <property name="collide" type="bool" value="true"/>
    </properties>
   </tile>
-  <tile id="21">
+  <tile id="120">
    <properties>
     <property name="collide" type="bool" value="true"/>
    </properties>
   </tile>
-  <tile id="22">
+  <tile id="121">
    <properties>
     <property name="collide" type="bool" value="true"/>
    </properties>
   </tile>
-  <tile id="23">
+  <tile id="122">
    <properties>
     <property name="collide" type="bool" value="true"/>
    </properties>
   </tile>
-  <tile id="24">
+  <tile id="123">
    <properties>
     <property name="collide" type="bool" value="true"/>
    </properties>
   </tile>
-  <tile id="25">
+  <tile id="124">
    <properties>
     <property name="collide" type="bool" value="true"/>
    </properties>
   </tile>
-  <tile id="26">
+  <tile id="125">
    <properties>
     <property name="collide" type="bool" value="true"/>
    </properties>
   </tile>
-  <tile id="27">
+  <tile id="126">
    <properties>
     <property name="collide" type="bool" value="true"/>
    </properties>
   </tile>
-  <tile id="28">
+  <tile id="127">
    <properties>
     <property name="collide" type="bool" value="true"/>
    </properties>
   </tile>
-  <tile id="29">
+  <tile id="180">
    <properties>
     <property name="collide" type="bool" value="true"/>
    </properties>
   </tile>
-  <tile id="30">
+  <tile id="181">
    <properties>
     <property name="collide" type="bool" value="true"/>
    </properties>
   </tile>
-  <tile id="36">
-   <properties>
-    <property name="exit" type="bool" value="true"/>
-   </properties>
-  </tile>
- </tileset>
- <tileset firstgid="217" name="macchine" tilewidth="84" tileheight="57" spacing="1" margin="1" tilecount="5" columns="5">
-  <image source="macchine.png" width="440" height="76"/>
-  <tile id="0">
+  <tile id="182">
    <properties>
     <property name="collide" type="bool" value="true"/>
    </properties>
   </tile>
-  <tile id="1">
+  <tile id="183">
    <properties>
     <property name="collide" type="bool" value="true"/>
    </properties>
   </tile>
-  <tile id="2">
+  <tile id="184">
    <properties>
     <property name="collide" type="bool" value="true"/>
    </properties>
   </tile>
-  <tile id="3">
+  <tile id="185">
    <properties>
     <property name="collide" type="bool" value="true"/>
    </properties>
   </tile>
-  <tile id="4">
+  <tile id="186">
+   <properties>
+    <property name="collide" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="187">
    <properties>
     <property name="collide" type="bool" value="true"/>
    </properties>
   </tile>
  </tileset>
- <tileset firstgid="222" name="Nemico" tilewidth="22" tileheight="40" tilecount="4" columns="4">
-  <image source="nemicocammina22_40.png" width="88" height="40"/>
- </tileset>
- <layer id="1" name="Pavimento" width="30" height="20">
+ <objectgroup id="3" name="Nemico">
+  <object id="1" name="Nemico 3" class="Nemico" gid="222" x="1374.33" y="288" width="22" height="40"/>
+  <object id="2" name="Nemico 2" class="Nemico" gid="222" x="1114.33" y="384.667" width="22" height="40"/>
+  <object id="3" name="Nemico 1" class="Nemico" gid="222" x="608.333" y="480.667" width="22" height="40"/>
+  <object id="4" name="Nemico 4" class="Nemico" gid="222" x="1707" y="221" width="22" height="40"/>
+ </objectgroup>
+ <layer id="4" name="Collide" width="80" height="16">
   <data encoding="csv">
    <chunk x="0" y="0" width="16" height="16">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -188,9 +202,9 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,22,22,22,22,0,0,0,0,0,
-0,0,0,0,0,0,0,0,22,0,22,22,0,0,0,0,
-1,2,2,4,5,5,5,5,5,5,5,5,5,5,5,5
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,226,226,226,226,226,0,0,0,0,
+227,227,227,227,227,227,227,227,227,227,227,227,227,227,227,227
 </chunk>
    <chunk x="16" y="0" width="16" height="16">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -201,14 +215,14 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,7,8,2147483655,0,0,0,0,0,7,2147483655,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,7,2147483655,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
-0,0,0,0,22,22,0,0,0,0,0,0,0,0,0,1610612739,
-0,0,0,0,0,22,22,0,0,0,0,0,0,0,1,11,
-5,5,5,5,5,5,5,5,5,5,5,5,5,5,11,11
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,227,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,227,
+0,0,0,0,226,226,226,0,0,0,0,0,0,0,227,0,
+227,227,227,227,227,227,227,227,227,227,227,227,227,227,0,0
 </chunk>
    <chunk x="32" y="0" width="16" height="16">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -217,16 +231,16 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-7,8,8,8,8,2147483655,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,22,22,22,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,22,22,0,
-0,0,0,0,0,0,0,1,2,4,5,5,5,5,5,5,
-0,0,0,0,22,22,22,1610612738,11,11,11,11,11,11,11,11,
-0,0,0,0,0,22,22,1610612738,11,11,11,11,11,11,11,11,
-2,2,2,2,2,2,2,11,11,11,11,11,11,11,11,11,
-11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,
-11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,
-11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,226,226,226,0,
+0,0,0,0,0,0,0,227,227,227,227,227,227,227,227,227,
+0,0,0,0,226,226,0,227,0,0,0,0,0,0,0,0,
+0,0,0,0,226,226,226,227,0,0,0,0,0,0,0,0,
+227,227,227,227,227,227,227,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </chunk>
    <chunk x="48" y="0" width="16" height="16">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -235,25 +249,20 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,226,226,226,226,226,0,0,0,37,
+0,0,0,0,227,227,227,227,227,227,227,227,227,227,227,227,
+0,0,0,0,227,0,0,0,0,0,0,0,0,0,0,0,
+227,227,227,227,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,37,37,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,37,37,0,0,0,0,0,0,0,0,0,0,0,0,
-19,2,2,2,0,0,0,0,0,0,0,0,0,0,0,0,
-11,11,11,11,0,0,0,0,0,0,0,0,0,0,0,0,
-11,11,11,11,0,0,0,0,0,0,0,0,0,0,0,0,
-11,11,11,11,0,0,0,0,0,0,0,0,0,0,0,0,
-11,11,11,11,0,0,0,0,0,0,0,0,0,0,0,0,
-11,11,11,11,0,0,0,0,0,0,0,0,0,0,0,0,
-11,11,11,11,0,0,0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </chunk>
   </data>
  </layer>
- <objectgroup id="3" name="Nemico">
-  <object id="1" name="Nemico 3" class="Nemico" gid="222" x="1374.33" y="288" width="22" height="40"/>
-  <object id="2" name="Nemico 2" class="Nemico" gid="222" x="1114.33" y="384.667" width="22" height="40"/>
-  <object id="3" name="Nemico 1" class="Nemico" gid="222" x="608.333" y="480.667" width="22" height="40"/>
- </objectgroup>
- <layer id="2" name="Macchine" width="30" height="20">
+ <layer id="2" name="Macchine" width="80" height="16">
   <data encoding="csv">
    <chunk x="0" y="0" width="16" height="16">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -309,14 +318,14 @@
 0,0,0,22,0,0,22,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </chunk>
-   <chunk x="16" y="16" width="16" height="16">
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,22,0,0,0,0,
+   <chunk x="48" y="0" width="16" height="16">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,220,0,221,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -326,6 +335,82 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</chunk>
+  </data>
+ </layer>
+ <layer id="1" name="Pavimento" width="80" height="16">
+  <data encoding="csv">
+   <chunk x="0" y="0" width="16" height="16">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,22,22,22,22,0,0,0,0,0,
+0,0,0,0,0,0,0,0,22,0,22,22,0,0,0,0,
+1,2,2,4,5,5,5,5,5,5,5,5,5,5,5,5
+</chunk>
+   <chunk x="16" y="0" width="16" height="16">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
+0,0,0,0,22,22,0,0,0,0,0,0,0,0,0,1610612739,
+0,0,0,0,0,22,22,0,0,0,0,0,0,0,1,11,
+5,5,5,5,5,5,5,5,5,5,5,5,5,5,11,11
+</chunk>
+   <chunk x="32" y="0" width="16" height="16">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,22,22,22,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,22,22,0,
+0,0,0,0,0,0,0,1,2,4,5,5,5,5,5,5,
+0,0,0,0,22,22,22,1610612738,11,11,11,11,11,11,11,11,
+0,0,0,0,0,22,22,1610612738,11,11,11,11,11,11,11,11,
+2,2,2,2,2,2,2,11,11,11,11,11,11,11,11,11,
+11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,
+11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,
+11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11
+</chunk>
+   <chunk x="48" y="0" width="16" height="16">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,37,37,1,2,4,5,5,5,5,5,5,19,2,2,
+0,0,37,37,1610612738,11,11,11,11,11,11,11,11,11,11,11,
+19,2,2,2,11,11,11,11,11,11,11,11,11,11,11,11,
+11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,
+11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,
+11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,
+11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,
+11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,11,
+11,11,11,11,10,10,10,10,10,10,10,10,10,10,10,10
 </chunk>
   </data>
  </layer>

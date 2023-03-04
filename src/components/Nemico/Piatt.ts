@@ -5,7 +5,7 @@ export default class Piatt extends Nemico {
   private _vel: number = 50;
   constructor(params: genericConfig) {
     super(params);
-    this.setName("nemico")
+    this.setName("Soldato")
     this.create();
   }
   create() {
@@ -19,7 +19,7 @@ export default class Piatt extends Nemico {
 
     this._body.setVelocityX(50);
 
-    let _animation = {
+    /*let _animation = {
       key: "move",
       frames: this.anims.generateFrameNumbers(this._config.key, {
         frames: [4, 5, 6, 7]
@@ -30,11 +30,38 @@ export default class Piatt extends Nemico {
     };
     this.setFlipX(true);
     this.anims.create(_animation);
-    this.play("move");
+    this.play("move");*/
+    
+   let _animation= {
+      key: "Stop",
+      frames: this.anims.generateFrameNumbers("Soldato", { frames: [0] }),
+      frameRate: 1,
+      yoyo: false,
+      repeat: -1
+    }
+    this.anims.create(_animation);
 
-  }
+     /* let _morte: Phaser.Types.Animations.Animation = {
+        key: "died",
+        frames: this.anims.generateFrameNumbers("Soldato", { frames: [ 0,1,2,3,4,5,6] }),
+        frameRate: 6,
+        yoyo: false,
+        repeat: 0,
+      };
+      this.anims.create(_animation);
+      this.time.addEvent({
+        delay: 1000,
+        callback: () => { console.log(this._enemy1.destroy) },
+        callbackScope: this
+        });*/
 
 
+
+    }
+    Stop() {
+      this._enemy1.setEnable(false);
+      this.setAlpha(0);
+    }
   changeDirection(): void {
 
     if (this._vel == 50) {
@@ -48,5 +75,7 @@ export default class Piatt extends Nemico {
   }
 
 
-  update(time: number, delta: number) { }
+  update(time: number, delta: number) { 
+    
+  }
 }

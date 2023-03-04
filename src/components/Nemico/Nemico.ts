@@ -6,7 +6,7 @@ export default class Nemico extends Phaser.GameObjects.Sprite implements INemico
   protected _scene: FabioIacolare;
   protected _body: Phaser.Physics.Arcade.Body;
     private _type:number=0;
-    private _enemy1:Phaser.Physics.Arcade.Body;
+    public _enemy1:Phaser.Physics.Arcade.Body;
     private _enemyGroup: Phaser.GameObjects.Group;
     private _scene2:Phaser.Scene;
     private _trigger: Phaser.GameObjects.Zone;
