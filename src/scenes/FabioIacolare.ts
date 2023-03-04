@@ -134,7 +134,7 @@ createMap(): void {
 
         //aggungiamo un nuovo nemico nella positione indicata dalla TILE
        new Piatt({
-        scene: this, x: tile.x, y: tile.y, key: "Soldato"})})}
+        scene: this, x: tile.x, y: tile.y, key: "Soldato_Nem_1_ATT sin i"})})}
      }
 
     
