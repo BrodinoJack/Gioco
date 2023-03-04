@@ -1,12 +1,12 @@
 import IMain from "./IMain";
 import FabioIacolare from "../../scenes/FabioIacolare";
-
+import Hub from "../../scenes/Hud";
 export default class Main extends Phaser.GameObjects.Sprite implements IMain{
     protected _config: genericConfig;
     private _scene: FabioIacolare;
     private _cursors: Phaser.Types.Input.Keyboard.CursorKeys;
     private Proie: Phaser.Physics.Arcade.Group
-    private _ncolpi2: number=12;
+    private _ncolpi2: number=24;
 
     private _M: Phaser.Physics.Arcade.Body; 
     private _spacebar: Phaser.Input.Keyboard.Key;
@@ -31,7 +31,7 @@ constructor(params: genericConfig) {
       .setGravity(0, 1200)
       .setMaxVelocity(250, 550)
       .setGravityY(1500)
-      
+      this._scene.addProie(this);      
       this._cursors = this._scene.input.keyboard.createCursorKeys(); 
       this._spacebar = this._scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
 
@@ -104,8 +104,7 @@ constructor(params: genericConfig) {
           if (!this.Proie)
           {
             return
-          }
-      
+          }  
           const Proi = this.Proie.get(this.x, this.y-5, 'Proi') as Phaser.Physics.Arcade.Image
           if (!Proi)
           {
@@ -145,16 +144,26 @@ constructor(params: genericConfig) {
           Proi.setVelocity(vec.x * 1000, vec.y * 1000)
         }
 
-
-
+  removeproie() {
+   this.Sparo
+   
+}
 
 
 
     update(time: number, delta: number) {
 
       
+
       if (Phaser.Input.Keyboard.JustDown(this._spacebar)) { 
         this.Sparo();
+        this._ncolpi2--;
+        
+        if(this._ncolpi2>-1){
+          this.scene.events.emit("decrease-Colpi", [1]);
+        }
+        
+
        }
 
 
@@ -186,3 +195,5 @@ constructor(params: genericConfig) {
          
   }
 }
+
+

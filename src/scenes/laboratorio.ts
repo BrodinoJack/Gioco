@@ -93,7 +93,7 @@
      this._dialogolab3ContainerText,
      this._dialogolab3ContainerBackground2,
      this.add.text(this.game.canvas.width / 2, 100, "Quindi esiste davvero ").setTint(0x00000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setDepth(10).setScale(1.2).setPosition(570,280),
-     this.add.text(this.game.canvas.width / 2, 100, "una cosa del genere").setTint(0x00000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setDepth(10).setScale(1.2).setPosition(570,310),
+     this.add.text(this.game.canvas.width / 2, 100, "una cosa del genere...").setTint(0x00000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setDepth(10).setScale(1.2).setPosition(570,310),
      this.add.image(0, 0, "freccia").setOrigin(0.5).setScale(0.4).setDepth(15).setPosition(1010,470).setInteractive()
      .on("pointerdown", () => {
       this.closedialogolab3(),
@@ -177,6 +177,8 @@ opendialogolab() {
         startGame() {
             this.scene.stop("laboratorio");
             this.scene.start("FabioIacolare");
+            this.scene.start("Hud");
+            this.scene.bringToTop("Hud");
           
           }
         update(time: number, delta: number): void {

@@ -33,6 +33,8 @@ export default class Nemico extends Phaser.GameObjects.Sprite implements INemico
 
 
 
+
+
     }
 
 

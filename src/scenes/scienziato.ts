@@ -105,8 +105,8 @@ export default class scienziato extends Phaser.Scene {
     this._dialogo2ContainerBackground,
      this._dialogo2ContainerText,
      this._dialogo2ContainerBackground2,
-     this.add.text(this.game.canvas.width / 2, 100, "Vengo da una Nazione ").setTint(0x00000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setDepth(10).setScale(1.2).setPosition(500,230),
-     this.add.text(this.game.canvas.width / 2, 100, "del sud chiamata Clover").setTint(0x00000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setDepth(10).setScale(1.2).setPosition(500,265),
+     this.add.text(this.game.canvas.width / 2, 100, "Vengo da un Paese ").setTint(0x00000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setDepth(10).setScale(1.2).setPosition(500,230),
+     this.add.text(this.game.canvas.width / 2, 100, "del sud chiamato Clover").setTint(0x00000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setDepth(10).setScale(1.2).setPosition(500,265),
      this.add.image(0, 0, "freccia").setOrigin(0.5).setScale(0.4).setPosition(1010,470).setDepth(15).setInteractive()
      .on("pointerdown", () => {
     this.closedialogo2();
@@ -126,7 +126,7 @@ export default class scienziato extends Phaser.Scene {
     this._dialogo3ContainerBackground,
      this._dialogo3ContainerText,
      this._dialogo3ContainerBackground2,
-     this.add.text(this.game.canvas.width / 2, 100, "Ah, quella nazione che ha perso ").setTint(0x00000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setDepth(10).setScale(1.2).setPosition(240,220),
+     this.add.text(this.game.canvas.width / 2, 100, "Ah, il Paese che ha perso ").setTint(0x00000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setDepth(10).setScale(1.2).setPosition(240,220),
      this.add.text(this.game.canvas.width / 2, 100, "la guerra tempo fa. *cough *cough").setTint(0x00000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setDepth(10).setScale(1.2).setPosition(240,245),
      this.add.image(0, 0, "freccia").setOrigin(0.5).setScale(0.4).setDepth(15).setPosition(1010,470).setInteractive()
      .on("pointerdown", () => {
@@ -146,10 +146,10 @@ export default class scienziato extends Phaser.Scene {
     this._dialogo4ContainerBackground,
      this._dialogo4ContainerText,
      this._dialogo4ContainerBackground2,
-     this.add.text(this.game.canvas.width / 2, 100, "Si proprio quella nazione, ").setTint(0x00000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setDepth(10).setScale(1.2).setPosition(480,213),
+     this.add.text(this.game.canvas.width / 2, 100, "Si, proprio quello, ").setTint(0x00000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setDepth(10).setScale(1.2).setPosition(480,213),
      this.add.text(this.game.canvas.width / 2, 100, "vorrei ci fosse un modo per  ").setTint(0x00000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setDepth(10).setScale(1.2).setPosition(480,233),
      this.add.text(this.game.canvas.width / 2, 100, "rimediare ai miei sbagli come ").setTint(0x00000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setDepth(10).setScale(1.2).setPosition(480,253),
-     this.add.text(this.game.canvas.width / 2, 100, " ad esempio tornare nel passato").setTint(0x00000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setDepth(10).setScale(1.2).setPosition(480,273),
+     this.add.text(this.game.canvas.width / 2, 100, "ad esempio tornare nel passato").setTint(0x00000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setDepth(10).setScale(1.2).setPosition(480,273),
      this.add.image(0, 0, "freccia").setOrigin(0.5).setScale(0.4).setPosition(1010,470).setDepth(15).setInteractive()
      .on("pointerdown", () => {
     this.closedialogo4();
@@ -167,8 +167,8 @@ export default class scienziato extends Phaser.Scene {
     this._dialogo5ContainerBackground,
      this._dialogo5ContainerText,
      this._dialogo5ContainerBackground2,
-     this.add.text(this.game.canvas.width / 2, 100, "Ho io qualcosa che fa al caso tuo,  ").setTint(0x00000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setDepth(10).setScale(1.2).setPosition(240,210),
-     this.add.text(this.game.canvas.width / 2, 100, "domani recati nel mio laboratorio").setTint(0x00000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setDepth(10).setScale(1.2).setPosition(240,230),
+     this.add.text(this.game.canvas.width / 2, 100, "Ho io qualcosa che fa al caso tuo.  ").setTint(0x00000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setDepth(10).setScale(1.2).setPosition(240,210),
+     this.add.text(this.game.canvas.width / 2, 100, "Ci vediamo domani al mio laboratorio").setTint(0x00000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setDepth(10).setScale(1.2).setPosition(240,230),
      this.add.text(this.game.canvas.width / 2, 100, "via WolfStreet 1/5").setTint(0x00000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setDepth(10).setScale(1.2).setPosition(240,250),
      this.add.image(0, 0, "freccia").setOrigin(0.5).setScale(0.4).setDepth(15).setPosition(1010,470).setInteractive()
      .on("pointerdown", () => {

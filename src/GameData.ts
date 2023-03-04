@@ -82,6 +82,20 @@ export let GameData: any = {
       height: 40,
       frames: 4,
     },
+    {
+      name: "shot",
+      path: "assets/Mappa/Soldato_Nem_1_ATT_destra.png",
+      width: 22,
+      height: 40,
+      frames: 4,
+    },
+    {
+      name: "Boss",
+      path: "assets/Mappa/fermo boss.png",
+      width: 22,
+      height: 40,
+      frames: 4,
+    },
 
   ],
 
@@ -178,10 +192,26 @@ export let GameData: any = {
     {
       name: "_musicbar",
       paths: ["assets/sounds/music-bar.ogg", "assets/sounds/music-bar.m4a"]
+    },
+    {
+      name: "_level1",
+      paths: ["assets/sounds/gameplay1.ogg", "assets/sounds/gameplay1.m4a"]
+    },
+    {
+      name: "_level2",
+      paths: ["assets/sounds/gameplay2.ogg", "assets/sounds/gameplay2.m4a"]
     }
   ],
   
-  audio: [  ],
+  audio: [ {
+    name: "_level1",
+    paths: ["assets/sounds/gameplay1.ogg", "assets/sounds/gameplay1.m4a"]
+  },
+  {
+    name: "_level2",
+    paths: ["assets/sounds/gameplay2.ogg", "assets/sounds/gameplay2.m4a"]
+  }
+ ],
   bitmapfont: [],
   tilemaps:[ 
     {

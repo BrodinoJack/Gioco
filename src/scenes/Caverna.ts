@@ -30,6 +30,8 @@ export default class Caverna extends Phaser.Scene {
     private _proiettileGroup: Phaser.GameObjects.Group
 
     private _cursors: Phaser.Types.Input.Keyboard.CursorKeys;
+
+    private _music: Phaser.Sound.BaseSound;
     
     preload() {
         // Caricamento della mappa Tiled
@@ -58,7 +60,8 @@ export default class Caverna extends Phaser.Scene {
         this._colpi2=this.add.image(this.game.canvas.width/ 2,100, "proiettili_vuoti").setPosition(870,30).setScrollFactor(0).setScale(.35).setAlpha(0)
         this._ncolpi=this.add.text(this.game.canvas.width/ 2,100, ""+ this._ncolpi2).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setTint(0xffffff).setPosition(820,20);
         
-        
+        this._music = this.sound.add("_level2", { loop: true, volume: 1 });
+        this._music.play();
 
 
         /*this.Sparata = this.physics.add.group({

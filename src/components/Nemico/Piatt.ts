@@ -40,6 +40,18 @@ export default class Piatt extends Nemico {
       repeat: -1
     }
     this.anims.create(_animation);
+    this.anims.play('Stop', true);
+    let _animation2= {
+      key: "sparare",
+      frames: this.anims.generateFrameNumbers("shot", { frames: [0,1,2,3] }),
+      frameRate: 4,
+      yoyo: false,
+      repeat: -1
+    }
+    this.anims.create(_animation2);
+    this.anims.play('sparare', true);
+    }
+
 
      /* let _morte: Phaser.Types.Animations.Animation = {
         key: "died",
@@ -57,11 +69,16 @@ export default class Piatt extends Nemico {
 
 
 
-    }
+    
     Stop() {
       this._enemy1.setEnable(false);
       this.setAlpha(0);
     }
+    sparare() {
+      this._enemy1.setEnable(false);
+      this.setAlpha(1);}
+    
+
   changeDirection(): void {
 
     if (this._vel == 50) {
@@ -76,6 +93,6 @@ export default class Piatt extends Nemico {
 
 
   update(time: number, delta: number) { 
-    //this.anims.play('enemy', true);
+    
   }
 }

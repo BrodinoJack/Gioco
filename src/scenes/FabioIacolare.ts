@@ -3,7 +3,6 @@ import Player from "../components/Player/Main";
 import Nemico from "../components/Nemico/Nemico"; 
 import { GameData } from "../GameData";
 import Piatt from "../components/Nemico/Piatt";
-import Hud from "../scenes/Hud"
 import { GameObjects } from "phaser";
 export default class FabioIacolare extends Phaser.Scene {
  
@@ -12,7 +11,7 @@ export default class FabioIacolare extends Phaser.Scene {
   private _tre: Phaser.GameObjects.Text;
   private _colpi:Phaser.GameObjects.Image;
   private _ncolpi:Phaser.GameObjects.Text;
-  private _ncolpi2: number=12;
+  private _ncolpi2: number=24;
   private _player: Main;  
   private _Enemy: Piatt;
 
@@ -35,11 +34,13 @@ export default class FabioIacolare extends Phaser.Scene {
   private layer1: Phaser.Tilemaps.TilemapLayer;
   private layer2: Phaser.Tilemaps.TilemapLayer;
   private layer3: Phaser.Tilemaps.TilemapLayer;
+  private layer4: Phaser.Tilemaps.TilemapLayer;
 
  
     private _proiettileGroup: Phaser.GameObjects.Group;
   
-
+    private _music: Phaser.Sound.BaseSound;
+    _Proie:any
 
     constructor() {
         super({ key: "FabioIacolare" });   
@@ -54,10 +55,14 @@ export default class FabioIacolare extends Phaser.Scene {
 create(){
   this._enemyGroup = this.add.group({ runChildUpdate: true });
   this._proiettileGroup = this.add.group({ runChildUpdate: true });
+  const trigger = this.add.sprite(40, 40, 'enemy');
+  trigger.visible = false;
+  this._music = this.sound.add("_level1", { loop: true, volume: 1 });
+  this._music.play();
 
   this.Sparata = this.physics.add.group({
     classType: Phaser.Physics.Arcade.Image,
-    maxSize: 12
+    maxSize: 24
   })
   this._player = new Player({
     scene: this, x: 60, y:
@@ -72,9 +77,10 @@ create(){
   this.setupEnemies(); 
   this.cameras.main.startFollow(this._player);
     this.physics.add.collider(this.Sparata, this._enemyGroup,(
-      
+      _Proie, _enemy
     )=>{
-
+    this.removeProie(_Proie)
+    _enemy.destroy()
     })
       this.physics.add.collider(this.Sparata, this.layer1,()=>{
       });
@@ -132,7 +138,43 @@ createMap(): void {
       .setAlpha(1);
       this.layer2.setCollisionByProperty({
           collide: true,})
-      
+    this.layer3 = this.map
+      .createLayer("Exit", this.tileset, 0, 90)
+      .setDepth(9)
+      .setAlpha(1);
+      this.layer3.setCollisionByProperty({
+          exit: true
+        })
+    this.layer4 = this.map
+      .createLayer("morte", this.tileset, 0, 90)
+      .setDepth(9)
+      .setAlpha(1);
+      this.layer4.setCollisionByProperty({
+          kill: true
+        })
+
+      this.physics.add.collider(
+          this._player,
+          this.layer3,
+          (_player: any, _tile: any) => {
+            if (_tile.properties.exit == true) {
+              console.log("level completed");
+            }
+          },
+          undefined,
+          this
+        );
+        this.physics.add.collider(
+          this._player,
+          this.layer4,
+          (_player: any, _tile: any) => {
+            if (_tile.properties.kill == true) {
+              console.log("Dio");
+            }
+          },
+          undefined,
+          this
+        );
         /*  this.physics.add.collider(
             this._enemyGroup,
             this.layer1,
@@ -147,7 +189,6 @@ createMap(): void {
             this._enemyGroup,
             this.layer2,
             (enemy: any) => {
-              //quando ENEMY collide con una tile di questo layer viene richiamato per l'ENEMY il metodo changeDirection
               let _enemy: Nemico = <Nemico>enemy;
               _enemy.changeDirection();
       
@@ -168,7 +209,15 @@ createMap(): void {
         
       }
 
-     
+      addProie(_Proie: any){
+        this._proiettileGroup.add(_Proie)
+      }
+
+      removeProie(_Proie: any) {
+        _Proie.destroy()
+       
+        
+      }
 
       
       
@@ -182,11 +231,8 @@ createMap(): void {
       console.log(_Soldato)
        _Soldato.forEach((tile: Phaser.Tilemaps.Tile) => {
 
-        //aggungiamo un nuovo nemico nella positione indicata dalla TILE
        new Piatt({
         scene: this, x: tile.x, y: tile.y, key: "enemy"})})}
-
-       // if(this._enemy.bound)
      }
     
   
@@ -196,9 +242,7 @@ createMap(): void {
 
   update(time: number, delta: number): void {
     this._player.update(time, delta);
-    
-      
-
- 
-  }
-} 
+    this.physics.add.overlap(this._player, this._enemy, () => {
+      console.log("shot");
+  })
+} }

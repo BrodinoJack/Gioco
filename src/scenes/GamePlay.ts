@@ -46,7 +46,7 @@ export default class GamePlay extends Phaser.Scene {
               .setPosition(800,500) 
               .setInteractive()
               .on("pointerdown", () => {
-                this._frase3=this.add.text(this.game.canvas.width / 2, 100, "di questa Nazione però sopravvive un solo soldato fuggito dalla guerra per paura,")
+                this._frase3=this.add.text(this.game.canvas.width / 2, 100, "di questa Nazione però sopravvive un solo soldato fuggito dalla guerra per paura.")
                 .setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif')
                 .setTint(0xffffff)
                 .setScale(1.2)
@@ -54,12 +54,12 @@ export default class GamePlay extends Phaser.Scene {
                 this._cliccare
                .setInteractive()
                .on("pointerdown", () => {
-                this._frase4=this.add.text(this.game.canvas.width / 2, 100, "costui dopo aver saputo della guerra persa")
+                this._frase4=this.add.text(this.game.canvas.width / 2, 100, "Questi, dopo aver saputo della guerra persa,")
                 .setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif')
                 .setTint(0xffffff)
                 .setScale(1.2)
                 .setPosition(295,275);
-                this._frase5=this.add.text(this.game.canvas.width / 2, 100, "si sente in colpa per non aver aiutato la Nazione e decide di dirigersi a nord.")
+                this._frase5=this.add.text(this.game.canvas.width / 2, 100, "si sente in colpa per non aver aiutato il suo Paese e decide di dirigersi a nord.")
                 .setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif')
                 .setTint(0xffffff)
                 .setScale(1.2)
@@ -67,7 +67,7 @@ export default class GamePlay extends Phaser.Scene {
                 this._cliccare.setInteractive()
                 .setPosition(800,500)
                 .on("pointerdown", () => {
-                  this._frase6=this.add.text(this.game.canvas.width / 2, 100, "L'ex-soldato riuscì a trovare un paese ospitale dove trascorrere le notti,")
+                  this._frase6=this.add.text(this.game.canvas.width / 2, 100, "Qui riusce a trovare un paese ospitale dove potersi sistemare,")
                   .setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif')
                   .setTint(0xffffff)
                   .setScale(1.2)
