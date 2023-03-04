@@ -84,6 +84,14 @@ export let GameData: any = {
       path: "assets/Sfondo/introcity.png",
     },
     {
+      name: "frecce",
+      path: "assets/images/frecce.png",
+    },
+    {
+      name: "logo",
+      path: "assets/images/logo.png",
+    },
+    {
       name: "player_intro",
       path: "assets/images/playerintro.png",
     },
@@ -172,11 +180,11 @@ export let GameData: any = {
   tilemaps:[ 
     {
     key: "level-1",
-    path: "assets/Mappa/LivelloBoss.json",
+    path: "assets/Mappa/Map1.json",
   },
   {
     key: "level-2",
-    path: "assets/Mappa/LivelloBoss.json",
+    path: "assets/Mappa/livello2.json",
   },
   {
     key: "level-3",
