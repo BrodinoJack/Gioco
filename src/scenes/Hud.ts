@@ -5,6 +5,7 @@ export default class Hud extends Phaser.Scene {
   private _vita: Phaser.GameObjects.Image;
   private _tre: Phaser.GameObjects.Text;
   private _colpi: Phaser.GameObjects.Image;
+  private _nocolpi: Phaser.GameObjects.Image;
   private _ncolpi:Phaser.GameObjects.Text;
   private _ncolpi2: number
   private _FabioIacolare:FabioIacolare;
@@ -18,6 +19,7 @@ export default class Hud extends Phaser.Scene {
   preload() { }
 
   create() {
+    
     this._FabioIacolare = <FabioIacolare>this.scene.get("FabioIacolare");
     this._vita= this.add.image(this.game.canvas.width/ 2,100, "cuore").setPosition(980,40).setScale(.1).setAlpha(1)
   this._tre= this.add.text(this.game.canvas.width/ 2,100, "3").setPosition(977,25).setScale(1).setAlpha(1).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setTint(0x000000)
@@ -27,6 +29,6 @@ export default class Hud extends Phaser.Scene {
  
   }
  update(time: number, delta: number): void {
-     
+    
+     }
     }
-  }

@@ -5,7 +5,6 @@ import { GameData } from "../GameData";
 import Piatt from "../components/Nemico/Piatt";
 export default class FabioIacolare extends Phaser.Scene {
  
- //a
 
   private _vita: Phaser.GameObjects.Image;
   private _tre: Phaser.GameObjects.Text;
@@ -14,6 +13,7 @@ export default class FabioIacolare extends Phaser.Scene {
   private _ncolpi2: number=12;
   private _player: Main;
   private L: Phaser.GameObjects.Image;
+  private _spacebar: Phaser.Input.Keyboard.Key;
     private _bg: Phaser.GameObjects.TileSprite;
     private _P: Phaser.Physics.Arcade.Sprite;
     private GruppoPavimento: Phaser.GameObjects.Group;
@@ -50,7 +50,7 @@ export default class FabioIacolare extends Phaser.Scene {
 create(){
   
  this.createMap();  
- this.setupEnemies(); 
+// this.setupEnemies(); 
  this._vita= this.add.image(this.game.canvas.width/ 2,100, "cuore").setPosition(980,40).setScale(.1).setAlpha(1).setScrollFactor(0);
  this._tre= this.add.text(this.game.canvas.width/ 2,100, "3").setPosition(977,25).setScale(1).setAlpha(1).setScrollFactor(0).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setTint(0x000000),
  this._colpi= this.add.image(this.game.canvas.width /2,100, "proiettil").setPosition(910,35).setScale(.35).setAlpha(1).setScrollFactor(0);
@@ -68,7 +68,6 @@ this._ncolpi=this.add.text(this.game.canvas.width /2,100, ""+this._ncolpi2).setP
       450, key: "Main"     
   });  
   this._player.setProie(this.Sparata)
-  this.setupEnemies();
 
   
   
@@ -82,7 +81,7 @@ createMap(): void {
   this._bg = this.add.tileSprite(0, 0, 1024, 600, "lvl1city").setOrigin(0).setScrollFactor(0);
   if (this.map != null) this.map.destroy();
 
-    this.map = this.make.tilemap({ key: "level-0" });
+    this.map = this.make.tilemap({ key: "level-2" });
 
      this.cameras.main.setBounds(
       0,
@@ -111,14 +110,7 @@ createMap(): void {
       .setAlpha(1);
       this.layer1.setCollisionByProperty({
         collide: true,})
-    /*this.layer2 = this.map
-      .createLayer("Exit", this.tileset, 0, 90)
-      .setDepth(9)
-      .setAlpha(1);
-      this.layer2.setCollisionByProperty({
-        collide: true,
-        exit: true
-      });*/
+
 
       
       
@@ -127,29 +119,21 @@ createMap(): void {
       
 
   
-     setupEnemies(): void {
-
-    //recuperiamo il layer object dalla mappa di TILED
-    let _objLayer: Phaser.Tilemaps.ObjectLayer = this.map.getObjectLayer("enemies");
-
-    // controlliamo che _objLayer non sia null
-    if (_objLayer != null) {
-
-      // recuperiamo gli objects all'interno del layer
-      let _enemies: any = _objLayer.objects as any[];
-
+     //setupEnemies(): void {
+      //let _objLayer: Phaser.Tilemaps.ObjectLayer = this.map.getObjectLayer("nemico");
+      //if (_objLayer != null) {
+        //let _enemies: any = _objLayer.objects as any[];
+      
       // cicliamo l'array 
-      _enemies.forEach((tile: Phaser.Tilemaps.Tile) => {
+//      _enemies.forEach((tile: Phaser.Tilemaps.Tile) => {
 
         //aggungiamo un nuovo nemico nella positione indicata dalla TILE
-        new Piatt({
-          scene: this, x: tile.x, y: tile.y, key: "soldato"
-        });
+    //    new ({
+      //    scene: this, x: tile.x, y: tile.y, key: "robo2"}}}
+     //}
 
-      });
-    }
-
-  }
+    
+        
     
   
 
@@ -158,8 +142,10 @@ createMap(): void {
 
 
   update(time: number, delta: number): void {
-    
-
+   
+    if(this._ncolpi2==0){
+      this._colpi= this.add.image(this.game.canvas.width/ 2,100, "proiettili_vuoti").setPosition(915,37).setScale(.3).setAlpha(1).setScrollFactor(0)
+    }
 
 
 

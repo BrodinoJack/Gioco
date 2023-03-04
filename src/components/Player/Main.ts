@@ -5,7 +5,6 @@ export default class Main extends Phaser.GameObjects.Sprite implements IMain{
     protected _config: genericConfig;
     private _scene: FabioIacolare;
     private _cursors: Phaser.Types.Input.Keyboard.CursorKeys;
-
     private Proie: Phaser.Physics.Arcade.Group
 
     private _M: Phaser.Physics.Arcade.Body; 
@@ -152,9 +151,9 @@ constructor(params: genericConfig) {
 
     update(time: number, delta: number) {
 
+      
       if (Phaser.Input.Keyboard.JustDown(this._spacebar)) { 
         this.Sparo();
-        
        }
 
 

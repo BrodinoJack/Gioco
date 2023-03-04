@@ -1,12 +1,11 @@
-import GamePlay from "../../scenes/FabioIacolare";
+import FabioIacolare from "../../scenes/FabioIacolare";
 import Nemico from "./Nemico";
 
 export default class Piatt extends Nemico {
-
   private _vel: number = 50;
   constructor(params: genericConfig) {
     super(params);
-    this.setName("soldato")
+    this.setName("nemico")
     this.create();
   }
   create() {

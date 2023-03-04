@@ -1,8 +1,9 @@
 export default class Intro extends Phaser.Scene {
-
+private _logogame: Phaser.GameObjects.Image;
   private _logo: Phaser.GameObjects.Image;
   private _play: Phaser.GameObjects.BitmapText;
   private _credits:Phaser.GameObjects.BitmapText;
+  private _howtoplay: Phaser.GameObjects.BitmapText;
   private _music: Phaser.Sound.BaseSound;
   private _music2: Phaser.Sound.BaseSound;
   private _creditsContainer: Phaser.GameObjects.Container;
@@ -11,6 +12,11 @@ export default class Intro extends Phaser.Scene {
   private _creditsContainerBackground2: Phaser.GameObjects.Image;
   private _creditsContainerEsc: Phaser.GameObjects.Image; 
   private _M: Phaser.GameObjects.Sprite;
+  private _howtoplayContainer: Phaser.GameObjects.Container;
+  private _howtoplayContainerText: Phaser.GameObjects.Text;
+  private _howtoplayContainerBackground: Phaser.GameObjects.Image;
+  private _howtoplayContainerBackground2: Phaser.GameObjects.Image;
+  private _howtoplayContainerEsc: Phaser.GameObjects.Image; 
   private _Aereo: Phaser.GameObjects.TileSprite;
   private _Aereo2: Phaser.GameObjects.TileSprite;
   private _Aereo3: Phaser.GameObjects.TileSprite;
@@ -49,7 +55,7 @@ export default class Intro extends Phaser.Scene {
   create() {
     this.add.tileSprite(500, 250, 0, 0, "intro-image").setOrigin(1).setPosition(1024,600); 
 
-
+    this._logogame=this.add.image(this.game.canvas.width / 1.98, 150,"logo").setOrigin(0.5).setScale(.5).setDepth(2)
     
 
     
@@ -103,6 +109,25 @@ export default class Intro extends Phaser.Scene {
        .on("pointerdown", () => {
       this.closeCredits();
     })]);
+
+    this._howtoplayContainer = this.add.container().setAlpha(0).setDepth(10);
+    this._howtoplayContainerText = this.add.text(this.game.canvas.width / 2, 100, "").setTint(0xff0000).setOrigin(.5);
+    this._howtoplayContainerBackground = this.add.image(0, 0, "").setOrigin(.0).setScale(.1).setPosition(450,0);
+    this._howtoplayContainerBackground2=this.add.image(this.game.canvas.width / 2, 120, "options");
+
+    this._howtoplayContainer.add([
+      this._howtoplayContainerBackground,
+       this._howtoplayContainerText,
+       this._howtoplayContainerBackground2,
+       this.add.text(this.game.canvas.width / 2, 100, "Comandi").setTint(0xff0000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setScale(1.4).setPosition(475,15),
+       this.add.image(0,0,"frecce").setOrigin(.0).setScale(.1).setPosition(580,0),
+       this.add.text(this.game.canvas.width / 2, 100, "Movimento a destra").setTint(0xff0000).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setScale(1.4).setPosition(585,20),
+       this.add.image(0, 0, "popup").setOrigin(.0).setScale(.1).setPosition(640,0).setInteractive()
+       .on("pointerdown", () => {
+      this.closeCredits();
+    })]);
+
+
    
 
     this.cameras.main.setBackgroundColor(0xffffff);
@@ -127,10 +152,30 @@ export default class Intro extends Phaser.Scene {
       .on("pointerout", () => { 
         this._play.setTint(0x800000).setScale(1.1);
       });
+      
+      this._howtoplay = this.add
+      .bitmapText(this.game.canvas.width / 2, 400,  "arcade", "HOW TO PLAY")
+      .setAlpha(1)
+      .setOrigin(0.5)
+      .setInteractive()
+      .setDepth(100)
+      .setScale(0.8)
+      .setTint(0x800000)
+      .on("pointerup", () => {
+        this._howtoplay.removeInteractive();
+      })
+      .on("pointerover", () => {
+        this._howtoplay.setTint(0x300000).setScale(1);
+        this._music2= this.sound.add("_button", { loop: false, volume: 0.7 });
+        this._music2.play();
+      })
+      .on("pointerout", () => { 
+        this._howtoplay.setTint(0x800000).setScale(0.8);
+      }).on("pointerdown", this.openHowToPlay, this);;
 
 
       this._credits = this.add
-      .bitmapText(this.game.canvas.width / 2, 400, "arcade", "CREDITS")
+      .bitmapText(this.game.canvas.width / 2, 450, "arcade", "CREDITS")
       .setAlpha(1)
       .setOrigin(0.5)
       .setInteractive()
@@ -159,6 +204,7 @@ export default class Intro extends Phaser.Scene {
   openCredits() {
     this._credits.disableInteractive();
     this._play.disableInteractive();
+    this._howtoplay.disableInteractive();
     this.tweens.add({
       targets: this._creditsContainer, alpha: 1, duration: 1000, onComplete: () => {
         this._creditsContainerBackground.setInteractive()
@@ -170,9 +216,29 @@ export default class Intro extends Phaser.Scene {
         targets: this._creditsContainer, alpha: 0, duration: 1000, onComplete: () => {
           this._play.setInteractive();
           this._credits.setInteractive();
+          this._howtoplay.setInteractive();
         }
       })
     }
+    openHowToPlay() {
+      this._credits.disableInteractive();
+      this._play.disableInteractive();
+      this._howtoplay.disableInteractive();
+      this.tweens.add({
+        targets: this._howtoplayContainer, alpha: 1, duration: 1000, onComplete: () => {
+          this._howtoplayContainerBackground.setInteractive()
+        }
+      })}
+    
+    closeHowToPlay() {
+        this.tweens.add({
+          targets: this._creditsContainer, alpha: 0, duration: 1000, onComplete: () => {
+            this._play.setInteractive();
+            this._credits.setInteractive();
+            this._howtoplay.setInteractive();
+          }
+        })
+      }
 
   startGame() {
 
