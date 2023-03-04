@@ -32,6 +32,14 @@ export let GameData: any = {
       margin: 0,
     },
     {
+      name: "PavBoss",
+      path: "assets/Mappa/blocchi5.png",
+      width: 32,
+      height: 32,
+      spacing: 0,
+      margin: 0,
+    },
+    {
       name: "Car",
       path: "assets/Mappa/macchine.png",
       width: 84,
@@ -161,10 +169,18 @@ export let GameData: any = {
   }],
   audio: [],
   bitmapfont: [],
-  tilemaps:[ {
-    key: "level-0",
-    path: "assets/Mappa/livello2.json",
+  tilemaps:[ 
+    {
+    key: "level-1",
+    path: "assets/Mappa/LivelloBoss.json",
+  },
+  {
+    key: "level-2",
+    path: "assets/Mappa/LivelloBoss.json",
+  },
+  {
+    key: "level-3",
+    path: "assets/Mappa/LivelloBoss.json",
   },
   ]
 };
-//a

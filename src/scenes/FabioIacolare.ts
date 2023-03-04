@@ -104,22 +104,21 @@ createMap(): void {
       .createLayer("Pavimento", this.tileset, 0, 85)
       .setDepth(9)
       .setAlpha(1);
-      this.layer.setCollisionByProperty({
-        collide: true,
-      });
+
     this.layer1 = this.map
-      .createLayer("R", this.tileset, 0, 90)
+      .createLayer("Collisioni", this.tileset, 0, 90)
       .setDepth(9)
       .setAlpha(1);
-
-    this.layer2 = this.map
+      this.layer1.setCollisionByProperty({
+        collide: true,})
+    /*this.layer2 = this.map
       .createLayer("Exit", this.tileset, 0, 90)
       .setDepth(9)
       .setAlpha(1);
       this.layer2.setCollisionByProperty({
         collide: true,
         exit: true
-      });
+      });*/
 
       
       
