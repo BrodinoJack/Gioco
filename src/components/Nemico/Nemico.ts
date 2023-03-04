@@ -21,48 +21,15 @@ export default class Nemico extends Phaser.GameObjects.Sprite implements INemico
     this._body = <Phaser.Physics.Arcade.Body>this.body;
     this._scene.add.existing(this);
     this._enemy1 = <Phaser.Physics.Arcade.Body>this.body;
-    this.createAnimations();
-            this._enemy1.setDragX(1000)
-      .setCollideWorldBounds(true, 0.5)
-      .setImmovable(true)
-      .setGravity(0, 1200)
-      .setMaxVelocity(250, 550)
-      .setGravityY(1500)
-    this._scene.addEnemy(FabioIacolare);
+        this._scene.addEnemy(this);
     
-    
-    
-    this._enemy1.setSize(35,40)
   
   }
- 
+
+  getEnemy(): Phaser.Physics.Arcade.Body {return this._body}
+
   
   create() {
-    this._enemy1 = this.add.Sprite(450,250, "enemy").setScale(1).setAlpha(1)
-   
-    let _animation: Phaser.Types.Animations.Animation = {
-      key: "Stop",
-      frames: this.anims.generateFrameNumbers("enemy", { frames: [0] }),
-      frameRate: 1,
-      yoyo: false,
-      repeat: -1
-    };
-    this.anims.create(_animation);
-
-    if(this._enemy1.checkCollision){
-      let _animation: Phaser.Types.Animations.Animation = {
-        key: "died",
-        frames: this.anims.generateFrameNumbers("enemy", { frames: [ 0,1,2,3,4,5,6] }),
-        frameRate: 6,
-        yoyo: false,
-        repeat: 0,
-      };
-      this.anims.create(_animation);
-      this.time.addEvent({
-        delay: 1000,
-        callback: () => { console.log(this._enemy1.destroy) },
-        callbackScope: this
-        });
 
 
 
@@ -106,17 +73,13 @@ export default class Nemico extends Phaser.GameObjects.Sprite implements INemico
     this.play("rotate");
    // this._scene.addNemico(this);
     this._scene.add.existing(this);*/
-  }
-  getNemico(): Phaser.Physics.Arcade.Body {return this._enemy1}
-  createAnimations() {
-    
-  }
-  Stop() {
-    this._enemy1.setEnable(false);
-    this.setAlpha(0);
+  
+  
+  
+  
 
-  }
-  died() {
+  
+ /* died() {
     this._enemy1.setEnable(false);
     this.setAlpha(0);
 
@@ -125,7 +88,7 @@ export default class Nemico extends Phaser.GameObjects.Sprite implements INemico
     this._enemy1.setEnable(true);
     this.setAlpha(1);
     this.setPosition(450,250);
-  }
+  }*/
   update(time: number, delta: number) { }
 
   changeDirection(): void { }

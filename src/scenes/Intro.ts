@@ -86,7 +86,7 @@ private _logogame: Phaser.GameObjects.Image;
     this._Aereo23=this.add.tileSprite(-7007,70,0,0, "aereo").setOrigin(0).setDepth(1).setScale(.24,.2);
     this._Aereo24=this.add.tileSprite(-6643,120,0,0, "aereo").setOrigin(0).setDepth(1).setScale(.4,.3);
     this._M=this.add.sprite(510,493,"player_intro").setDepth(1).setScale(.15);
-    this._music = this.sound.add("_intro", { loop: true, volume: 0.7 });
+    this._music = this.sound.add("intromusic", { loop: true, volume: 0.7 });
     this._music.play();
     this._creditsContainer = this.add.container().setAlpha(0).setDepth(10);
     this._creditsContainerText = this.add.text(this.game.canvas.width / 2, 100, "").setTint(0xff0000).setOrigin(.5);

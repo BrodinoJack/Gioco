@@ -34,8 +34,8 @@ export default class Piatt extends Nemico {
     
    let _animation= {
       key: "Stop",
-      frames: this.anims.generateFrameNumbers("Soldato", { frames: [0] }),
-      frameRate: 1,
+      frames: this.anims.generateFrameNumbers("enemy", { frames: [0,1,2,3] }),
+      frameRate: 4,
       yoyo: false,
       repeat: -1
     }
@@ -76,6 +76,6 @@ export default class Piatt extends Nemico {
 
 
   update(time: number, delta: number) { 
-    
+    this.anims.play('enemy', true);
   }
 }

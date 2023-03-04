@@ -75,7 +75,14 @@ export let GameData: any = {
       height: 40,
       frames: 4,
     },
-   
+    {
+      name: "enemy",
+      path: "assets/Mappa/nemicocammina22_40.png",
+      width: 22,
+      height: 40,
+      frames: 4,
+    },
+
   ],
 
   images: [
@@ -152,10 +159,7 @@ export let GameData: any = {
               name: "lvl1city",
               path: "assets/Sfondo/lvl1city.png",
             },
-            {
-              name: "enemy",
-              path: "assets/Images/Soldato_Nem_1_ATT sinistra.png",
-            },
+     
 ],
   atlas: [],
   sounds: [{
@@ -164,7 +168,7 @@ export let GameData: any = {
     paths: ["assets/sounds/sfx.ogg", "assets/sounds/sfx.m4a"]
   },
   {
-    name: "_intro", 
+    name: "intromusic", 
     paths: ["assets/sounds/canzoneintro.ogg", "assets/sounds/canzoneintro.m4a"]
   },
   {

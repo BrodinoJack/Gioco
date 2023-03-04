@@ -5,15 +5,16 @@ import { GameData } from "../GameData";
 import Piatt from "../components/Nemico/Piatt";
 export default class FabioIacolare extends Phaser.Scene {
  
-
+  
   private _vita: Phaser.GameObjects.Image;
   private _tre: Phaser.GameObjects.Text;
   private _colpi:Phaser.GameObjects.Image;
   private _ncolpi:Phaser.GameObjects.Text;
   private _ncolpi2: number=12;
-  private _player: Main;
+  private _player: Main;  
+  private _Enemy: Piatt;
+
   private L: Phaser.GameObjects.Image;
-  private _spacebar: Phaser.Input.Keyboard.Key;
     private _bg: Phaser.GameObjects.TileSprite;
     private _P: Phaser.Physics.Arcade.Sprite;
     private GruppoPavimento: Phaser.GameObjects.Group;
@@ -31,10 +32,11 @@ export default class FabioIacolare extends Phaser.Scene {
   private layer: Phaser.Tilemaps.TilemapLayer;
   private layer1: Phaser.Tilemaps.TilemapLayer;
   private layer2: Phaser.Tilemaps.TilemapLayer;
+  private layer3: Phaser.Tilemaps.TilemapLayer;
 
  
     private _proiettileGroup: Phaser.GameObjects.Group;
-  addEnemy: any;
+  
 
 
     constructor() {
@@ -43,18 +45,16 @@ export default class FabioIacolare extends Phaser.Scene {
       } 
       
       preload(){
-        this.load.image('enemy', 'assets/images/Soldato_Nem_1_ATT sinistra.png')
+        this.load.spritesheet('enemy', 'assets/Mappa/nemicocammina22_40.png')
       }
 
 
 create(){
   
- this.createMap();  
-// this.setupEnemies(); 
+ 
  this._vita= this.add.image(this.game.canvas.width/ 2,100, "cuore").setPosition(980,40).setScale(.1).setAlpha(1).setScrollFactor(0);
  this._tre= this.add.text(this.game.canvas.width/ 2,100, "3").setPosition(977,25).setScale(1).setAlpha(1).setScrollFactor(0).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setTint(0x000000),
  this._colpi= this.add.image(this.game.canvas.width /2,100, "proiettil").setPosition(910,35).setScale(.35).setAlpha(1).setScrollFactor(0);
-this._ncolpi=this.add.text(this.game.canvas.width /2,100, ""+this._ncolpi2).setPosition(850,25).setTint(0x000000).setScrollFactor(0).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setScale(1)
   
   this._enemyGroup = this.add.group({ runChildUpdate: true });
   this._proiettileGroup = this.add.group({ runChildUpdate: true });
@@ -72,7 +72,8 @@ this._ncolpi=this.add.text(this.game.canvas.width /2,100, ""+this._ncolpi2).setP
   
   
   
-
+  this.createMap();  
+  this.setupEnemies(); 
   
       }
 
@@ -118,8 +119,39 @@ createMap(): void {
       this.layer2.setCollisionByProperty({
           collide: true,})
       
+        /*  this.physics.add.collider(
+            this._enemyGroup,
+            this.layer1,
+            () => {
+              //qui è possibile eseguire del codice specifico
+            },
+            undefined,
+            this
+          );*/
+
+          this.physics.add.collider(
+            this._enemyGroup,
+            this.layer2,
+            (enemy: any) => {
+              //quando ENEMY collide con una tile di questo layer viene richiamato per l'ENEMY il metodo changeDirection
+              let _enemy: Nemico = <Nemico>enemy;
+              _enemy.changeDirection();
+      
+            },
+            undefined,
+            this
+          );
+
+          
       
       }
+
+      addEnemy(enemy: Nemico){
+        this._enemyGroup.add(enemy)
+      }
+
+     
+
       
       
 
@@ -127,14 +159,14 @@ createMap(): void {
      setupEnemies(): void {
       let _objLayer: Phaser.Tilemaps.ObjectLayer = this.map.getObjectLayer("nemico");
       if (_objLayer != null) {
-        let _enemies: any = _objLayer.objects as any[];
+        let _Soldato: any = _objLayer.objects as any[];
       
-      
-       _enemies.forEach((tile: Phaser.Tilemaps.Tile) => {
+      console.log(_Soldato)
+       _Soldato.forEach((tile: Phaser.Tilemaps.Tile) => {
 
         //aggungiamo un nuovo nemico nella positione indicata dalla TILE
        new Piatt({
-        scene: this, x: tile.x, y: tile.y, key: "Soldato_Nem_1_ATT sin i"})})}
+        scene: this, x: tile.x, y: tile.y, key: "enemy"})})}
      }
 
     
@@ -147,12 +179,13 @@ createMap(): void {
 
 
   update(time: number, delta: number): void {
-
     this._player.update(time, delta);
     this.cameras.main.startFollow(this._player);
       this.physics.add.collider(this.Sparata, this.layer1,()=>{
       });
       this.physics.add.collider(this._player, this.layer1);
+      this.physics.add.collider(this._enemyGroup, this.layer2);
+
       this.physics.add.collider(
         this._enemyGroup,
         this.layer1,
