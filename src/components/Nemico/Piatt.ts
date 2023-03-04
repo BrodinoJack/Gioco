@@ -1,12 +1,12 @@
 import GamePlay from "../../scenes/FabioIacolare";
 import Nemico from "./Nemico";
 
-export default class EnemyPlatform extends Nemico {
+export default class Piatt extends Nemico {
 
   private _vel: number = 50;
   constructor(params: genericConfig) {
     super(params);
-    this.setName("robot")
+    this.setName("soldato")
     this.create();
   }
   create() {

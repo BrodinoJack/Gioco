@@ -24,11 +24,15 @@ export let GameData: any = {
       margin: 0,
     },
     {
-<<<<<<< HEAD
-      name: "Mac",
-=======
+      name: "PavCav",
+      path: "assets/Mappa/blocchi_caverna.png",
+      width: 32,
+      height: 32,
+      spacing: 0,
+      margin: 0,
+    },
+    {
       name: "Car",
->>>>>>> 0522842bcca92913d6b565f51c35e41fe1b04ce6
       path: "assets/Mappa/macchine.png",
       width: 84,
       height: 57,
@@ -63,14 +67,7 @@ export let GameData: any = {
       height: 40,
       frames: 4,
     },
-    {
-      name: "sfondo",
-      path: "assets/map/sfondo.png",
-      width: 32,
-      height: 32,
-      spacing: 2,
-      margin: 1,
-    },
+   
   ],
 
   images: [
@@ -94,10 +91,7 @@ export let GameData: any = {
     name: "options",
     path: "assets/images/options.png",
     },
-    {
-      name: "Sfondo",
-      path: "assets/images/Sfondo.png",
-      },
+
       {
         name: "intro-image",
         path: "assets/Sfondo/introcity.png",
@@ -122,11 +116,6 @@ export let GameData: any = {
             name: "labs",
             path: "assets/images/labs.png",
           },
-
-          {
-            name: "stradabg",
-            path: "assets/imagestradaty.png",
-          },
           {
             name: "cuore",
             path: "assets/images/cuore.png",
@@ -146,6 +135,10 @@ export let GameData: any = {
             {
               name: "lvl1city",
               path: "assets/Sfondo/lvl1city.png",
+            },
+            {
+              name: "enemy",
+              path: "assets/Images/Soldato_Nem_1_ATT sinistra.png",
             },
 ],
   atlas: [],
@@ -168,20 +161,10 @@ export let GameData: any = {
   }],
   audio: [],
   bitmapfont: [],
-<<<<<<< HEAD
-  tilemaps: [
-    {
-      key: "level-0",
-      path: "assets/Mappa/Map1.json",
-    },
-  ],
-};
-=======
   tilemaps:[ {
     key: "level-0",
-    path: "assets/Mappa/Map1.json",
+    path: "assets/Mappa/livello2.json",
   },
   ]
 };
 //a
->>>>>>> 0522842bcca92913d6b565f51c35e41fe1b04ce6

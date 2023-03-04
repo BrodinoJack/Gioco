@@ -36,7 +36,7 @@ constructor(params: genericConfig) {
       this._spacebar = this._scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
 
 
-      this._M.setSize(35,40)
+      this._M.setSize(30,40)
 
       let _animation : Phaser.Types.Animations.Animation = {
 
@@ -82,8 +82,6 @@ constructor(params: genericConfig) {
         
         createAnimations() {           
         }
-//a
-
         death() {
           this._M.setEnable(false);
           this.setAlpha(0);
@@ -144,7 +142,7 @@ constructor(params: genericConfig) {
       
           Proi.x += vec.x * 16
       
-          Proi.setVelocity(vec.x * 300, vec.y * 300)
+          Proi.setVelocity(vec.x * 500, vec.y * 500)
         }
 
 
@@ -156,6 +154,7 @@ constructor(params: genericConfig) {
 
       if (Phaser.Input.Keyboard.JustDown(this._spacebar)) { 
         this.Sparo();
+        
        }
 
 
@@ -168,16 +167,16 @@ constructor(params: genericConfig) {
 
         if (this._cursors.right.isDown ) {
             this.anims.play('move', true);
-            this._M.setVelocityX(150);
+            this._M.setVelocityX(2000);
             this.scaleX = 1
-			      this._M.offset.x = 8
+			      this._M.offset.x = 10
             
           }
           else if (this._cursors.left.isDown) {
             this.anims.play('move', true);
-            this._M.setVelocityX(-150);
+            this._M.setVelocityX(-2000);
             this.scaleX = -1
-			      this._M.offset.x = 24
+			      this._M.offset.x = 28
 
           }else{
             this.anims.play('Stop', true);
