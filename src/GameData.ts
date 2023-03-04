@@ -168,18 +168,20 @@ export let GameData: any = {
     paths: ["assets/sounds/sfx.ogg", "assets/sounds/sfx.m4a"]
   },
   {
-    name: "intromusic", 
-    paths: ["assets/sounds/canzoneintro.ogg", "assets/sounds/canzoneintro.m4a"]
-  },
-  {
     name: "_button",
     paths: ["assets/sounds/button.ogg", "assets/sounds/button.m4a"]
   },
-  {
-    name: "_musicbar",
-    paths: ["assets/sounds/music-bar.ogg", "assets/sounds/music-bar.m4a"]
-  }],
-  audio: [],
+    {
+      name: "intromusic", 
+      paths: ["assets/sounds/canzoneintro.ogg", "assets/sounds/canzoneintro.m4a"]
+    },
+    {
+      name: "_musicbar",
+      paths: ["assets/sounds/music-bar.ogg", "assets/sounds/music-bar.m4a"]
+    }
+  ],
+  
+  audio: [  ],
   bitmapfont: [],
   tilemaps:[ 
     {

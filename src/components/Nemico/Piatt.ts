@@ -76,6 +76,6 @@ export default class Piatt extends Nemico {
 
 
   update(time: number, delta: number) { 
-    this.anims.play('enemy', true);
+    //this.anims.play('enemy', true);
   }
 }

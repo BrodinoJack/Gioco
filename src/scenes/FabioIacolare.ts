@@ -3,6 +3,8 @@ import Player from "../components/Player/Main";
 import Nemico from "../components/Nemico/Nemico"; 
 import { GameData } from "../GameData";
 import Piatt from "../components/Nemico/Piatt";
+import Hud from "../scenes/Hud"
+import { GameObjects } from "phaser";
 export default class FabioIacolare extends Phaser.Scene {
  
   
@@ -50,12 +52,6 @@ export default class FabioIacolare extends Phaser.Scene {
 
 
 create(){
-  
- 
- this._vita= this.add.image(this.game.canvas.width/ 2,100, "cuore").setPosition(980,40).setScale(.1).setAlpha(1).setScrollFactor(0);
- this._tre= this.add.text(this.game.canvas.width/ 2,100, "3").setPosition(977,25).setScale(1).setAlpha(1).setScrollFactor(0).setFontFamily('Georgia,"Goudy Booletter 1911",Times,serif').setTint(0x000000),
- this._colpi= this.add.image(this.game.canvas.width /2,100, "proiettil").setPosition(910,35).setScale(.35).setAlpha(1).setScrollFactor(0);
-  
   this._enemyGroup = this.add.group({ runChildUpdate: true });
   this._proiettileGroup = this.add.group({ runChildUpdate: true });
 
@@ -74,7 +70,25 @@ create(){
   
   this.createMap();  
   this.setupEnemies(); 
-  
+  this.cameras.main.startFollow(this._player);
+    this.physics.add.collider(this.Sparata, this._enemyGroup,(
+      
+    )=>{
+
+    })
+      this.physics.add.collider(this.Sparata, this.layer1,()=>{
+      });
+      this.physics.add.collider(this._player, this.layer1);
+      this.physics.add.collider(this._enemyGroup, this.layer2);
+
+      this.physics.add.collider(
+        this._enemyGroup,
+        this.layer1,
+        () => {
+        },
+        undefined,
+        this
+        )
       }
 
 
@@ -149,6 +163,10 @@ createMap(): void {
       addEnemy(enemy: Nemico){
         this._enemyGroup.add(enemy)
       }
+      removeEnemy(enemy: Nemico) {
+        this._enemyGroup.remove(enemy, true, true);
+        
+      }
 
      
 
@@ -167,33 +185,19 @@ createMap(): void {
         //aggungiamo un nuovo nemico nella positione indicata dalla TILE
        new Piatt({
         scene: this, x: tile.x, y: tile.y, key: "enemy"})})}
-     }
 
-    
-        
+       // if(this._enemy.bound)
+     }
     
   
 
 
 
 
-
   update(time: number, delta: number): void {
     this._player.update(time, delta);
-    this.cameras.main.startFollow(this._player);
-      this.physics.add.collider(this.Sparata, this.layer1,()=>{
-      });
-      this.physics.add.collider(this._player, this.layer1);
-      this.physics.add.collider(this._enemyGroup, this.layer2);
-
-      this.physics.add.collider(
-        this._enemyGroup,
-        this.layer1,
-        () => {
-        },
-        undefined,
-        this
-      );
+    
+      
 
  
   }
