@@ -12,7 +12,7 @@ export default class Hud extends Phaser.Scene {
   private _FabioIacolare:FabioIacolare;
   private _music: Phaser.Sound.BaseSound;
   private _scoreText:Phaser.GameObjects.BitmapText;
-  private _score:number;
+  public _score:number;
 
 
   constructor() {
@@ -24,8 +24,8 @@ export default class Hud extends Phaser.Scene {
   preload() { }
 
   create() {
-    this._vite = 3;
-    this._ncolpi2 = 35;
+    this._vite = 1;
+    this._ncolpi2 = 12;
     this._score = 0;
     this._FabioIacolare = <FabioIacolare>this.scene.get("FabioIacolare");
 
@@ -44,8 +44,8 @@ export default class Hud extends Phaser.Scene {
 
     this._scoreText = this.add
       .bitmapText(20, 20, "arcade", this._score + "")
-      .setFontSize(30) //settiamo il font size a 30
-      .setTint(0xffffff) //colore bianco
+      .setFontSize(30) 
+      .setTint(0x000000) 
       .setOrigin(0);
 
 
@@ -84,7 +84,7 @@ export default class Hud extends Phaser.Scene {
     _level++;
     this.scene.pause("FabioIacolare");
     this.time.addEvent({
-      delay: 2000, callback: () => {
+      delay: 1000, callback: () => {
         this.nextLevel(_level);
       }
     })
@@ -131,5 +131,5 @@ export default class Hud extends Phaser.Scene {
     this.scene.stop("Hud");
     this.scene.stop("FabioIacolare");
     this.scene.start("GameOver");
-
+    
   }}

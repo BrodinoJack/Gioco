@@ -1391,6 +1391,11 @@
                  "id":324,
                  "properties":[
                         {
+                         "name":"collide",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
                          "name":"exit",
                          "type":"bool",
                          "value":true

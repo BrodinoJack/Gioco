@@ -44,7 +44,7 @@ window.addEventListener("load", () => {
       default: "arcade",
       arcade: {
         
-        debug: true,
+        debug: false,
       }
     },
 

@@ -15,9 +15,18 @@ constructor() {
 
 create() {
 
+  
   localStorage.removeItem("score");
   localStorage.removeItem("vite");
   this.cameras.main.setBackgroundColor(0x00000);
+  this.add
+      .bitmapText(this.game.canvas.width / 2, 165, "arcade", "YOUR SCORE:" + this.registry.get("score"), 30 )
+      .setAlpha(1)
+      .setOrigin(0)
+      .setDepth(1001)
+      .setPosition(500,500)
+      .setOrigin(0.5)
+      .setTint(0xffffff);
   this._text = this.add
     .bitmapText(this.game.canvas.width / 2, 350,  "arcade", "SEI MORTO").setDepth(1).setOrigin(0,5).setPosition(185,500).setScale(2.3).setTint(0xff0000)
   console.log("Create:gameover")

@@ -6,7 +6,7 @@ export default class Main extends Phaser.GameObjects.Sprite implements IMain{
     private _scene: FabioIacolare;
     private _cursors: Phaser.Types.Input.Keyboard.CursorKeys;
     private Proie: Phaser.Physics.Arcade.Group
-    private _ncolpi2: number=35;
+    private _ncolpi2: number=12;
 
     private _M: Phaser.Physics.Arcade.Body; 
     private _spacebar: Phaser.Input.Keyboard.Key;
@@ -177,14 +177,14 @@ constructor(params: genericConfig) {
 
         if (this._cursors.right.isDown ) {
             this.anims.play('move', true);
-            this._M.setVelocityX(1000);
+            this._M.setVelocityX(200);
             this.scaleX = 1
 			      this._M.offset.x = 10
             
           }
           else if (this._cursors.left.isDown) {
             this.anims.play('move', true);
-            this._M.setVelocityX(-1000);
+            this._M.setVelocityX(-200);
             this.scaleX = -1
 			      this._M.offset.x = 28
 

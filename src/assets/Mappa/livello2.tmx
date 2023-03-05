@@ -650,6 +650,7 @@
   </tile>
   <tile id="324">
    <properties>
+    <property name="collide" type="bool" value="true"/>
     <property name="exit" type="bool" value="true"/>
    </properties>
   </tile>
