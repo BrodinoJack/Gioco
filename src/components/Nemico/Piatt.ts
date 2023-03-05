@@ -3,6 +3,10 @@ import Nemico from "./Nemico";
 
 export default class Piatt extends Nemico {
   private _vel: number = 50;
+  private _direction: string;
+  private _isAttacking: boolean=false;
+  private trigger: boolean= false;
+  
   constructor(params: genericConfig) {
     super(params);
     this.setName("Soldato")
@@ -19,18 +23,6 @@ export default class Piatt extends Nemico {
 
     this._body.setVelocityX(50);
 
-    /*let _animation = {
-      key: "move",
-      frames: this.anims.generateFrameNumbers(this._config.key, {
-        frames: [4, 5, 6, 7]
-      }),
-      frameRate: 10,
-      yoyo: false,
-      repeat: -1
-    };
-    this.setFlipX(true);
-    this.anims.create(_animation);
-    this.play("move");*/
     
    let _animation= {
       key: "Stop",
@@ -39,6 +31,8 @@ export default class Piatt extends Nemico {
       yoyo: false,
       repeat: -1
     }
+    this.anims.create(_animation);
+
     this.anims.create(_animation);
     this.anims.play('Stop', true);
     let _animation2= {
@@ -49,34 +43,18 @@ export default class Piatt extends Nemico {
       repeat: -1
     }
     this.anims.create(_animation2);
-    this.anims.play('sparare', true);
+    
     }
 
-
-     /* let _morte: Phaser.Types.Animations.Animation = {
-        key: "died",
-        frames: this.anims.generateFrameNumbers("Soldato", { frames: [ 0,1,2,3,4,5,6] }),
-        frameRate: 6,
-        yoyo: false,
-        repeat: 0,
-      };
-      this.anims.create(_animation);
-      this.time.addEvent({
-        delay: 1000,
-        callback: () => { console.log(this._enemy1.destroy) },
-        callbackScope: this
-        });*/
 
 
 
     
     Stop() {
-      this._enemy1.setEnable(false);
+      this._enemy1.setEnable(true);
       this.setAlpha(0);
     }
-    sparare() {
-      this._enemy1.setEnable(false);
-      this.setAlpha(1);}
+    
     
 
   changeDirection(): void {
@@ -84,15 +62,50 @@ export default class Piatt extends Nemico {
     if (this._vel == 50) {
       this._vel = -50;
       this.setFlipX(false);
+      this._direction="left";
     } else {
       this._vel = 50;
       this.setFlipX(true);
+      this._direction="right";
     }
     this._body.setVelocityX(this._vel);
   }
 
 
   update(time: number, delta: number) { 
-    
+
+   /* if(this.isActive()){
+      let _playerY = this._scene.getPlayer().y +70;
+      let _distanceY: number=0;
+      let _sameDirection: boolean=false;
+
+      if(_playerY>this.y && _playerY){
+        _distanceY=_playerY-_playerY
+      }
+      if (this._direction =="left" && this.x>this._scene.getPlayer().x || this._direction=="right" && this.x < this._scene.getPlayer().x){
+        _sameDirection=true;
+      }
+      let _distance = Phaser.Math.Distance.BetweenPoints({x:this.x,y:this.y},{x:this._scene.getPlayer().x,y:
+      _playerY})
+      if(_sameDirection && _distanceY < 30 && _distance <200 && ! this._isAttacking){
+        this.trigger=true
+        this.attack();
+        
+      }
+    }
+  }
+  attack() {
+    // Implementa la logica di attacco del nemico qui
+    this._isAttacking = true;
+    this._enemy1.setEnable(false);
+    this.setAlpha(1);
+
+
+
+
+
+  }
+  isActive(): boolean {
+    return this.active;*/
   }
 }

@@ -5,14 +5,14 @@
         {
          "draworder":"topdown",
          "id":3,
-         "name":"Nemico",
+         "name":"nemico-1",
          "objects":[
                 {
                  "class":"Nemico",
                  "gid":222,
                  "height":40,
                  "id":1,
-                 "name":"Nemico 3",
+                 "name":"nemico3",
                  "rotation":0,
                  "visible":true,
                  "width":22,
@@ -24,7 +24,7 @@
                  "gid":222,
                  "height":40,
                  "id":2,
-                 "name":"Nemico 2",
+                 "name":"nemico2",
                  "rotation":0,
                  "visible":true,
                  "width":22,
@@ -36,7 +36,7 @@
                  "gid":222,
                  "height":40,
                  "id":3,
-                 "name":"Nemico 1",
+                 "name":"nemico1",
                  "rotation":0,
                  "visible":true,
                  "width":22,
@@ -48,11 +48,11 @@
                  "gid":222,
                  "height":40,
                  "id":4,
-                 "name":"Nemico 4",
+                 "name":"nemico4",
                  "rotation":0,
                  "visible":true,
                  "width":22,
-                 "x":1707,
+                 "x":1721,
                  "y":221
                 }],
          "opacity":1,
@@ -136,7 +136,7 @@
                     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
                     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
                     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                    0, 0, 0, 0, 0, 0, 0, 226, 226, 226, 226, 226, 0, 0, 0, 37,
+                    0, 0, 0, 0, 0, 0, 0, 226, 226, 226, 226, 226, 0, 0, 0, 0,
                     0, 0, 0, 0, 227, 227, 227, 227, 227, 227, 227, 227, 227, 227, 227, 227,
                     0, 0, 0, 0, 227, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
                     227, 227, 227, 227, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -153,7 +153,7 @@
                 }],
          "height":16,
          "id":4,
-         "name":"Collide",
+         "name":"Collide-1",
          "opacity":1,
          "startx":0,
          "starty":0,
@@ -255,7 +255,7 @@
                 }],
          "height":16,
          "id":2,
-         "name":"Macchine",
+         "name":"Macchine-1",
          "opacity":1,
          "startx":0,
          "starty":0,
@@ -335,13 +335,49 @@
                 }],
          "height":16,
          "id":5,
-         "name":"BlocchiNem",
+         "name":"BlocchiNem-1",
          "opacity":1,
          "startx":0,
          "starty":0,
          "type":"tilelayer",
          "visible":true,
          "width":48,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "chunks":[
+                {
+                 "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11,
+                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                 "height":16,
+                 "width":16,
+                 "x":48,
+                 "y":0
+                }],
+         "height":16,
+         "id":7,
+         "name":"Exit-1",
+         "opacity":1,
+         "startx":48,
+         "starty":0,
+         "type":"tilelayer",
+         "visible":true,
+         "width":16,
          "x":0,
          "y":0
         }, 
@@ -437,7 +473,7 @@
                 }],
          "height":16,
          "id":1,
-         "name":"Pavimento",
+         "name":"Pavimento-1",
          "opacity":1,
          "startx":0,
          "starty":0,
@@ -447,7 +483,7 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":6,
+ "nextlayerid":8,
  "nextobjectid":5,
  "orientation":"orthogonal",
  "renderorder":"right-down",
@@ -467,6 +503,15 @@
          "tileheight":32,
          "tiles":[
                 {
+                 "id":10,
+                 "properties":[
+                        {
+                         "name":"exit",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
+                {
                  "id":21,
                  "properties":[
                         {
@@ -480,6 +525,15 @@
                  "properties":[
                         {
                          "name":"exit",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
+                {
+                 "id":37,
+                 "properties":[
+                        {
+                         "name":"kill",
                          "type":"bool",
                          "value":true
                         }]

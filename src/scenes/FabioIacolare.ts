@@ -11,7 +11,7 @@ export default class FabioIacolare extends Phaser.Scene {
   private _tre: Phaser.GameObjects.Text;
   private _colpi:Phaser.GameObjects.Image;
   private _ncolpi:Phaser.GameObjects.Text;
-  private _ncolpi2: number=24;
+  private _ncolpi2: number=35;
   private _player: Main;  
   private _Enemy: Piatt;
 
@@ -21,43 +21,53 @@ export default class FabioIacolare extends Phaser.Scene {
     private GruppoPavimento: Phaser.GameObjects.Group;
     private strada: Phaser.GameObjects.TileSprite;
     private _enemyGroup: Phaser.GameObjects.Group;
+    private _TriggerGroup: Phaser.GameObjects.Group;
+    private _triggered: Phaser.Physics.Arcade.Sprite;
     private _enemy: Phaser.Physics.Arcade.Sprite;
     
 
     private Sparata: Phaser.Physics.Arcade.Group
 
+    private _level: number=1;
     private map: Phaser.Tilemaps.Tilemap;
-  private tileset: Phaser.Tilemaps.Tileset;
-  private tileset1: Phaser.Tilemaps.Tileset;
+    private tileset: Phaser.Tilemaps.Tileset;
+    private tileset1: Phaser.Tilemaps.Tileset;
+    private tileset2: Phaser.Tilemaps.Tileset;
+    private tileset3: Phaser.Tilemaps.Tileset;
 
-  private layer: Phaser.Tilemaps.TilemapLayer;
-  private layer1: Phaser.Tilemaps.TilemapLayer;
-  private layer2: Phaser.Tilemaps.TilemapLayer;
-  private layer3: Phaser.Tilemaps.TilemapLayer;
-  private layer4: Phaser.Tilemaps.TilemapLayer;
+    private layer: Phaser.Tilemaps.TilemapLayer;
+    private layer1: Phaser.Tilemaps.TilemapLayer;
+    private layer2: Phaser.Tilemaps.TilemapLayer;
+    private layer3: Phaser.Tilemaps.TilemapLayer;
+    private layer4: Phaser.Tilemaps.TilemapLayer;
+    private layercav: Phaser.Tilemaps.TilemapLayer;
+    private layerkill: Phaser.Tilemaps.TilemapLayer;
 
  
     private _proiettileGroup: Phaser.GameObjects.Group;
-  
     private _music: Phaser.Sound.BaseSound;
     _Proie:any
 
     constructor() {
         super({ key: "FabioIacolare" });   
-
       } 
+
       
-      preload(){
-        this.load.spritesheet('enemy', 'assets/Mappa/nemicocammina22_40.png')
+      init(data: {level:number}) {
+
+        if (data.level != null) {
+          this._level = data.level;
+        }
       }
 
 
 create(){
   this._enemyGroup = this.add.group({ runChildUpdate: true });
   this._proiettileGroup = this.add.group({ runChildUpdate: true });
+  this._TriggerGroup= this.add.group({runChildUpdate: true});
   const trigger = this.add.sprite(40, 40, 'enemy');
   trigger.visible = false;
-  this._music = this.sound.add("_level1", { loop: true, volume: 1 });
+  this._music = this.sound.add("_level1", { loop: true, volume: 0.1 });
   this._music.play();
 
   this.Sparata = this.physics.add.group({
@@ -69,24 +79,32 @@ create(){
       450, key: "Main"     
   });  
   this._player.setProie(this.Sparata)
+  
 
   
   
-  
   this.createMap();  
+  this._level=1;
   this.setupEnemies(); 
   this.cameras.main.startFollow(this._player);
-    this.physics.add.collider(this.Sparata, this._enemyGroup,(
-      _Proie, _enemy
+    this.physics.add.collider(this.Sparata, this._enemyGroup, (
+      _Proie, _enemy,
+    )=>{
+      this.events.emit("update-score", [100]);
+    this.removeProie(_Proie)
+    _enemy.destroy()
+    })
+    this.physics.add.collider(this.Sparata, this._TriggerGroup, (
+      _Proie, _enemy,
     )=>{
     this.removeProie(_Proie)
     _enemy.destroy()
+    this.events.emit("update-score", [100]);
     })
       this.physics.add.collider(this.Sparata, this.layer1,()=>{
       });
       this.physics.add.collider(this._player, this.layer1);
       this.physics.add.collider(this._enemyGroup, this.layer2);
-
       this.physics.add.collider(
         this._enemyGroup,
         this.layer1,
@@ -95,118 +113,142 @@ create(){
         undefined,
         this
         )
+        
       }
 
 
 createMap(): void {
-  this._bg = this.add.tileSprite(0, 0, 1024, 600, "lvl1city").setOrigin(0).setScrollFactor(0);
-  if (this.map != null) this.map.destroy();
+ if (this.map != null) 
+  this.map.destroy();
+      this._bg = this.add.tileSprite(0, 0, 1024, 600, "lvl1city").setOrigin(0).setScrollFactor(0);
+      this.map = this.make.tilemap({ key: "level-" + this._level });
+  
+       this.cameras.main.setBounds(
+        0,
+        0,
+        2050,
+        this.map.heightInPixels
+      );
+      this.physics.world.setBounds(
+        0,
+        0,
+        2050,
+        650
+      );
+  
+      this.tileset = this.map.addTilesetImage("Blocchi", "Pav");
+      this.tileset1 = this.map.addTilesetImage("grass", "Verde");
+      this.tileset2 = this.map.addTilesetImage("macchine", "Car");
+      this.tileset3 = this.map.addTilesetImage("blocchi_caverna", "PavCav");
 
-    this.map = this.make.tilemap({ key: "level-2" });
 
-     this.cameras.main.setBounds(
-      0,
-      0,
-      2100,
-      this.map.heightInPixels
-    );
-    this.physics.world.setBounds(
-      0,
-      0,
-      2100,
-      650
-    );
-
-    this.tileset = this.map.addTilesetImage("blocchi_caverna", "PavCav");
-    //this.tileset1 = this.map.addTilesetImage("macchine", "Car");
-
-    this.layer = this.map
-      .createLayer("Pavimento", this.tileset, 0, 85)
-      .setDepth(9)
-      .setAlpha(1);
-
-    this.layer1 = this.map
-      .createLayer("Collisioni", this.tileset, 0, 90)
-      .setDepth(9)
-      .setAlpha(1);
-      this.layer1.setCollisionByProperty({
-        collide: true,})
-
-    this.layer2 = this.map
-      .createLayer("BlocchiNem", this.tileset, 0, 90)
-      .setDepth(9)
-      .setAlpha(1);
-      this.layer2.setCollisionByProperty({
+        if (this._level==1){
+      this.layer = this.map
+        .createLayer("Pavimento-1", this.tileset, 0, 90)
+        .setDepth(9)
+        .setAlpha(1);
+      }else{
+        this._bg = this.add.tileSprite(0, 0, 1024, 600, "Caverna").setOrigin(0).setScrollFactor(0);
+        this.layercav = this.map
+        .createLayer("Pavimento-2", this.tileset3, 0, 90)
+        .setDepth(9)
+        .setAlpha(1);
+        this.layercav.setCollisionByProperty({
+          collide: true,})}
+  
+      this.layer1 = this.map
+        .createLayer("Collide-"+ this._level, this.tileset1, 0, 90)
+        .setDepth(9)
+        .setAlpha(0);
+        this.layer1.setCollisionByProperty({
           collide: true,})
-    this.layer3 = this.map
-      .createLayer("Exit", this.tileset, 0, 90)
-      .setDepth(9)
-      .setAlpha(1);
-      this.layer3.setCollisionByProperty({
+  
+      this.layer2 = this.map
+        .createLayer("BlocchiNem-"+ this._level, this.tileset, 0, 90)
+        .setDepth(9)
+        .setAlpha(1);
+        this.layer2.setCollisionByProperty({
+          collide: true,})
+
+        
+
+      this.layer3 = this.map
+        .createLayer("Exit-"+ this._level, this.tileset, 1537, 90)
+        .setDepth(9)
+        .setAlpha(1);
+        this.layer3.setCollisionByProperty({
+          collide: false,
           exit: true
-        })
-    this.layer4 = this.map
-      .createLayer("morte", this.tileset, 0, 90)
-      .setDepth(9)
-      .setAlpha(1);
-      this.layer4.setCollisionByProperty({
-          kill: true
-        })
+          })
+      if (this._level==1){
+      this.layer4 = this.map
+        .createLayer("Macchine-1", this.tileset2, 0, 65)
+        .setDepth(9)
+        .setAlpha(1);
+      }else{
+        this.layerkill = this.map
+        .createLayer("Macchine-2", this.tileset3, 0, 65)
+        .setDepth(9)
+        .setAlpha(1);
+        this.layerkill.setCollisionByProperty({
+          kill: true,
+      })
+    }
+this.physics.add.collider(
+      this._player,
+      this.layerkill,
+      (_player: any, _tile: any) => {
+        if (_tile.properties.kill == true) {
+          this.events.emit("decrease-vite", [1]);
+        }
+      },
+          );
 
       this.physics.add.collider(
           this._player,
-          this.layer3,
-          (_player: any, _tile: any) => {
-            if (_tile.properties.exit == true) {
-              console.log("level completed");
-            }
-          },
-          undefined,
-          this
-        );
-        this.physics.add.collider(
-          this._player,
-          this.layer4,
-          (_player: any, _tile: any) => {
-            if (_tile.properties.kill == true) {
-              console.log("Dio");
-            }
-          },
-          undefined,
-          this
-        );
-        /*  this.physics.add.collider(
-            this._enemyGroup,
-            this.layer1,
-            () => {
-              //qui è possibile eseguire del codice specifico
-            },
-            undefined,
-            this
-          );*/
-
+          this.layer1
+          );
+        
           this.physics.add.collider(
-            this._enemyGroup,
-            this.layer2,
-            (enemy: any) => {
-              let _enemy: Nemico = <Nemico>enemy;
-              _enemy.changeDirection();
-      
+            this._player,
+            this.layer3,
+            (_player: any, _tile: any) => {
+              if (_tile.properties.exit == true) {
+                this.levelCompleted();     
+              }
             },
             undefined,
             this
           );
-
           
+            this.physics.add.collider(
+              this._enemyGroup,
+              this.layer2,
+              (enemy: any) => {
+                let _enemy: Nemico = <Nemico>enemy;
+                 _enemy.changeDirection();
+        
+              },
+              undefined,
+              this
+            );
+           
       
-      }
+      
+    
+    }
+
+
 
       addEnemy(enemy: Nemico){
         this._enemyGroup.add(enemy)
       }
+      addEnemy2(enemy: Nemico){
+        this._TriggerGroup.add(enemy)
+      }
+
       removeEnemy(enemy: Nemico) {
-        this._enemyGroup.remove(enemy, true, true);
-        
+        this._enemyGroup.remove(enemy, true, true);  
       }
 
       addProie(_Proie: any){
@@ -214,17 +256,32 @@ createMap(): void {
       }
 
       removeProie(_Proie: any) {
-        _Proie.destroy()
-       
+        _Proie.destroy()  
+      }
+     
+      
+      getPlayer(): Main {
+        return this._player;
         
       }
 
-      
-      
+      getEnemyGroup(): Phaser.GameObjects.Group{
+        return this._enemyGroup
 
-  
+      }
+
+      getTriggersGroup(): Phaser.GameObjects.Group{
+        return this._TriggerGroup;
+      }
+
+      
+      levelCompleted(): void {
+        this.events.emit("level-completed", [this._level]);
+      }
+
+      
      setupEnemies(): void {
-      let _objLayer: Phaser.Tilemaps.ObjectLayer = this.map.getObjectLayer("nemico");
+      let _objLayer: Phaser.Tilemaps.ObjectLayer = this.map.getObjectLayer("nemico-" + this._level);
       if (_objLayer != null) {
         let _Soldato: any = _objLayer.objects as any[];
       
@@ -234,15 +291,17 @@ createMap(): void {
        new Piatt({
         scene: this, x: tile.x, y: tile.y, key: "enemy"})})}
      }
-    
-  
 
 
-
+     StartGame() {
+      if(this._ncolpi2==0){
+        this.scene.stop("FabioIacolare");
+        this.scene.start("GameOver");
+      }
+    }
 
   update(time: number, delta: number): void {
     this._player.update(time, delta);
-    this.physics.add.overlap(this._player, this._enemy, () => {
-      console.log("shot");
-  })
-} }
+ 
+  }
+} 

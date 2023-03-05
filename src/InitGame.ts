@@ -9,6 +9,7 @@ import scienziato from "./scenes/scienziato";
 import FabioIacolare from "./scenes/FabioIacolare";
 import laboratorio from "./scenes/laboratorio";
 import Caverna from "./scenes/Caverna";
+import Victory from "./scenes/Victory";
 import { GameData } from "./GameData";
 
 
@@ -34,9 +35,8 @@ window.addEventListener("load", () => {
       scienziato,
       FabioIacolare,
       laboratorio,
-      Caverna
-  
-      
+      Caverna,
+      Victory
     ],
    
 

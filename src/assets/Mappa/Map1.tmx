@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="80" height="16" tilewidth="32" tileheight="32" infinite="1" nextlayerid="6" nextobjectid="5">
+<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="80" height="16" tilewidth="32" tileheight="32" infinite="1" nextlayerid="8" nextobjectid="5">
  <editorsettings>
   <export target="Map1.json" format="json"/>
  </editorsettings>
  <tileset firstgid="1" name="Blocchi" tilewidth="32" tileheight="32" spacing="1" margin="1" tilecount="216" columns="18">
   <image source="Blocchi.png" width="612" height="408"/>
+  <tile id="10">
+   <properties>
+    <property name="exit" type="bool" value="true"/>
+   </properties>
+  </tile>
   <tile id="21">
    <properties>
     <property name="collide" type="bool" value="true"/>
@@ -13,6 +18,11 @@
   <tile id="36">
    <properties>
     <property name="exit" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="37">
+   <properties>
+    <property name="kill" type="bool" value="true"/>
    </properties>
   </tile>
  </tileset>
@@ -185,13 +195,13 @@
    </properties>
   </tile>
  </tileset>
- <objectgroup id="3" name="Nemico">
-  <object id="1" name="Nemico 3" class="Nemico" gid="222" x="1374.33" y="288" width="22" height="40"/>
-  <object id="2" name="Nemico 2" class="Nemico" gid="222" x="1114.33" y="384.667" width="22" height="40"/>
-  <object id="3" name="Nemico 1" class="Nemico" gid="222" x="608.333" y="480.667" width="22" height="40"/>
-  <object id="4" name="Nemico 4" class="Nemico" gid="222" x="1707" y="221" width="22" height="40"/>
+ <objectgroup id="3" name="nemico-1">
+  <object id="1" name="nemico3" class="Nemico" gid="222" x="1374.33" y="288" width="22" height="40"/>
+  <object id="2" name="nemico2" class="Nemico" gid="222" x="1114.33" y="384.667" width="22" height="40"/>
+  <object id="3" name="nemico1" class="Nemico" gid="222" x="608.333" y="480.667" width="22" height="40"/>
+  <object id="4" name="nemico4" class="Nemico" gid="222" x="1721" y="221" width="22" height="40"/>
  </objectgroup>
- <layer id="4" name="Collide" width="80" height="16" visible="0">
+ <layer id="4" name="Collide-1" width="80" height="16" visible="0">
   <data encoding="csv">
    <chunk x="0" y="0" width="16" height="16">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -254,7 +264,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,226,226,226,226,226,0,0,0,37,
+0,0,0,0,0,0,0,226,226,226,226,226,0,0,0,0,
 0,0,0,0,227,227,227,227,227,227,227,227,227,227,227,227,
 0,0,0,0,227,0,0,0,0,0,0,0,0,0,0,0,
 227,227,227,227,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -267,7 +277,7 @@
 </chunk>
   </data>
  </layer>
- <layer id="2" name="Macchine" width="80" height="16">
+ <layer id="2" name="Macchine-1" width="80" height="16">
   <data encoding="csv">
    <chunk x="0" y="0" width="16" height="16">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -343,7 +353,7 @@
 </chunk>
   </data>
  </layer>
- <layer id="5" name="BlocchiNem" width="80" height="16">
+ <layer id="5" name="BlocchiNem-1" width="80" height="16">
   <data encoding="csv">
    <chunk x="0" y="0" width="16" height="16">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -401,7 +411,29 @@
 </chunk>
   </data>
  </layer>
- <layer id="1" name="Pavimento" width="80" height="16">
+ <layer id="7" name="Exit-1" width="80" height="16">
+  <data encoding="csv">
+   <chunk x="48" y="0" width="16" height="16">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,11,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</chunk>
+  </data>
+ </layer>
+ <layer id="1" name="Pavimento-1" width="80" height="16">
   <data encoding="csv">
    <chunk x="0" y="0" width="16" height="16">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,

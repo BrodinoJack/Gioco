@@ -20,8 +20,8 @@ export let GameData: any = {
       path: "assets/Mappa/Blocchi.png",
       width: 32,
       height: 32,
-      spacing: 0,
-      margin: 0,
+      spacing: 1,
+      margin: 1,
     },
     {
       name: "PavCav",
@@ -38,6 +38,14 @@ export let GameData: any = {
       height: 32,
       spacing: 0,
       margin: 0,
+    },
+    {
+      name: "Verde",
+      path: "assets/Mappa/grass-green-color-solid-background-1920x1080.png",
+      width: 32,
+      height: 32,
+      spacing: 1,
+      margin: 1,
     },
     {
       name: "Car",
@@ -84,7 +92,7 @@ export let GameData: any = {
     },
     {
       name: "shot",
-      path: "assets/Mappa/Soldato_Nem_1_ATT_destra.png",
+      path: "assets/images/Soldato_Nem_1_ATT_destra.png",
       width: 22,
       height: 40,
       frames: 4,
@@ -173,6 +181,10 @@ export let GameData: any = {
               name: "lvl1city",
               path: "assets/Sfondo/lvl1city.png",
             },
+            {
+              name: "Caverna",
+              path: "assets/Mappa/caverna.png",
+            }
      
 ],
   atlas: [],
@@ -203,14 +215,7 @@ export let GameData: any = {
     }
   ],
   
-  audio: [ {
-    name: "_level1",
-    paths: ["assets/sounds/gameplay1.ogg", "assets/sounds/gameplay1.m4a"]
-  },
-  {
-    name: "_level2",
-    paths: ["assets/sounds/gameplay2.ogg", "assets/sounds/gameplay2.m4a"]
-  }
+  audio: [ 
  ],
   bitmapfont: [],
   tilemaps:[ 
@@ -220,7 +225,7 @@ export let GameData: any = {
   },
   {
     key: "level-2",
-    path: "assets/Mappa/livello2.json",
+    path: "assets/Mappa/livello2.json"
   },
   {
     key: "level-3",

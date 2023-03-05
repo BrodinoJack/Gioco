@@ -6,7 +6,7 @@ export default class Main extends Phaser.GameObjects.Sprite implements IMain{
     private _scene: FabioIacolare;
     private _cursors: Phaser.Types.Input.Keyboard.CursorKeys;
     private Proie: Phaser.Physics.Arcade.Group
-    private _ncolpi2: number=24;
+    private _ncolpi2: number=35;
 
     private _M: Phaser.Physics.Arcade.Body; 
     private _spacebar: Phaser.Input.Keyboard.Key;
@@ -93,6 +93,9 @@ constructor(params: genericConfig) {
           this.setPosition(64, 450);
         }
 
+     
+        
+
          setProie(Proie: Phaser.Physics.Arcade.Group)
       {
         this.Proie = Proie
@@ -150,7 +153,6 @@ constructor(params: genericConfig) {
 }
 
 
-
     update(time: number, delta: number) {
 
       
@@ -162,8 +164,7 @@ constructor(params: genericConfig) {
         if(this._ncolpi2>-1){
           this.scene.events.emit("decrease-Colpi", [1]);
         }
-        
-
+       
        }
 
 
