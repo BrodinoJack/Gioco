@@ -4,6 +4,7 @@ import Nemico from "../components/Nemico/Nemico";
 import { GameData } from "../GameData";
 import Piatt from "../components/Nemico/Piatt";
 import { GameObjects } from "phaser";
+import Victory from "./Victory";
 export default class FabioIacolare extends Phaser.Scene {
  
   
@@ -11,9 +12,10 @@ export default class FabioIacolare extends Phaser.Scene {
   private _tre: Phaser.GameObjects.Text;
   private _colpi:Phaser.GameObjects.Image;
   private _ncolpi:Phaser.GameObjects.Text;
-  private _ncolpi2: number=35;
+  private _ncolpi2: number=12;
   private _player: Main;  
   private _Enemy: Piatt;
+  private _Score2: number=0;
 
   private L: Phaser.GameObjects.Image;
     private _bg: Phaser.GameObjects.TileSprite;
@@ -26,7 +28,7 @@ export default class FabioIacolare extends Phaser.Scene {
     private _enemy: Phaser.Physics.Arcade.Sprite;
     
 
-    private Sparata: Phaser.Physics.Arcade.Group
+    private Sparata!: Phaser.Physics.Arcade.Group
 
     private _level: number=1;
     private map: Phaser.Tilemaps.Tilemap;
@@ -65,14 +67,13 @@ create(){
   this._enemyGroup = this.add.group({ runChildUpdate: true });
   this._proiettileGroup = this.add.group({ runChildUpdate: true });
   this._TriggerGroup= this.add.group({runChildUpdate: true});
-  const trigger = this.add.sprite(40, 40, 'enemy');
-  trigger.visible = false;
+
   this._music = this.sound.add("_level1", { loop: true, volume: 0.1 });
   this._music.play();
 
   this.Sparata = this.physics.add.group({
     classType: Phaser.Physics.Arcade.Image,
-    maxSize: 24
+    maxSize: 12
   })
   this._player = new Player({
     scene: this, x: 60, y:
@@ -84,8 +85,8 @@ create(){
   
   
   this.createMap();  
-  this._level=1;
   this.setupEnemies(); 
+  this._level=1;
   this.cameras.main.startFollow(this._player);
     this.physics.add.collider(this.Sparata, this._enemyGroup, (
       _Proie, _enemy,
@@ -101,7 +102,8 @@ create(){
     _enemy.destroy()
     this.events.emit("update-score", [100]);
     })
-      this.physics.add.collider(this.Sparata, this.layer1,()=>{
+      this.physics.add.collider(this.Sparata, this.layer1,(_Proie)=>{
+        this.removeProie(_Proie)
       });
       this.physics.add.collider(this._player, this.layer1);
       this.physics.add.collider(this._enemyGroup, this.layer2);
@@ -173,13 +175,15 @@ createMap(): void {
         
 
       this.layer3 = this.map
-        .createLayer("Exit-"+ this._level, this.tileset, 1537, 90)
+        .createLayer("Exit-" + this._level, this.tileset, 1537, 90)
         .setDepth(9)
         .setAlpha(1);
         this.layer3.setCollisionByProperty({
           collide: false,
           exit: true
           })
+
+          
       if (this._level==1){
       this.layer4 = this.map
         .createLayer("Macchine-1", this.tileset2, 0, 65)
@@ -214,7 +218,10 @@ this.physics.add.collider(
             this.layer3,
             (_player: any, _tile: any) => {
               if (_tile.properties.exit == true) {
-                this.levelCompleted();     
+                this.levelCompleted(); 
+                if (this._level==2){
+                  this.scene.start("Victory")
+                }
               }
             },
             undefined,
@@ -232,10 +239,16 @@ this.physics.add.collider(
               undefined,
               this
             );
-           
       
-      
-    
+              this.physics.add.collider(
+                this._player,
+                this._enemyGroup,
+                (_player: any, _direction: any) => {
+                 
+                    this.events.emit("decrease-vite", [1]);
+                  
+                },
+                    );
     }
 
 
@@ -293,12 +306,8 @@ this.physics.add.collider(
      }
 
 
-     StartGame() {
-      if(this._ncolpi2==0){
-        this.scene.stop("FabioIacolare");
-        this.scene.start("GameOver");
-      }
-    }
+    
+    
 
   update(time: number, delta: number): void {
     this._player.update(time, delta);
